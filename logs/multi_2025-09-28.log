@@ -1,0 +1,964 @@
+==== START Sun 09/28/2025  1:21:57.23 ====
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=117430
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=124627
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=116784
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=123981
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=116120
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=123316
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[Renebates] time budget exceeded; moving on
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=115471
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=122666
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=114818
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=122014
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=114156
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=121353
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=113512
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=120708
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=112861
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=120056
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[Renebates] time budget exceeded; moving on
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=112200
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=119397
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=111554
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=118750
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=110903
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=118097
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=110234
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=117430
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=109578
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=116771
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[Renebates] time budget exceeded; moving on
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=108916
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=116112
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=108252
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=115448
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=107592
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=114788
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=106940
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=114137
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=106291
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=113486
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=105638
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=112835
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=104976
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=112171
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 108; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=104313
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=111510
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=77808
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=85004
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+✅ Digest SMS sent (SID=SMbd9ddea75aa4906ad39f284062f93876)
+📬 Daily digest SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=77154
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=84350
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=76499
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=83697
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=75852
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=83050
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=75210
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=82405
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=74556
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=81752
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=73896
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=81093
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=73254
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=80449
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=72599
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=79796
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=71946
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=79142
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=71302
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=78498
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=70651
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=77849
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=70008
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=77204
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=69354
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=76551
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 109; passing: 2
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=68709
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=75907
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=68061
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=75258
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=67413
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=74610
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=66766
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=73963
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=66119
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=73315
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=65464
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=72661
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=64814
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=72009
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=64169
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=71365
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+✅ SMS sent successfully (SID=SMc1d085af4f5ca0c6b8d4a95fd8d2c8b8)
+💓 Healthcheck SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=63514
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=70710
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=62862
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=70059
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 109; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=62218
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=69413
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 108; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=61558
+[Renebates] City Of McKinney, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=273&cat=all
+[Renebates] event: City Of Richardson, Texas secs=68756
+[Renebates] City Of Richardson, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=194&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 108; passing: 3
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: City Of McKinney, Texas secs=60904

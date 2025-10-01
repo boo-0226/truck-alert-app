@@ -1,0 +1,30 @@
+^C==== START Mon 08/11/2025 10:20:30.92 ====
+[DEBUG] Thresholds -> price_cap=500000 cents (5000.00), alert_time_secs=600, early_time_secs=1800
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Unexpected error: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "govdeals_scraper.py", line 542, in <module>
+    soonest = run_cycle(args.pages, args.page_delay, alerts_enabled=not args.no_alerts)
+  File "govdeals_scraper.py", line 328, in run_cycle
+    print(f"\U0001f50e Requesting page {page} from maestro.lqdt1.com …")
+  File "C:\Users\TScot\AppData\Local\Programs\Python\Python38-32\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "govdeals_scraper.py", line 556, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+^C==== START Sat 08/16/2025  8:12:27.73 ====
+'py' is not recognized as an internal or external command,
+operable program or batch file.
+==== EXIT Sat 08/16/2025  8:12:27.76 code=9009 ====

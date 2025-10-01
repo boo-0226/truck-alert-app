@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truck Watcher</title>
+</head>
+<body>
+    <h1>Monitored Trucks</h1>
+    {% if trucks %}
+        <ul>
+            {% for truck in trucks %}
+                <li>
+                    <strong>{{ truck.title }}</strong><br>
+                    Price: ${{ truck.price }}<br>
+                    Engine Match: {{ truck.engine_match }}<br>
+                    Specialty Match: {{ truck.specialty_match }}<br>
+                    {% if truck.link %}
+                        <a href="{{ truck.link }}" target="_blank">View Listing</a>
+                    {% else %}
+                        <em>No link available</em>
+                    {% endif %}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matching trucks found.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,7 +1,6 @@
 {
-    "models": ["F-250,F-350,F-450, F-550, Ram 5500,"],
-    "year_range": [2011, 2018],
-    "engine_keywords": ["diesel", "6.7L", "power stroke"],
-    "specialty_keywords": ["dump", "utility", "bucket", "flatbed", "crane", "ambulance"],
-    "max_bid": 5000
+  "models": ["F-250", "F250", "F 250", "250"],
+  "engine_keywords": ["diesel", "6.7L", "power stroke", "v8", "cummins", "duramax"],
+  "specialty_keywords": ["utility", "dump", "crane", "service body", "flatbed"],
+  "max_bid": 6000
 }
