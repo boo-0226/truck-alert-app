@@ -1,0 +1,1460 @@
+==== START Thu 10/02/2025 12:37:29.38 ====
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 86; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Bexar County, Texas (San Antonio) secs=1288
+[Renebates] Bexar County, Texas (San Antonio) -> 30 lots via https://renebates.com/a_list_2.php?id=202&cat=all
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=4885
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+❌ Digest SMS failed: HTTP 401 error: Unable to create record: Authenticate
+📬 Daily digest SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 86; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Bexar County, Texas (San Antonio) secs=633
+[Renebates] Bexar County, Texas (San Antonio) -> 30 lots via https://renebates.com/a_list_2.php?id=202&cat=all
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=4229
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 85; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Bexar County, Texas (San Antonio) secs=0
+[Renebates] Bexar County, Texas (San Antonio) -> 29 lots via https://renebates.com/a_list_2.php?id=202&cat=all
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=3584
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 87; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Bexar County, Texas (San Antonio) secs=0
+[Renebates] Bexar County, Texas (San Antonio) -> 21 lots via https://renebates.com/a_list_2.php?id=202&cat=all
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=2926
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 87; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=2281
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=5877
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 88; passing: 18
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=1637
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=5234
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 40 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 87; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=985
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=4583
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 87; passing: 19
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=336
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 60 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=3932
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 41 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 89; passing: 17
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 56 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=3277
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 91; passing: 16
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 43 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=2622
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 90; passing: 17
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=1965
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 96; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=1317
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 97; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=662
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 99; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 63 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Rhome, Texas secs=8
+[Renebates] City Of Rhome, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=289&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 101; passing: 15
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Mansfield, Texas secs=67765
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 100; passing: 16
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Mansfield, Texas secs=67113
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 100; passing: 15
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Mansfield, Texas secs=66460
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 99; passing: 15
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Mansfield, Texas secs=65810
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 98; passing: 16
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport secs=0
+[Renebates] Euless B&B Wrecker Service Selling For The City Of Euless, Texas & DFW Airport -> 40 lots via https://renebates.com/a_list_2.php?id=148&cat=all
+[Renebates] event: City Of Mansfield, Texas secs=65151
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 96; passing: 16
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=64508
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=68103
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 97; passing: 15
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=63860
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=67436
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[Renebates] time budget exceeded; moving on
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 97; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=63189
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=66786
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=62542
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=66138
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 33 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=61896
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=65493
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 33 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=61249
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=64845
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=60600
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=64197
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=59958
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=63554
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=59304
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=62900
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 99; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=58653
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=62248
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 98; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=57996
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=61593
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 97; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=57353
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=60950
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 40 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 97; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=56706
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=60302
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 40 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 97; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=56053
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=59650
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 40 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 97; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=55398
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=58995
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 97; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=54756
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=58352
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 96; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=54100
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=57698
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 40 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 97; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=53449
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=57047
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 96; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=52805
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=56401
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 98; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=52154
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=55752
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=51509
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=55107
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=50855
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=54452
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 36 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=50204
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=53801
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=49549
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=53144
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=48893
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=52490
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=48243
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=51840
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=47586
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=51184
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=46944
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=50541
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=46302
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=49899
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=45650
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=49246
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=45007
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=48604
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=44362
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=47959
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=43711
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=47309
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 100; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=43067
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=46663
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 100; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=42416
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=46012
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=41761
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=45357
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=41114
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=44710
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=40461
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=44056
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=39815
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=43411
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=39160
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=42756
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=38507
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=42104
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=37866
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=41462
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=37217
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=40815
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=36569
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=40166
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=35914
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=39511
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=35260
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=38856
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+❌ SMS failed: HTTP 401 error: Unable to create record: Authenticate
+💓 Healthcheck SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=34613
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=38208
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=33963
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=37560
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=33311
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=36907
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=32658
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=36255
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=32005
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=35602
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=31349
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=34945
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 64 events on index
+[Renebates] event: City Of Mansfield, Texas secs=30702
+[Renebates] City Of Mansfield, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=159&cat=all
+[Renebates] event: Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) secs=34299
+[Renebates] Montgomery County Emergency Services District No. 1 - Texas (Conroe, Willis) -> 6 lots via https://renebates.com/a_list_2.php?id=66&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 99; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)

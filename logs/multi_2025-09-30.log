@@ -1,1 +1,743 @@
 ==== START Tue 09/30/2025  0:00:02.05 ====
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=35951
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=43148
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+✅ SMS sent successfully (SID=SMd6f42691789554d3dc0a6ab1b0c48542)
+💓 Healthcheck SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=35296
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=42493
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=34638
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=41833
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=33991
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=41188
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=33335
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=40530
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=32684
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=39881
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=32031
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=39228
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=31378
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=38574
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=30726
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=37923
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=30078
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=37274
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=29426
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=36624
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=28771
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=35967
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=28126
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=35322
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=27473
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=34669
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=26820
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=34016
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=26177
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=33373
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=25521
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=32718
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 107; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 67 events on index
+[Renebates] event: Waller County, Texas (Hempstead) secs=24866
+[Renebates] Waller County, Texas (Hempstead) -> 12 lots via https://renebates.com/a_list_2.php?id=235&cat=all
+[Renebates] event: City Of Nassau Bay, Texas secs=32062
+[Renebates] City Of Nassau Bay, Texas -> 33 lots via https://renebates.com/a_list_2.php?id=296&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 108; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=49292
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=52889
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+✅ Digest SMS sent (SID=SM7f237af68085a8bcd415365098091544)
+📬 Daily digest SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 108; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=48643
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=52239
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 108; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=47995
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=51591
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 109; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=47340
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=50937
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 20 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 107; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=46693
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=50291
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 22 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 106; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=46047
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=49644
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 22 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=45394
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=48990
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=44739
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=48337
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=44094
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=47690
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=43450
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=47047
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=42808
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=46405
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=42164
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=45760
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=41522
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=45119
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=40864
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=44461
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=40207
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=43803
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=39551
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=43147
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=38905
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=42500
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=38252
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=41848
+[Renebates] Sulphur Springs Independent School District - Sulphur Springs, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=259&cat=all
+[DEBUG] collected 21 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 107; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 71 events on index
+[Renebates] event: Prosper Independent School District - Prosper, Texas secs=37593
+[Renebates] Prosper Independent School District - Prosper, Texas -> 54 lots via https://renebates.com/a_list_2.php?id=250&cat=all
+[Renebates] event: Sulphur Springs Independent School District - Sulphur Springs, Texas secs=41189

@@ -1,0 +1,1516 @@
+==== START Wed 10/01/2025 12:19:26.36 ====
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 117
+[GD] normalized rows: 117
+[GD] blocked by specialty/diesel filter: 108; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=2324
+[Renebates] Canton Independent School District - Canton, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=5920
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+❌ Digest SMS failed: HTTP 401 error: Unable to create record: Authenticate
+📬 Daily digest SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 117
+[GD] normalized rows: 117
+[GD] blocked by specialty/diesel filter: 108; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=1669
+[Renebates] Canton Independent School District - Canton, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=5265
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 107; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=1013
+[Renebates] Canton Independent School District - Canton, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=4610
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 107; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=367
+[Renebates] Canton Independent School District - Canton, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=3963
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 116
+[GD] normalized rows: 116
+[GD] blocked by specialty/diesel filter: 108; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=0
+[Renebates] Canton Independent School District - Canton, Texas -> 56 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=3312
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 33 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 105; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=0
+[Renebates] Canton Independent School District - Canton, Texas -> 44 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=2661
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 35 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 104; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Canton Independent School District - Canton, Texas secs=0
+[Renebates] Canton Independent School District - Canton, Texas -> 40 lots via https://renebates.com/a_list_2.php?id=55&cat=all
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=2007
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 104; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=1354
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[Renebates] event: Garland Independent School District - Garland, Texas secs=76951
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 104; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=699
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[Renebates] event: Garland Independent School District - Garland, Texas secs=76295
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 105; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=48
+[Renebates] Comfort Independent School District - Comfort, Texas -> 18 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[Renebates] event: Garland Independent School District - Garland, Texas secs=75644
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 105; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=0
+[Renebates] Comfort Independent School District - Comfort, Texas -> 14 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[Renebates] event: Garland Independent School District - Garland, Texas secs=74991
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 105; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Comfort Independent School District - Comfort, Texas secs=0
+[Renebates] Comfort Independent School District - Comfort, Texas -> 14 lots via https://renebates.com/a_list_2.php?id=196&cat=all
+[Renebates] event: Garland Independent School District - Garland, Texas secs=74334
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 105; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=73683
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=77280
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 103; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=73038
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=76636
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 103; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=72394
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=75991
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 103; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=71738
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=75335
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 34 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 103; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=71093
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=74691
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 34 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 103; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=70452
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=74049
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 34 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 98; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=69798
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=73396
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 98; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=69158
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=72756
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 98; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=68502
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=72098
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 98; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=67849
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=71446
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 99; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=67193
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=70789
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 99; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=66545
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=70142
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 100; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=65898
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=69496
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=65242
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=68840
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=64590
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=68187
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=63950
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=67545
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=63295
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=66893
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=62640
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=66237
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 37 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=61986
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=65583
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 101; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=61332
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=64929
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 98; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=60678
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=64274
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 95; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=60022
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=63620
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 95; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=59366
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=62963
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 95; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=58717
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=62314
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 94; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=58067
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=61663
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=57406
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=61002
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=56765
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=60362
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=56110
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=59707
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=55465
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=59062
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=54815
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=58411
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=54160
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=57757
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 93; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=53510
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=57107
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=52852
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=56449
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=52205
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=55803
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=51551
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=55148
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=50906
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=54501
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 92; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=50253
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=53850
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 91; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=49609
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=53206
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 92; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=48961
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=52558
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 92; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=48317
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=51914
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 38 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=47658
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=51255
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=47010
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=50606
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=46355
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=49952
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 92; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=45708
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=49304
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 91; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=45060
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=48658
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 90; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=44415
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=48011
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=43764
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=47359
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=43108
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=46703
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=42452
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=46047
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=41804
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=45400
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=41154
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=44752
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=40501
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=44097
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=39842
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=43439
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=39185
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=42781
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+❌ SMS failed: HTTP 401 error: Unable to create record: Authenticate
+💓 Healthcheck SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=38544
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=42141
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=37897
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=41494
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=37245
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=40842
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=36604
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=40200
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=35946
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=39544
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=35287
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=38882
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=34632
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=38229
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=33981
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=37577
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 89; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Garland Independent School District - Garland, Texas secs=33332
+[Renebates] Garland Independent School District - Garland, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=228&cat=all
+[Renebates] event: City Of Milford, Texas secs=36929
+[Renebates] City Of Milford, Texas -> 3 lots via https://renebates.com/a_list_2.php?id=103&cat=all
+[DEBUG] collected 39 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
