@@ -70,6 +70,36 @@ BLOCKED_MODELS = {
 
 # ---------- Helpers ----------
 
+# debug + formatting helpers required by alerts.py
+import os
+
+def _debug_enabled() -> bool:
+    v = (os.getenv("DEBUG") or "").strip().lower()
+    return v in ("1", "true", "yes", "on")
+
+def dprint(*args, **kwargs):
+    """Print only when DEBUG is enabled in the environment."""
+    if _debug_enabled():
+        print("[DEBUG]", *args, **kwargs, flush=True)
+
+def format_dollars(value_cents):
+    """
+    Safe money formatter. Accepts cents (int) or None.
+    Returns e.g. '$4,500' or '$4,500.25'. Returns '—' if None.
+    """
+    if value_cents is None:
+        return "—"
+    try:
+        cents = int(value_cents)
+    except (TypeError, ValueError):
+        return "—"
+    dollars = cents / 100.0
+    # no decimals if it's an even dollar amount
+    if abs(dollars - round(dollars)) < 1e-9:
+        return f"${int(round(dollars)):,}"
+    return f"${dollars:,.2f}"
+
+
 def _contains_any(text: str, keywords: set[str]) -> bool:
     """Returns True if any keyword is found in text."""
     t = (text or "").lower()
