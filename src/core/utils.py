@@ -46,22 +46,33 @@ def normalize_ws(s: Optional[str]) -> str:
 
 # ========== Money / time parsing ==========
 
-def parse_bid_cents(text: Optional[str]) -> Optional[int]:
+def parse_bid_cents(text) -> Optional[int]:
     """
-    Extract numeric dollar amount from a string like:
-      "$4,500" / "Current bid: $3,250" / "3,250.50"
+    Extract numeric dollar amount from a string or number like:
+      "$4,500", "Current bid: $3,250", 3250.50, 4500
     Return cents (int) or None.
     """
-    if not text:
+    if text is None:
         return None
-    cleaned = text.replace(",", "")
-    m = re.search(r"(\d+(?:\.\d{1,2})?)", cleaned)
+
+    # Normalize type
+    if isinstance(text, (int, float)):
+        return int(round(float(text) * 100))
+
+    # Defensive: convert to string
+    s = str(text).strip()
+    if not s:
+        return None
+
+    s = s.replace(",", "")
+    m = re.search(r"(\d+(?:\.\d{1,2})?)", s)
     if not m:
         return None
     try:
         return int(round(float(m.group(1)) * 100))
     except ValueError:
         return None
+
 
 # Back-compat aliases some adapters may import
 parse_price_cents = parse_bid_cents
