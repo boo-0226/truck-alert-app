@@ -127,6 +127,28 @@ def is_specialty_body(text: str) -> bool:
 def is_heavy_duty_model(text: str) -> bool:
     return _contains_any(text, HEAVY_DUTY_MODELS)
 
+# ---------- Bid parsing helper ----------
+
+import re
+
+def parse_bid_cents(text: str | None):
+    """
+    Extract numeric dollar amount from a bid string like "$4,500" or "Current bid: $3,250"
+    and return it in cents (int). Returns None if not found or invalid.
+    """
+    if not text:
+        return None
+    # Remove commas and dollar signs
+    match = re.search(r"(\d[\d,]*(?:\.\d{1,2})?)", text.replace(",", ""))
+    if not match:
+        return None
+    try:
+        value = float(match.group(1))
+        return int(round(value * 100))
+    except ValueError:
+        return None
+
+
 # ---------- Targeting Rule ----------
 
 def is_target_vehicle(text: str) -> bool:

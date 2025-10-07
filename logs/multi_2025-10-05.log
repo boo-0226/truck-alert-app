@@ -1936,3 +1936,164 @@
 [GD] total raw items before normalize: 120; unique kept: 112
 [GD] normalized rows: 112
 [GD] blocked by specialty/diesel filter: 105; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=67072
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=70670
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 105; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=66424
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=70019
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 105; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=65766
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=69364
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 105; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=65112
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=68708
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 104; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=64465
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=68060
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 103; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=63813
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=67409
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 103; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=63166
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=66763
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 104; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=62515
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=66110
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 23 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 104; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
