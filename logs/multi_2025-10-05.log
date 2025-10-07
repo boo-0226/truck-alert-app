@@ -4740,3 +4740,141 @@
 [Renebates] event: City Of Miami, Florida secs=58778
 [Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
 [Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=62374
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 105; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=58117
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=61714
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 105; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=57464
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=61060
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 107; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=56821
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=60417
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 109; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=56174
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=59771
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 109; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=55519
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=59117
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 115
+[GD] normalized rows: 115
+[GD] blocked by specialty/diesel filter: 109; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=54869
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=58466
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 114
+[GD] normalized rows: 114
+[GD] blocked by specialty/diesel filter: 108; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=54210

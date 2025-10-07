@@ -17,10 +17,8 @@ def dprint(*args, **kwargs):
     if _debug_enabled():
         print("[DEBUG]", *args, **kwargs, flush=True)
 
-def format_dollars(value_cents: Optional[int]) -> str:
-    """
-    Format cents to dollars string. Returns '—' if None.
-    """
+def format_dollars(value_cents):
+    """Format cents to dollars string. Returns '—' if None."""
     if value_cents is None:
         return "—"
     try:
@@ -32,8 +30,10 @@ def format_dollars(value_cents: Optional[int]) -> str:
         return f"${int(round(dollars)):,}"
     return f"${dollars:,.2f}"
 
-# Back-compat alias some code bases used
 format_money = format_dollars
+
+
+
 
 # ========== Small text helpers ==========
 
