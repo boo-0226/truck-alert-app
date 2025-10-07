@@ -2097,3 +2097,2646 @@
 [GD] normalized rows: 110
 [GD] blocked by specialty/diesel filter: 104; passing: 6
 [Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=61868
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=65464
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 24 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 104; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=61221
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=64816
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 25 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 103; passing: 5
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=60570
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=64168
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 101; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=59928
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=63525
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 101; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=59278
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=62874
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 100; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=58626
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=62222
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 100; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=57968
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=61566
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 100; passing: 6
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=57312
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=60910
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=56667
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=60265
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 105
+[GD] normalized rows: 105
+[GD] blocked by specialty/diesel filter: 98; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=56023
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=59620
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=55370
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=58968
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=54717
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=58313
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=54056
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=57651
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=53410
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=57008
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=52758
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=56355
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=52107
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=55704
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=51453
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=55048
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=50796
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=54394
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=50141
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=53737
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=49494
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=53091
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=48844
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=52440
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=48193
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=51790
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=47537
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=51132
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=46878
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=50475
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=46225
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=49822
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=45575
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=49171
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=44915
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=48512
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=44261
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=47857
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=43614
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=47211
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=42972
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=46569
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=42329
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=45927
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=41675
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=45272
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+❌ SMS failed: HTTP 401 error: Unable to create record: Authenticate
+💓 Healthcheck SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] net error on page 4: HTTPSConnectionPool(host='maestro.lqdt1.com', port=443): Max retries exceeded with url: /search/list (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00E82B38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[GD] total raw items before normalize: 72; unique kept: 68
+[GD] normalized rows: 68
+[GD] blocked by specialty/diesel filter: 65; passing: 3
+[Proxibid] net error for https://www.proxibid.com/core/category/lotItems/category/3817/html?sortBy=endingsoonest&auctionType=timed&inventoryType=all&auctionHouseId=0&auctionId=0&featured=false&metaDataFilters=&galleryView=true&pageNumber=0: HTTPSConnectionPool(host='www.proxibid.com', port=443): Max retries exceeded with url: /core/category/lotItems/category/3817/html?sortBy=endingsoonest&auctionType=timed&inventoryType=all&auctionHouseId=0&auctionId=0&featured=false&metaDataFilters=&galleryView=true&pageNumber=0 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00E82A78>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[Proxibid] net error for https://www.proxibid.com/core/category/lotItems/category/3817/auctionHouseId/0/auctionId/0/metadata/html?auctionType=timed: HTTPSConnectionPool(host='www.proxibid.com', port=443): Max retries exceeded with url: /core/category/lotItems/category/3817/auctionHouseId/0/auctionId/0/metadata/html?auctionType=timed (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00E82B20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[Proxibid] parsed 0 rows across 1 page(s)
+[Renebates] index fetch error: HTTPSConnectionPool(host='renebates.com', port=443): Max retries exceeded with url: /a_main.php (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00E82670>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[DEBUG] collected 3 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=40381
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=43978
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=39726
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=43323
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=39081
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=42679
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=38431
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=42027
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=37772
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=41368
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=37125
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=40722
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=36473
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=40071
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=35818
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=39415
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=35161
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=38757
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=34506
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=38104
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=33862
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=37458
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=33207
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=36803
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=32563
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=36159
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=31906
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=35502
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=31248
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=34843
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=30601
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=34197
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=29938
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=33535
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=29288
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=32885
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=28636
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=32233
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=27990
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=31586
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=27347
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=30943
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=26693
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=30290
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=26043
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=29639
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=25391
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=28987
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=24744
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=28340
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=24095
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=27692
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=23438
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=27034
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=22794
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=26392
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=22146
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=25741
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=21485
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=25081
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=20841
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=24436
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=20192
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=23790
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=19547
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=23145
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=18901
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=22496
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=18241
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=21838
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=17592
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=21188
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=16941
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=20539
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=16289
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=19886
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=15643
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=19241
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=14996
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=18592
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=14347
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=17945
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 100; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=13705
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=17302
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 99; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=13051
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=16649
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=12397
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=15994
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: City Of Cameron, Texas secs=11744
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=15340
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: City Of Cameron, Texas secs=11090
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=14687
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: City Of Cameron, Texas secs=10441
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=14039
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+❌ Digest SMS failed: HTTP 401 error: Unable to create record: Authenticate
+📬 Daily digest SMS sent.
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 107
+[GD] normalized rows: 107
+[GD] blocked by specialty/diesel filter: 100; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: City Of Cameron, Texas secs=9791
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=13386
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 99; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: City Of Cameron, Texas secs=9129
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=12726
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=8473
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=12069
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 98; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=7827
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=11422
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 97; passing: 7
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=7166
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=10761
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 26 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 96; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=6512
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=10109
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 95; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=5863
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=9459
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 95; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 62 events on index
+[Renebates] event: City Of Cameron, Texas secs=5213
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=8809
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 27 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 94; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=4564
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=8160
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 94; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=3906
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=7502
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 94; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=3252
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=6849
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 95; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=2612
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=6210
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 95; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=1957
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=5555
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 95; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=1313
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=4911
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 103
+[GD] normalized rows: 103
+[GD] blocked by specialty/diesel filter: 94; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Cameron, Texas secs=666
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=4261
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 104
+[GD] normalized rows: 104
+[GD] blocked by specialty/diesel filter: 95; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 59 events on index
+[Renebates] event: City Of Cameron, Texas secs=20
+[Renebates] City Of Cameron, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=3617
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 106
+[GD] normalized rows: 106
+[GD] blocked by specialty/diesel filter: 96; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 59 events on index
+[Renebates] event: City Of Cameron, Texas secs=0
+[Renebates] City Of Cameron, Texas -> 50 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=2969
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 108
+[GD] normalized rows: 108
+[GD] blocked by specialty/diesel filter: 96; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: City Of Cameron, Texas secs=0
+[Renebates] City Of Cameron, Texas -> 43 lots via https://renebates.com/a_list_2.php?id=254&cat=all
+[Renebates] event: Town Of Addison, Texas secs=2316
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 98; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Town Of Addison, Texas secs=1666
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=5262
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 98; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Town Of Addison, Texas secs=1018
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=4614
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 99; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Town Of Addison, Texas secs=375
+[Renebates] Town Of Addison, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=3972
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 100; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Town Of Addison, Texas secs=0
+[Renebates] Town Of Addison, Texas -> 24 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=3325
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 98; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Town Of Addison, Texas secs=0
+[Renebates] Town Of Addison, Texas -> 19 lots via https://renebates.com/a_list_2.php?id=80&cat=all
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=2668
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 98; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=2024
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=5621
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 98; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=1378
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=4974
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 98; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=725
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=4322
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 100; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=72
+[Renebates] Big Bass Towing - McKinney, Texas -> 27 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=3668
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 101; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 61 events on index
+[Renebates] event: Big Bass Towing - McKinney, Texas secs=0
+[Renebates] Big Bass Towing - McKinney, Texas -> 20 lots via https://renebates.com/a_list_2.php?id=107&cat=all
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=3016
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 100; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 60 events on index
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=2367
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[Renebates] event: City Of Miami, Florida secs=74364
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 100; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 59 events on index
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=1725
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[Renebates] event: City Of Miami, Florida secs=73723
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 100; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=1083
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[Renebates] event: City Of Miami, Florida secs=73080
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 100; passing: 13
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: Tarrant County, Texas (Fort Worth) secs=433
+[Renebates] Tarrant County, Texas (Fort Worth) -> 6 lots via https://renebates.com/a_list_2.php?id=7&cat=all
+[Renebates] event: City Of Miami, Florida secs=72431
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[DEBUG] collected 32 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 99; passing: 14
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Miami, Florida secs=71787
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=75383
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 33 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 101; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Miami, Florida secs=71130
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=74726
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 100; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Miami, Florida secs=70476
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=74073
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 99; passing: 12
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 58 events on index
+[Renebates] event: City Of Miami, Florida secs=69828
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=73424
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 31 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 100; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=69173
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=72770
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 100; passing: 11
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=68528
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=72124
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 30 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=67883
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=71479
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 101; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=67229
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=70826
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 99; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=66576
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=70172
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 110
+[GD] normalized rows: 110
+[GD] blocked by specialty/diesel filter: 101; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=65927
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=69523
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 109
+[GD] normalized rows: 109
+[GD] blocked by specialty/diesel filter: 99; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=65277
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=68872
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 103; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=64626
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=68223
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 103; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=63978
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=67576
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 104; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=63327
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=66923
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 102; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=62677
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=66274
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 102; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=62019
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=65616
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 111
+[GD] normalized rows: 111
+[GD] blocked by specialty/diesel filter: 102; passing: 9
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=61371
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=64968
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 28 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 102; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=60720
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=64316
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 112
+[GD] normalized rows: 112
+[GD] blocked by specialty/diesel filter: 102; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=60077
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=63675
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 103; passing: 10
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=59424
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=63020
+[Renebates] Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas -> 60 lots via https://renebates.com/a_list_2.php?id=297&cat=all
+[DEBUG] collected 29 listings from all sites (after filter)
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=1
+[GD] page 1: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=2
+[GD] page 2: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=3
+[GD] page 3: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=4
+[GD] page 4: 24 items
+[GD] HTTP 200 | CT=application/json; charset=utf-8 | page=5
+[GD] page 5: 24 items
+[GD] total raw items before normalize: 120; unique kept: 113
+[GD] normalized rows: 113
+[GD] blocked by specialty/diesel filter: 105; passing: 8
+[Proxibid] parsed 30 rows across 1 page(s)
+[Renebates] found 57 events on index
+[Renebates] event: City Of Miami, Florida secs=58778
+[Renebates] City Of Miami, Florida -> 3 lots via https://renebates.com/a_list_2.php?id=249&cat=all
+[Renebates] event: Wylie Auto Towing, Inc. Abandoned Impounded Vehicle Auction For Multiple Municipalities Located In Collin County, Texas secs=62374
