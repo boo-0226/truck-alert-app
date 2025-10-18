@@ -8,9 +8,14 @@ from typing import Optional, Tuple, List
 
 # ========== Debug / formatting ==========
 
+def _on(name: str, default: bool = False) -> bool:
+    v = os.getenv(name)
+    if v is None:
+        return default
+    return v.strip().lower() in ("1", "true", "yes", "on")
+
 def _debug_enabled() -> bool:
-    v = (os.getenv("DEBUG") or "").strip().lower()
-    return v in ("1", "true", "yes", "on")
+    return _on("DEBUG", False)
 
 def dprint(*args, **kwargs):
     """Print only when DEBUG is enabled in the environment."""
@@ -30,10 +35,8 @@ def format_dollars(value_cents):
         return f"${int(round(dollars)):,}"
     return f"${dollars:,.2f}"
 
+# Back-compat alias used by some callers
 format_money = format_dollars
-
-
-
 
 # ========== Small text helpers ==========
 
@@ -55,16 +58,16 @@ def parse_bid_cents(text) -> Optional[int]:
     if text is None:
         return None
 
-    # Normalize type
+    # Numeric input
     if isinstance(text, (int, float)):
         return int(round(float(text) * 100))
 
-    # Defensive: convert to string
+    # Defensive: convert to string and strip commas
     s = str(text).strip()
     if not s:
         return None
-
     s = s.replace(",", "")
+
     m = re.search(r"(\d+(?:\.\d{1,2})?)", s)
     if not m:
         return None
@@ -72,7 +75,6 @@ def parse_bid_cents(text) -> Optional[int]:
         return int(round(float(m.group(1)) * 100))
     except ValueError:
         return None
-
 
 # Back-compat aliases some adapters may import
 parse_price_cents = parse_bid_cents
@@ -134,35 +136,36 @@ def parse_city_state(s: Optional[str]) -> Tuple[Optional[str], Optional[str]]:
 
 # Specialty body / upfit cues
 DUMP_PHRASES = {
-    "dump truck","dump bed","dump-body","single axle dump","tandem dump"
+    "dump truck","dump bed","dump-body","single axle dump","tandem dump",
 }
 BUCKET_PHRASES = {
     "bucket truck","boom truck","aerial lift","cherry picker","manlift",
-    "lift truck","platform lift"
+    "lift truck","platform lift","forestry",
 }
 BUCKET_BRANDS = {
     "altec","terex","hi-ranger","versalift","dur-a-lift","lift-all",
-    "at37","at37g","at-37","at200","at235","tm","tl"
+    "at37","at37g","at-37","at200","at235","tm","tl",
 }
 CRANE_PHRASES = {
     "crane truck","truck mounted crane","service crane","boom crane",
-    "knuckleboom","digger derrick","derrick digger"
+    "knuckleboom","digger derrick","derrick digger",
 }
 CRANE_BRANDS = {
-    "manitex","stellar","auto crane","imt","elliott","palfinger","national crane"
+    "manitex","stellar","auto crane","imt","elliott","palfinger","national crane",
 }
 BOX_PHRASES = {
-    "box truck","straight truck","van body","cargo box","delivery truck"
+    "box truck","straight truck","van body","cargo box","delivery truck",
 }
 EMERGENCY_PHRASES = {
-    "ambulance","rescue truck","fire truck","pumper","ems"
+    "ambulance","rescue truck","fire truck","pumper","ems",
 }
 UTILITY_REFUSE_TANKER_PHRASES = {
     "utility line truck","line truck","service body","utility body","mechanic body",
+    "service truck","utility truck","mechanic truck",
     "refuse truck","garbage truck","roll off","roll-off",
     "tanker truck","vacuum truck","vactor","sewer truck",
     "cement mixer","mixer truck","liftgate","tommy gate",
-    "knapheide","reading body","cab & chassis","chassis cab"
+    "knapheide","reading body","cab & chassis","chassis cab",
 }
 
 # Heavy-duty chassis / model cues
@@ -172,7 +175,7 @@ HEAVY_DUTY_MODELS = {
     "topkick","kodiak","c4500","c5500","c6500","gmc 6500","chevy 4500","chevy 5500",
     "international 4300","4300","4700","4900","durastar","workstar",
     "freightliner m2","m2 106","m2-106","sterling",
-    "isuzu npr","isuzu nqr","hino","peterbilt","kenworth"
+    "isuzu npr","isuzu nqr","hino","peterbilt","kenworth",
 }
 
 # Diesel / engine keywords
@@ -180,16 +183,16 @@ DIESEL_KWS = {
     "diesel","turbo diesel","power stroke","powerstroke","duramax","cummins",
     "caterpillar","cat c7","cat c9",
     "isx","isl","isc","isb","dt466","maxxforce","t444e","om906","mbe900",
-    "6.7l","6.4l","6.0l","7.3l","5.9l","8.3l"
+    "6.7l","6.4l","6.0l","7.3l","5.9l","8.3l","7.2l",
 }
 CUMMINS_KWS = {
-    "cummins","isx","isl","isc","isb","b5.9","5.9l","6.7 cummins","6.7l cummins"
+    "cummins","isx","isl","isc","isb","b5.9","5.9l","6.7 cummins","6.7l cummins",
 }
 
 # Light-duty blocklist
 BLOCKED_MODELS = {
     "f150","f-150","f 150","1500","silverado 1500","sierra 1500","ram 1500",
-    "tundra","titan","tacoma","ranger","colorado"
+    "tundra","titan","tacoma","ranger","colorado",
 }
 
 # ========== Matchers ==========
@@ -229,20 +232,31 @@ def is_engine_67(text: str) -> bool:
 
 # ========== Targeting Rule ==========
 
+# /src/core/utils.py
 def is_target_vehicle(text: str) -> bool:
     """
-    Rule:
-      (diesel AND (specialty body OR heavy-duty chassis)) OR any Cummins mention
-    and not a blocked light-duty model
+    New rule (your request):
+      - Always block light-duty (F-150/1500/etc.).
+      - Always allow Cummins.
+      - Require DIESEL, but do NOT require specialty/HD words.
+        (So diesel alone passes even if body/HD terms are missing.)
     """
     t = (text or "").lower()
+
+    # keep light-duty out
     if _contains_any(t, BLOCKED_MODELS):
         return False
+
+    # Cummins always in
     if has_cummins(t):
         return True
-    return is_diesel(t) and (is_specialty_body(t) or is_heavy_duty_model(t))
+
+    # Diesel required; specialty/HD no longer required
+    return is_diesel(t)
+
 
 # ========== Tagging for digests ==========
+
 def annotate_tags(text: str) -> List[str]:
     t = (text or "").lower()
     tags: List[str] = []
