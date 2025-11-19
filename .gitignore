@@ -4,3 +4,23 @@ __pycache__/
 
 # Ignore environment variables
 .env
+
+
+# Logs
+logs/
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Browser profiles / Playwright
+.pwprofile/
+
+# State jsons (but keep config.json)
+*.json
+!config.json
+
+# Virtual envs
+venv/
+.venv/
