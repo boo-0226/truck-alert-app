@@ -1,0 +1,93 @@
+<!-- file path: /src/web/templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Truck Alert — Listings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Truck Alert</h1>
+    <nav>
+      <button id="btn-upcoming" class="active">Upcoming (≤ 7 days)</button>
+      <button id="btn-closed">Recently Closed (7 days)</button>
+      <span class="tip">Auto-refresh every 60s</span>
+    </nav>
+  </header>
+
+  <main>
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Bid</th>
+          <th>Time Left</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </main>
+
+  <script>
+    let mode = "upcoming";
+    const tbody = document.getElementById("tbody");
+    const btnUpcoming = document.getElementById("btn-upcoming");
+    const btnClosed = document.getElementById("btn-closed");
+
+    function mmss(secs) {
+      if (typeof secs !== "number") return "N/A";
+      let s = Math.abs(secs);
+      const d = Math.floor(s / 86400); s %= 86400;
+      const h = Math.floor(s / 3600); s %= 3600;
+      const m = Math.floor(s / 60);
+      if (d > 0) return `${d}d ${h}h`;
+      if (h > 0) return `${h}h ${m}m`;
+      return `${m}m`;
+    }
+
+    function rowHtml(r) {
+      const link = r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${r.title}</a>` : r.title;
+      const desc = (r.desc || "").slice(0, 160);
+      const tags = (r.tags || []).join(", ");
+      const tl = r.secs <= 0 ? `Closed ${mmss(r.secs)} ago` : mmss(r.secs);
+      return `<tr>
+        <td>${r.site}</td>
+        <td>${link}</td>
+        <td>${desc}</td>
+        <td>${r.city}, ${r.state || ""}</td>
+        <td>${r.bid_display || "—"}</td>
+        <td>${tl}</td>
+        <td>${tags}</td>
+      </tr>`;
+    }
+
+    async function load() {
+      const res = await fetch(`/api/listings?mode=${mode}`);
+      const data = await res.json();
+      tbody.innerHTML = data.rows.map(rowHtml).join("");
+    }
+
+    btnUpcoming.onclick = () => {
+      mode = "upcoming";
+      btnUpcoming.classList.add("active");
+      btnClosed.classList.remove("active");
+      load();
+    };
+    btnClosed.onclick = () => {
+      mode = "closed";
+      btnClosed.classList.add("active");
+      btnUpcoming.classList.remove("active");
+      load();
+    };
+
+    load();
+    setInterval(load, 60000);
+  </script>
+</body>
+</html>

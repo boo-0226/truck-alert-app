@@ -17,8 +17,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 from datetime import datetime, timedelta
 from selenium.common.exceptions import NoSuchElementException
+
+
 import time
 import re, html
 
@@ -36,26 +39,26 @@ def contains_any(text: str, keywords: set) -> bool:
 
 # Create a Chrome driver + wait object. For now this still uses your local Windows chromedriver path. We'll swap this for a Linux/headless setup on the server later. 
 def create_driver():
-    if platform.system() == "Windows":
-        service = Service(r"C:\Users\TScot\Tools\chromedriver-win64\chromedriver.exe") # Needed this because i have to use chromedriver to get data since the site is dynamic and this is where i have the .exe for the library at 
-        driver = webdriver.Chrome(service=service) 
+        system = platform.system().lower()
 
-    else: 
-       # ✅ Server / Linux setup (headless)
-        from selenium.webdriver.chrome.options import Options
+        if system == "windows":
+            # ✅ Local dev on your Windows machine
+            service = Service(r"C:\Users\TScot\Tools\chromedriver-win64\chromedriver.exe")
+            options = webdriver.ChromeOptions()
+            driver = webdriver.Chrome(service=service, options=options)
 
-        options = Options()
-        options.add_argument("--headless=new")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--window-size=1920,1080")
+        else:
+            # ✅ Linux server (DigitalOcean) – headless Chromium using /usr/bin/chromedriver
+            options = Options()
+            options.add_argument("--headless=new")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
 
-        driver = webdriver.Chrome(options=options)
-        
-    wait =WebDriverWait(driver, 15) # Wait 15 seconds so i could throw this to 
-    return driver, wait
+            service = Service("/usr/bin/chromedriver")
+            driver = webdriver.Chrome(service=service, options=options)
+            
+        wait =WebDriverWait(driver, 15) # Wait 15 seconds so i could throw this to 
+        return driver, wait
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
 def scan_govdeals_once() -> int:

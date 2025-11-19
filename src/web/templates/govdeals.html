@@ -1,0 +1,315 @@
+<!-- file: templates/govdeals.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GovDeals – Target Trucks (Next 7 Days)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin: 0; background:#fafafa; color:#111; }
+    .wrap { padding: 16px; max-width: 1200px; margin: 0 auto; }
+    .row { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .badge { padding:2px 8px; border-radius:12px; font-size:12px; display:inline-block; }
+    .b-red   { background:#fee2e2; color:#991b1b; border:1px solid #fecaca; }
+    .b-ylw   { background:#fef9c3; color:#854d0e; border:1px solid #fde68a; }
+    .b-grn   { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
+    .b-gray  { background:#e5e7eb; color:#374151; border:1px solid #d1d5db; }
+    .btn-tag { font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid #d1d5db; background:#fff; cursor:pointer; }
+    .btn-tag.on { background:#111; color:#fff; border-color:#111; }
+    .controls { gap:10px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { padding:10px; border-bottom:1px solid #eee; vertical-align:top; }
+    th { text-align:left; background:#f8fafc; position:sticky; top:0; z-index:1; }
+    .muted { color:#6b7280; font-size:12px; }
+    .pass-yes, .pass-no {
+      width:24px; height:24px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:13px;
+    }
+    .pass-yes { background:#dcfce7; color:#166534; }
+    .pass-no  { background:#fee2e2; color:#991b1b; }
+    .legend .badge { margin-left:6px; }
+    .pill { display:inline-block; padding:2px 8px; border:1px solid #e5e7eb; border-radius:999px; font-size:12px; margin-right:4px; margin-top:4px; }
+    .error { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; padding:10px; border-radius:8px; }
+    .loading { background:#f3f4f6; color:#374151; border:1px solid #e5e7eb; padding:10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between; margin-bottom:8px;">
+      <div>
+        <h2 style="margin:0 0 6px 0;">GovDeals – Target Trucks (Next 7 Days)</h2>
+        <div class="muted">Filters: GovDeals + target + not blocked + ends ≤ 7 days + optional price cap.</div>
+      </div>
+      <div class="legend muted">
+        Legend:
+        <span class="badge b-red">≤10m</span>
+        <span class="badge b-ylw">≤30m</span>
+        <span class="badge b-grn">&gt;30m</span>
+      </div>
+    </div>
+
+    <div class="row controls">
+      <label class="muted">
+        <input id="respectCap" type="checkbox" checked /> Respect price cap
+      </label>
+      <label class="muted">
+        Price cap ($): <input id="capUsd" type="number" min="0" step="100" value="5000" style="width:100px; margin-left:6px;" />
+      </label>
+      <button id="refreshBtn">Refresh</button>
+      <span id="stats" class="muted"></span>
+    </div>
+
+    <div class="row" id="tagRow" style="margin:10px 0;"></div>
+
+    <div id="msg"></div>
+
+    <div style="overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px;">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>Pass</th>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Bid</th>
+            <th>Time Left</th>
+            <th>Tags</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // --- file: templates/govdeals.html (inline JS) ---
+
+    const API_URL = "/api/listings?mode=upcoming";
+    const tagRow = document.getElementById("tagRow");
+    const tbody  = document.getElementById("tbody");
+    const msg    = document.getElementById("msg");
+    const stats  = document.getElementById("stats");
+    const respectCapEl = document.getElementById("respectCap");
+    const capUsdEl = document.getElementById("capUsd");
+    const refreshBtn = document.getElementById("refreshBtn");
+
+    const activeTags = new Set();
+
+    function fmtMoney(cents) {
+      if (cents == null || isNaN(cents)) return "—";
+      const dollars = (cents / 100);
+      return dollars % 1 === 0 ? `$${dollars.toLocaleString()}` : `$${dollars.toLocaleString(undefined,{maximumFractionDigits:2})}`;
+    }
+    function fmtTL(secs) {
+      if (secs == null || secs < 0) return "N/A";
+      const d = Math.floor(secs/86400);
+      const h = Math.floor((secs%86400)/3600);
+      const m = Math.floor((secs%3600)/60);
+      const s = Math.floor(secs%60);
+      if (d > 0) return `${d}d ${h}h`;
+      if (h > 0) return `${h}h ${m}m`;
+      if (m > 0) return `${m}m ${s}s`;
+      return `${s}s`;
+    }
+    function tlClass(secs) {
+      if (secs == null || secs < 0) return "badge b-gray";
+      if (secs <= 600)  return "badge b-red";
+      if (secs <= 1800) return "badge b-ylw";
+      return "badge b-grn";
+    }
+
+    // core predicate (what your ✓/✗ reflects)
+    function makePredicate(priceCapCents, requireCap) {
+      return function(r) {
+        const within7d = typeof r.secs === "number" && r.secs >= 0 && r.secs <= 7*86400;
+        const bidOK = !requireCap || r.bid_cents == null || (r.bid_cents <= priceCapCents);
+        const base = (r.site === "GovDeals") && !!r.target && !r.blocked && within7d && bidOK;
+        if (activeTags.size === 0) return base;
+        const rtags = Array.isArray(r.tags) ? r.tags : [];
+        return base && rtags.some(t => activeTags.has(t));
+      };
+    }
+
+    function buildTagToggles(rows) {
+      const set = new Set();
+      rows.forEach(r => (r.tags || []).forEach(t => set.add(t)));
+      const tags = Array.from(set).sort();
+
+      tagRow.innerHTML = "";
+      if (!tags.length) return;
+
+      tags.forEach(tag => {
+        const btn = document.createElement("button");
+        btn.className = "btn-tag";
+        btn.textContent = tag;
+        btn.onclick = () => {
+          if (activeTags.has(tag)) {
+            activeTags.delete(tag);
+            btn.classList.remove("on");
+          } else {
+            activeTags.add(tag);
+            btn.classList.add("on");
+          }
+          render(lastRows);
+        };
+        tagRow.appendChild(btn);
+      });
+
+      const clear = document.createElement("button");
+      clear.className = "btn-tag";
+      clear.textContent = "Clear";
+      clear.onclick = () => { activeTags.clear(); [...tagRow.children].forEach(c => c.classList.remove("on")); render(lastRows); };
+      tagRow.appendChild(clear);
+    }
+
+    let lastRows = [];
+
+    async function load() {
+      msg.innerHTML = '<div class="loading">Loading…</div>';
+      tbody.innerHTML = "";
+      try {
+        const res = await fetch(API_URL, { credentials:"same-origin" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        lastRows = Array.isArray(data) ? data : (data.rows || []);
+        buildTagToggles(lastRows);
+        msg.innerHTML = "";
+        render(lastRows);
+      } catch (e) {
+        msg.innerHTML = '<div class="error">Error: ' + (e.message || e) + "</div>";
+      }
+    }
+
+    function render(rows) {
+      const capUsd = parseFloat(capUsdEl.value || "0");
+      const capCents = Math.max(0, Math.round(capUsd * 100));
+      const predicate = makePredicate(capCents, respectCapEl.checked);
+
+      // Passing (shown) and Non-passing (audit) sets
+      const passing = rows.filter(predicate).sort((a,b) => (a.secs ?? 1e12) - (b.secs ?? 1e12));
+      const failing = rows.filter(r => !predicate(r)).sort((a,b) => (a.secs ?? 1e12) - (b.secs ?? 1e12));
+
+      stats.textContent = `Loaded: ${rows.length} • Passing: ${passing.length} • Failing (hidden above table): ${failing.length}`;
+
+      // Build table:
+      const frag = document.createDocumentFragment();
+
+      // 1) Failing rows first (dimmed) so you can audit at a glance
+      failing.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.style.background = "#f9fafb";
+        tr.appendChild(tdPass(false));
+        tr.appendChild(tdTitle(r, true));
+        tr.appendChild(tdLoc(r));
+        tr.appendChild(tdBid(r));
+        tr.appendChild(tdTL(r));
+        tr.appendChild(tdTags(r));
+        tr.appendChild(tdLink(r));
+        frag.appendChild(tr);
+      });
+
+      // 2) Passing rows
+      passing.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.appendChild(tdPass(true));
+        tr.appendChild(tdTitle(r, false));
+        tr.appendChild(tdLoc(r));
+        tr.appendChild(tdBid(r));
+        tr.appendChild(tdTL(r));
+        tr.appendChild(tdTags(r));
+        tr.appendChild(tdLink(r));
+        frag.appendChild(tr);
+      });
+
+      tbody.innerHTML = "";
+      tbody.appendChild(frag);
+    }
+
+    // --- cell helpers ---
+    function tdPass(ok) {
+      const td = document.createElement("td");
+      const span = document.createElement("span");
+      span.className = ok ? "pass-yes" : "pass-no";
+      span.textContent = ok ? "✓" : "✗";
+      td.appendChild(span);
+      return td;
+    }
+    function tdTitle(r, failing) {
+      const td = document.createElement("td");
+      const title = document.createElement("div");
+      title.textContent = r.title || "Untitled";
+      td.appendChild(title);
+      const site = document.createElement("div");
+      site.className = "muted";
+      site.textContent = r.site || "?";
+      td.appendChild(site);
+      if (failing) {
+        const why = document.createElement("div");
+        why.className = "muted";
+        // quick hints for why it failed
+        const reasons = [];
+        if (r.site !== "GovDeals") reasons.push("site≠GovDeals");
+        if (!r.target) reasons.push("target=false");
+        if (r.blocked) reasons.push("blocked=true");
+        const within7d = typeof r.secs === "number" && r.secs >= 0 && r.secs <= 7*86400;
+        if (!within7d) reasons.push(">7d");
+        td.appendChild(why);
+        why.textContent = reasons.length ? ("fail: " + reasons.join(", ")) : "fail: price/time cap";
+      }
+      return td;
+    }
+    function tdLoc(r) {
+      const td = document.createElement("td");
+      td.textContent = [r.city || "?", r.state || ""].filter(Boolean).join(", ");
+      td.className = "muted";
+      return td;
+    }
+    function tdBid(r) {
+      const td = document.createElement("td");
+      td.textContent = fmtMoney(r.bid_cents);
+      return td;
+    }
+    function tdTL(r) {
+      const td = document.createElement("td");
+      const span = document.createElement("span");
+      span.className = tlClass(r.secs);
+      span.textContent = fmtTL(r.secs);
+      td.appendChild(span);
+      return td;
+    }
+    function tdTags(r) {
+      const td = document.createElement("td");
+      const tags = Array.isArray(r.tags) ? r.tags : [];
+      if (!tags.length) { td.textContent = "—"; return td; }
+      tags.forEach(t => {
+        const sp = document.createElement("span");
+        sp.className = "pill";
+        sp.textContent = t;
+        td.appendChild(sp);
+      });
+      return td;
+    }
+    function tdLink(r) {
+      const td = document.createElement("td");
+      if (r.url) {
+        const a = document.createElement("a");
+        a.href = r.url; a.target = "_blank"; a.rel = "noreferrer";
+        a.textContent = "open";
+        td.appendChild(a);
+      } else {
+        td.textContent = "—";
+      }
+      return td;
+    }
+
+    // events
+    respectCapEl.addEventListener("change", () => render(lastRows));
+    capUsdEl.addEventListener("change", () => render(lastRows));
+    document.getElementById("refreshBtn").addEventListener("click", load);
+
+    // initial
+    load();
+  </script>
+</body>
+</html>
