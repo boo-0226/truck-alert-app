@@ -46,6 +46,7 @@ def create_driver():
             service = Service(r"C:\Users\TScot\Tools\chromedriver-win64\chromedriver.exe")
             options = webdriver.ChromeOptions()
             driver = webdriver.Chrome(service=service, options=options)
+            timeout = 15  # fast, local, GUI
 
         else:
             # ✅ Linux server (DigitalOcean) – headless Chromium using /usr/bin/chromedriver
@@ -56,8 +57,9 @@ def create_driver():
 
             service = Service("/usr/bin/chromedriver")
             driver = webdriver.Chrome(service=service, options=options)
+            timeout = 30  # give the server more time
             
-        wait =WebDriverWait(driver, 15) # Wait 15 seconds so i could throw this to 
+        wait =WebDriverWait(driver,timeout) # Wait 15 seconds so i could throw this to 
         return driver, wait
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
