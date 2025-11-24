@@ -39,28 +39,53 @@ def contains_any(text: str, keywords: set) -> bool:
 
 # Create a Chrome driver + wait object. For now this still uses your local Windows chromedriver path. We'll swap this for a Linux/headless setup on the server later. 
 def create_driver():
-        system = platform.system().lower()
+    import platform
+    from selenium import webdriver
+    from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.support.ui import WebDriverWait
 
-        if system == "windows":
-            # ✅ Local dev on your Windows machine
-            service = Service(r"C:\Users\TScot\Tools\chromedriver-win64\chromedriver.exe")
-            options = webdriver.ChromeOptions()
-            driver = webdriver.Chrome(service=service, options=options)
-            timeout = 15  # fast, local, GUI
+    system = platform.system().lower()
 
-        else:
-            # ✅ Linux server (DigitalOcean) – headless Chromium using /usr/bin/chromedriver
-            options = Options()
-            options.add_argument("--headless=new")
-            options.add_argument("--no-sandbox")
-            options.add_argument("--disable-dev-shm-usage")
+    # ===============================
+    # WINDOWS (your laptop + server)
+    # ===============================
+    if system == "windows":
+        from webdriver_manager.chrome import ChromeDriverManager
 
-            service = Service("/usr/bin/chromedriver")
-            driver = webdriver.Chrome(service=service, options=options)
-            timeout = 30  # give the server more time
-            
-        wait =WebDriverWait(driver,timeout) # Wait 15 seconds so i could throw this to 
-        return driver, wait
+        options = webdriver.ChromeOptions()
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+
+        # ⭐ Force ChromeDriver 142 manually
+        driver = webdriver.Chrome(
+            service=Service(
+                ChromeDriverManager(driver_version="142.0.7444.0").install()
+            ),
+            options=options
+        )
+
+        timeout = 15
+
+    # ===============================
+    # LINUX (DigitalOcean)
+    # ===============================
+    else:
+        options = Options()
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+
+        service = Service("/usr/bin/chromedriver")
+        driver = webdriver.Chrome(service=service, options=options)
+
+        timeout = 30
+
+    wait = WebDriverWait(driver, timeout)
+    return driver, wait
+
+
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
 def scan_govdeals_once() -> int:
