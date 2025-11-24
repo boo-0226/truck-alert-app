@@ -43,48 +43,39 @@ def create_driver():
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.support.ui import WebDriverWait
+    from webdriver_manager.chrome import ChromeDriverManager
 
     system = platform.system().lower()
 
-    # ===============================
-    # WINDOWS (your laptop + server)
-    # ===============================
+    # Windows Server (GUI)
     if system == "windows":
-        from webdriver_manager.chrome import ChromeDriverManager
-
-        options = webdriver.ChromeOptions()
+        options = Options()
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
+        # options.add_argument("--headless=new")  # optional
 
-        # ⭐ Force ChromeDriver 142 manually
         driver = webdriver.Chrome(
-            service=Service(
-                ChromeDriverManager(driver_version="142.0.7444.0").install()
-            ),
+            service=Service(ChromeDriverManager().install()),
             options=options
         )
+        timeout = 20
 
-        timeout = 15
-
-    # ===============================
-    # LINUX (DigitalOcean)
-    # ===============================
     else:
+        # Linux server
         options = Options()
         options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
 
-        service = Service("/usr/bin/chromedriver")
-        driver = webdriver.Chrome(service=service, options=options)
-
+        driver = webdriver.Chrome(
+            service=Service("/usr/bin/chromedriver"),
+            options=options
+        )
         timeout = 30
 
     wait = WebDriverWait(driver, timeout)
     return driver, wait
-
 
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
