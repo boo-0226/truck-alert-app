@@ -66,23 +66,49 @@ CUMMINS_KWS = {
     "6.7 cummins", "6.7l cummins",
 }
 
+# Super tight strong flip trucks mode 
+
+STRONGER_FLIPS = {
+   "altec", "terex", "versalift", "dur-a-lift", "lift-all",
+   "at37", "at37g", "at-37", "at200", "at235", "bucket truck", "boom truck", "aerial lift", "cherry picker", "manlift",
+   "platform lift", "f450", "f-450" , "f550", "f-550", "f650", "f-650", "f750", "f-750", "sterling", "box truck",
+}
+
 # All keywords that make it a "target truck" if seen anywhere in the text
-TARGET_KEYWORDS = set().union(
-    DUMP_PHRASES,
-    BUCKET_PHRASES,
-    BUCKET_BRANDS,
-    CRANE_PHRASES,
-    CRANE_BRANDS,
-    BOX_PHRASES,
-    EMERGENCY_PHRASES,
-    UTILITY_REFUSE_TANKER_PHRASES,
-    HEAVY_DUTY_MODELS,
-    DIESEL_KWS,
-    CUMMINS_KWS,
-)
+#-------TARGET_KEYWORDS = set().union(
+    #--DUMP_PHRASES,
+    #--BUCKET_PHRASES,
+    #--BUCKET_BRANDS,
+    #--CRANE_PHRASES,
+    #--CRANE_BRANDS,
+    #--BOX_PHRASES,
+    #--EMERGENCY_PHRASES,
+    #--UTILITY_REFUSE_TANKER_PHRASES,
+    #--HEAVY_DUTY_MODELS,
+    #--DIESEL_KWS,
+    #--CUMMINS_KWS,
+#---------)
+
+#Manual mode for stronger flips only if i want to switch back its commmented out above and comment this out if i want to switch back 
+TARGET_KEYWORDS = STRONGER_FLIPS
 
 EXCLUDE_KEYWORDS = {
     "bus", "school bus", "transit bus",
     "garbage truck",
     "sweeper", "forklift", "tractor",
 }
+
+
+# -------------------------------
+# States allowed for alerting
+# -------------------------------
+ALERT_STATES = [
+    "TX", "Texas",
+    "AR", "Arkansas",
+    "OK", "Oklahoma",
+    "LA", "Louisiana",
+    "MS", "Mississippi",
+    "AL", "Alabama",
+    "GA", "Georgia",
+    "FL", "Florida",
+]

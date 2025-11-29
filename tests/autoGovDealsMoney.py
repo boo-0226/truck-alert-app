@@ -20,6 +20,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime, timedelta
 from selenium.common.exceptions import NoSuchElementException
+from src.core.autoKeywords_GovDeals import ALERT_STATES
+
 
 
 import time
@@ -131,6 +133,17 @@ def scan_govdeals_once() -> int:
             location_elem = driver.find_element(By.XPATH,"//span[@id='lnkAssetDetailLocation']")
             location = location_elem.get_attribute("title")
             print("Location: ", location)
+            # Check if location contains an allowed state
+            location_valid = False
+            if location:
+                loc_lower = location.lower()
+                for st in ALERT_STATES:
+                    if st.lower() in loc_lower:
+                        location_valid = True
+                        break
+
+            print("Location Allowed:", location_valid)
+
 
             #-----Table Description. # Prepare holders for specs text + miles
             specs_text_parts = []   # Prepare holders for specs text + miles used later for keyword search
@@ -231,7 +244,7 @@ def scan_govdeals_once() -> int:
                 print("No close time found; cannot compute minutes remaining.")
 
 
-                # -----Target Truck/mileage checks and Twilio alert. Build one big text blob: title + short + long + specs. Also prints the boolean to reference truck targe, low mileage, and should alert hits. 
+            # -----Target Truck/mileage checks and Twilio alert. Build one big text blob: title + short + long + specs. Also prints the boolean to reference truck targe, low mileage, and should alert hits. 
             search_blob = " ".join([
                 title or "",
                 short_desc or "",
@@ -270,7 +283,8 @@ def scan_govdeals_once() -> int:
                 truck_target and
                 low_mileage and
                 close_soon_flag and
-                bid_under_limit
+                bid_under_limit and 
+                location_valid
             )
 
             print("\n[ALERT DEBUG]")
