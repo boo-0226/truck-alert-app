@@ -103,12 +103,12 @@ EXCLUDE_KEYWORDS = {
 # States allowed for alerting
 # -------------------------------
 ALERT_STATES = [
-    "TX", "Texas",
-    "AR", "Arkansas",
-    "OK", "Oklahoma",
-    "LA", "Louisiana",
-    "MS", "Mississippi",
-    "AL", "Alabama",
-    "GA", "Georgia",
-    "FL", "Florida",
+    "Texas",
+    "Arkansas",
+    "Oklahoma",
+    "Louisiana",
+    "Mississippi",
+    "Alabama",
+    "Georgia",
+    "Florida",
 ]
