@@ -1,3 +1,5 @@
+# src/core/autoKeywords_GovDeals.py
+
 
 # Dump trucks
 DUMP_PHRASES = {
@@ -69,9 +71,29 @@ CUMMINS_KWS = {
 # Super tight strong flip trucks mode 
 
 STRONGER_FLIPS = {
-   "altec", "terex", "versalift", "dur-a-lift", "lift-all",
-   "at37", "at37g", "at-37", "at200", "at235", "bucket truck", "boom truck", "aerial lift", "cherry picker", "manlift",
-   "platform lift", "f450", "f-450" , "f550", "f-550", "f650", "f-650", "f750", "f-750", "sterling", "box truck",
+   # Bucket / aerial / boom
+    "bucket truck", "boom truck", "aerial lift", "cherry picker", "manlift", "platform lift",
+    "altec", "terex", "versalift", "dur-a-lift", "lift-all",
+    "at37", "at37g", "at-37", "at200", "at235",
+    "hi-ranger", "hi ranger",
+
+    # Dump trucks
+    "dump truck", "dump bed", "dump-body", "dump body",
+    "single axle dump", "tandem dump",
+
+    # Mechanics / service / crane trucks
+    "service truck", "utility truck", "mechanics truck", "service body", "mechanic body",
+    "knapheide", "reading body",
+    "crane truck", "truck mounted crane", "service crane", "boom crane",
+    "knuckleboom", "digger derrick", "derrick digger",
+    "stellar", "imt", "auto crane", "palfinger", "elliott", "national crane",
+
+    # Heavy chassis
+    "f450", "f-450", "f550", "f-550", "f650", "f-650", "f750", "f-750",
+    "ram 4500", "ram 5500",
+    "freightliner m2", "m2 106", "m2-106",
+    "international 4300", "4300",
+    "durastar", "workstar", "sterling", "topkick", "kodiak"
 }
 
 # All keywords that make it a "target truck" if seen anywhere in the text
@@ -93,9 +115,10 @@ STRONGER_FLIPS = {
 TARGET_KEYWORDS = STRONGER_FLIPS
 
 EXCLUDE_KEYWORDS = {
-    "bus", "school bus", "transit bus",
-    "garbage truck",
+    "bus", "school bus", "transit bus", "shuttle", "coach", "passenger",
+    "garbage truck", "rv", "motorhome",
     "sweeper", "forklift", "tractor",
+    "chassis only", "cab and chassis", "parts only", "salvage"
 }
 
 
