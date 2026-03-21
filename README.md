@@ -12,7 +12,7 @@ cloudzy used github to logon.
 Step 1: (Local Laptop) open remote desktop connection or typ mstc and spin up server. 
 
 Step 2: (Server Side-SS) Open powershell and type check status of code first: 
-
+> cd truck-alert-app
 > C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper
 results: SERVICE_RUNNING
 

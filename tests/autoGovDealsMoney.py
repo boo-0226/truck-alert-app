@@ -230,14 +230,16 @@ def scan_govdeals_once() -> int:
                 minutes_left = (close_dt - now).total_seconds() / 60  # Compute time difference in minutes
 
                 # Just print info here; "closing soon" will be decided later
-                if minutes_left <= 30:
+                #if minutes_left <= 30:
+                if minutes_left <=2880:
                     print("Less than 30 minutes left!")
                 else:
                     print(f"{minutes_left:.1f} minutes remaining.")
 
                 # Long-time check and ends loop
                 hours_left = minutes_left / 60
-                if hours_left > .583:
+                #if hours_left > .583:
+                if minutes_left>3000:
                     print("More than 35min left on this truck, stopping scan.")
                     break
             else:
