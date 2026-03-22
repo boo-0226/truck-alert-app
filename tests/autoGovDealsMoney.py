@@ -257,16 +257,14 @@ def scan_govdeals_once() -> int:
                     minutes_left = (close_dt - now).total_seconds() / 60  # Compute time difference in minutes
 
                     # Just print info here; "closing soon" will be decided later
-                    #if minutes_left <= 30:
-                    if minutes_left <=2880:
+                    if minutes_left <= 30:
                         print("Less than 30 minutes left!")
                     else:
                         print(f"{minutes_left:.1f} minutes remaining.")
 
                     # Long-time check and ends loop
                     hours_left = minutes_left / 60
-                    #if hours_left > .583:
-                    if minutes_left>3000:
+                    if hours_left > .583:
                         print("More than 35min left on this truck, stopping scan.")
                         break
                 else:
@@ -282,7 +280,7 @@ def scan_govdeals_once() -> int:
                 ])
 
                 truck_target = contains_any(search_blob, TARGET_KEYWORDS)
-                low_mileage = (miles_value is not None and miles_value <= 150_000)
+                low_mileage = (miles_value is not None and miles_value <= 200_000)
 
                 # Closing time filter: now based only on minutes_left
                 close_soon_flag = (minutes_left is not None and minutes_left <= 30)
