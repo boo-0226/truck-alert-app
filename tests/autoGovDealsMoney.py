@@ -310,8 +310,7 @@ def scan_govdeals_once() -> int:
                     truck_target and
                     low_mileage and
                     close_soon_flag and
-                    bid_under_limit and 
-                    location_valid
+                    bid_under_limit 
                 )
 
                 print("\n[ALERT DEBUG]")
