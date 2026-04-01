@@ -322,7 +322,14 @@ def scan_govdeals_once() -> int:
 
                 #Keywords.
                 # Override target if excluded terms are present
-                matched_excludes = [kw for kw in EXCLUDE_KEYWORDS if kw in search_blob]
+                search_blob_lower = search_blob.lower()
+
+                matched_excludes = []
+                for kw in EXCLUDE_KEYWORDS:
+                    pattern = r"\b" + re.escape(kw.lower()) + r"\b"
+                    if re.search(pattern, search_blob_lower):
+                        matched_excludes.append(kw)
+
                 exclude_hit = bool(matched_excludes)
 
                 if exclude_hit:
