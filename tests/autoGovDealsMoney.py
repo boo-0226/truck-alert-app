@@ -238,18 +238,23 @@ def scan_govdeals_once() -> int:
                         long_desc or "",
                     ])
 
-                    mileage_match = re.search(r"\bodometer[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
-                    if not mileage_match:
-                        mileage_match = re.search(r"\bmileage[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
-                    if not mileage_match:
-                        mileage_match = re.search(r"\bmiles[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
+                    mileage_patterns = [
+                        r"\blast\s+known\s+mileage\s*[-:]\s*([\d,]+)",
+                        r"\blast\s+reported\s+odometer\s+(?:was\s+)?([\d,]+)",
+                        r"\bodometer\s*[:\-]?\s*([\d,]+)",
+                        r"\bmileage\s*[:\-]?\s*([\d,]+)",
+                        r"\b([\d,]+)\s+miles\b",
+                    ]
 
-                    if mileage_match:
-                        try:
-                            miles_value = int(mileage_match.group(1).replace(",", ""))
-                            print(f"Mileage fallback hit: {miles_value}")
-                        except ValueError:
-                            miles_value = None
+                    for pattern in mileage_patterns:
+                        mileage_match = re.search(pattern, mileage_text, re.IGNORECASE)
+                        if mileage_match:
+                            try:
+                                miles_value = int(mileage_match.group(1).replace(",", ""))
+                                print(f"Mileage fallback hit: {miles_value}")
+                                break
+                            except ValueError:
+                                miles_value = None
 
                 #----- Closing Time. Ex.) timer text: "5h48m (Nov 08, 2025 06:16 AM CST)" 
                 try:
