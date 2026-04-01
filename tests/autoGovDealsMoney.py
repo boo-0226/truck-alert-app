@@ -185,14 +185,23 @@ def scan_govdeals_once() -> int:
                                 # Save for keyword blob later
                                 specs_text_parts.append(f"{label}: {value}")
 
-                                # Try to extract numeric miles
-                                if label.lower().startswith("miles"):
-                                    main_part = value.split("(")[0].strip()  # "136,619.00"
-                                    main_part = main_part.replace(",", "")
-                                    try:
-                                        miles_value = int(float(main_part.split()[0]))
-                                    except ValueError:
-                                        miles_value = None
+                                # Try to extract numeric miles / odometer from specs table
+                                label_lower = label.lower().strip()
+
+                                if label_lower.startswith("miles") or label_lower.startswith("odometer"):
+                                    # examples:
+                                    # "136,619.00"
+                                    # "56,334 Miles"
+                                    # "108,860"
+                                    value_clean = value.split("(")[0].strip()
+                                    mileage_match = re.search(r"([\d,]+(?:\.\d+)?)", value_clean)
+
+                                    if mileage_match:
+                                        try:
+                                            miles_value = int(float(mileage_match.group(1).replace(",", "")))
+                                            print(f"Parsed mileage from specs table: {miles_value}")
+                                        except ValueError:
+                                            miles_value = None
                     else:
                         print("\nDescription specs: none found")
                 except Exception as e:
@@ -221,6 +230,26 @@ def scan_govdeals_once() -> int:
                     long_desc = ""
                     print("\nLong Description: None found")
                     print("Contains 'diesel'? -> False")
+
+                # Fallback mileage parse from short/long description if specs table had no mileage
+                if miles_value is None:
+                    mileage_text = " ".join([
+                        short_desc or "",
+                        long_desc or "",
+                    ])
+
+                    mileage_match = re.search(r"\bodometer[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
+                    if not mileage_match:
+                        mileage_match = re.search(r"\bmileage[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
+                    if not mileage_match:
+                        mileage_match = re.search(r"\bmiles[:\s]+([\d,]+)", mileage_text, re.IGNORECASE)
+
+                    if mileage_match:
+                        try:
+                            miles_value = int(mileage_match.group(1).replace(",", ""))
+                            print(f"Mileage fallback hit: {miles_value}")
+                        except ValueError:
+                            miles_value = None
 
                 #----- Closing Time. Ex.) timer text: "5h48m (Nov 08, 2025 06:16 AM CST)" 
                 try:
@@ -280,7 +309,7 @@ def scan_govdeals_once() -> int:
                 ])
 
                 truck_target = contains_any(search_blob, TARGET_KEYWORDS)
-                low_mileage = (miles_value is not None and miles_value <= 200_000)
+                low_mileage = (miles_value is not None and miles_value <= 180_000)
 
                 # Closing time filter: now based only on minutes_left
                 close_soon_flag = (minutes_left is not None and minutes_left <= 30)
@@ -297,12 +326,12 @@ def scan_govdeals_once() -> int:
                     truck_target = False
 
 
-                # Bid filter: current bid < 6600
+                # Bid filter: current bid < 5000
                 bid_under_limit = False
                 if current_bid is not None:
                     try:
                         numeric_bid = float(current_bid)
-                        bid_under_limit = numeric_bid < 6600
+                        bid_under_limit = numeric_bid < 5000
                     except ValueError:
                         bid_under_limit = False
 
@@ -310,15 +339,17 @@ def scan_govdeals_once() -> int:
                     truck_target and
                     low_mileage and
                     close_soon_flag and
-                    bid_under_limit 
+                    bid_under_limit and 
+                    location_valid
                 )
 
                 print("\n[ALERT DEBUG]")
-                print(f"  exclude_hit (blocked keywords): {exclude_hit} {matched_excludes}")
+                print(f"  location_valid (allowed):    {location_valid}  (location={location if location else 'Not found'})")
+                print(f"  exclude_hit (blocked keywords): {exclude_hit}  {matched_excludes}")
                 print(f"  truck_target (keywords hit): {truck_target} (matched={matched_keywords})")
                 print(f"  low_mileage (<=150,000):     {low_mileage}  (miles_value={miles_value})")
                 print(f"  close_soon (<=30 min):       {close_soon_flag}  (minutes_left={minutes_left})")
-                print(f"  bid_under_limit (<6600):     {bid_under_limit}  (current_bid={current_bid})")
+                print(f"  bid_under_limit (<5000):     {bid_under_limit}  (current_bid={current_bid})")
                 print(f"  should_alert (ALL true):     {should_alert}")
 
                 if should_alert:
