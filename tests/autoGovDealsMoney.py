@@ -166,17 +166,21 @@ def scan_govdeals_once() -> int:
 
                 print("Location Allowed:", location_valid)
 
-
-                #-----Table Description. # Prepare holders for specs text + miles
-                specs_text_parts = []   # Prepare holders for specs text + miles used later for keyword search
-                miles_value = None      # numeric miles if we can parse it
+                #-----Table Description. Prepare holders for specs text + miles
+                specs_text_parts = []
+                miles_value = None
 
                 try:
-                    rows = driver.find_elements(By.CSS_SELECTOR, "div.showmore div.row.description-body")
+                    # GovDeals details/additional info tables
+                    rows = driver.find_elements(
+                        By.CSS_SELECTOR,
+                        "div.tab-content table.table tbody tr"
+                    )
+
                     if rows:
                         print("\nDescription specs:")
                         for row in rows:
-                            cols = row.find_elements(By.CLASS_NAME, "col-6")
+                            cols = row.find_elements(By.TAG_NAME, "td")
                             if len(cols) >= 2:
                                 label = cols[0].text.strip()
                                 value = cols[1].text.strip()
@@ -185,17 +189,10 @@ def scan_govdeals_once() -> int:
                                 # Save for keyword blob later
                                 specs_text_parts.append(f"{label}: {value}")
 
-                                # Try to extract numeric miles / odometer from specs table
-                                label_lower = label.lower().strip()
-
-                                if label_lower.startswith("miles") or label_lower.startswith("odometer"):
-                                    # examples:
-                                    # "136,619.00"
-                                    # "56,334 Miles"
-                                    # "108,860"
-                                    value_clean = value.split("(")[0].strip()
-                                    mileage_match = re.search(r"([\d,]+(?:\.\d+)?)", value_clean)
-
+                                # Try to extract numeric miles from Odometer or Miles rows
+                                label_lower = label.lower()
+                                if label_lower.startswith("odometer") or label_lower.startswith("miles"):
+                                    mileage_match = re.search(r"([\d,]+(?:\.\d+)?)", value)
                                     if mileage_match:
                                         try:
                                             miles_value = int(float(mileage_match.group(1).replace(",", "")))
@@ -204,6 +201,7 @@ def scan_govdeals_once() -> int:
                                             miles_value = None
                     else:
                         print("\nDescription specs: none found")
+
                 except Exception as e:
                     print("\nDescription specs: error while reading ->", e)
 
