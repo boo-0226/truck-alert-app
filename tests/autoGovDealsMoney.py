@@ -312,7 +312,7 @@ def scan_govdeals_once() -> int:
                 ])
 
                 truck_target = contains_any(search_blob, TARGET_KEYWORDS)
-                low_mileage = (miles_value is not None and miles_value <= 180_000)
+                low_mileage = (miles_value is not None and miles_value <= 150_000)
 
                 # Closing time filter: now based only on minutes_left
                 close_soon_flag = (minutes_left is not None and minutes_left <= 30)
