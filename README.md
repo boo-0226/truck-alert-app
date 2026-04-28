@@ -13,12 +13,12 @@ Step 1: (Local Laptop) open remote desktop connection or typ mstc and spin up se
 
 Step 2: (Server Side-SS) Open powershell and type check status of code first: 
 > cd truck-alert-app
-> C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper
+> & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper
 results: SERVICE_RUNNING
 
 Step 3: (SS) Stop the program and check status:
 
-> C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" stop GovDealsSniper
+> & "C:\nssm\nssm-2.24\win64\nssm.exe" stop GovDealsSniper
 results: unexpected status SERVICE_STOP_PENDING in response to STOP control. 
 
 > C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper

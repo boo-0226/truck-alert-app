@@ -3,6 +3,10 @@
 import os
 import sys
 import platform
+import time
+import re
+import html
+from datetime import datetime
 
 # Make sure .../src is on sys.path so "core" becomes importable
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))          # ...\truck-alert-app\tests
@@ -13,22 +17,24 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from datetime import datetime, timedelta
 from selenium.common.exceptions import NoSuchElementException
-from src.core.autoKeywords_GovDeals import ALERT_STATES
-
-
-
-import time
-import re, html
 
 # now we can import from src/core
-from core.autoKeywords_GovDeals import TARGET_KEYWORDS, EXCLUDE_KEYWORDS
+from core.autoKeywords_GovDeals import (
+    CLOSE_SOON_MINUTES,
+    MAX_DIESEL_MILES,
+    MAX_GAS_BID,
+    MAX_GAS_MILES,
+    evaluate_diesel_truck_filter,
+    evaluate_gas_fast_flip,
+    find_exclude_keywords,
+    location_matches_alert_state,
+    parse_bid_amount,
+)
 from core.autoTwilio_Alerts import send_alert
 
 
@@ -39,28 +45,16 @@ def contains_any(text: str, keywords: set) -> bool:
     t = text.lower()
     return any(kw in t for kw in keywords)
 
-# Create a Chrome driver + wait object. For now this still uses your local Windows chromedriver path. We'll swap this for a Linux/headless setup on the server later. 
+# Create a Chrome driver + wait object.
 def create_driver():
-    import platform
-    from selenium import webdriver
-    from selenium.webdriver.chrome.service import Service
-    from selenium.webdriver.chrome.options import Options
-    from webdriver_manager.chrome import ChromeDriverManager
-
     system = platform.system().lower()
 
-    # Windows Server (GUI)
     if system == "windows":
         options = Options()
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         # options.add_argument("--headless=new")  # optional
-
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=options
-        )
         timeout = 20
 
     else:
@@ -69,12 +63,9 @@ def create_driver():
         options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-
-        driver = webdriver.Chrome(
-            service=Service("/usr/bin/chromedriver"),
-            options=options
-        )
         timeout = 30
+
+    driver = webdriver.Chrome(options=options)
 
     wait = WebDriverWait(driver, timeout)
     return driver, wait
@@ -145,26 +136,12 @@ def scan_govdeals_once() -> int:
                     location_elem = driver.find_element(By.XPATH, "//span[@id='lnkAssetDetailLocation']")
                     location = (location_elem.get_attribute("title") or "").strip()
                 except NoSuchElementException:
-                    print("Location element not found. Skipping listing.")
-                    print(f"Skipped URL: {href}")
-                    continue
-
-                if not location:
-                    print("Location was blank. Skipping listing.")
-                    print(f"Skipped URL: {href}")
-                    continue
+                    location = ""
+                    print("Location element not found.")
 
                 print("Location:", location)
-                # Check if location contains an allowed state
-                location_valid = False
-                if location:
-                    loc_lower = location.lower()
-                    for st in ALERT_STATES:
-                        if st.lower() in loc_lower:
-                            location_valid = True
-                            break
-
-                print("Location Allowed:", location_valid)
+                # Check only full state names from ALERT_STATES; abbreviations like TX should not match.
+                location_valid = location_matches_alert_state(location)
 
                 #-----Table Description. Prepare holders for specs text + miles
                 specs_text_parts = []
@@ -227,7 +204,6 @@ def scan_govdeals_once() -> int:
                 except NoSuchElementException:
                     long_desc = ""
                     print("\nLong Description: None found")
-                    print("Contains 'diesel'? -> False")
 
                 # Fallback mileage parse from short/long description if specs table had no mileage
                 if miles_value is None:
@@ -261,9 +237,8 @@ def scan_govdeals_once() -> int:
                     )
                     timer_text = timer_elem.text.strip()
                 except Exception:
-                    print("Timer not found. Skipping listing.")
-                    print(f"Skipped URL: {href}")
-                    continue
+                    timer_text = ""
+                    print("Timer not found.")
 
                 # Split into countdown and actual close datetime
                 if "(" in timer_text:
@@ -279,31 +254,33 @@ def scan_govdeals_once() -> int:
 
                 # always defined for this listing
                 minutes_left = None
+                stop_after_debug = False
 
                 if close_time:
-                    close_time_clean = " ".join(close_time.split()[:-1])   # strip timezone (e.g. "CST")
+                    try:
+                        close_time_clean = " ".join(close_time.split()[:-1])   # strip timezone (e.g. "CST")
 
-                    # Convert/Parse to datetime
-                    close_dt = datetime.strptime(close_time_clean, "%b %d, %Y %I:%M %p")
-                    now = datetime.now()  # Current local time
-                    minutes_left = (close_dt - now).total_seconds() / 60  # Compute time difference in minutes
+                        # Convert/Parse to datetime
+                        close_dt = datetime.strptime(close_time_clean, "%b %d, %Y %I:%M %p")
+                        now = datetime.now()  # Current local time
+                        minutes_left = (close_dt - now).total_seconds() / 60  # Compute time difference in minutes
 
-                    # Just print info here; "closing soon" will be decided later
-                    if minutes_left <= 30:
-                        print("Less than 30 minutes left!")
-                    else:
-                        print(f"{minutes_left:.1f} minutes remaining.")
+                        # Just print info here; "closing soon" will be decided later
+                        if minutes_left <= CLOSE_SOON_MINUTES:
+                            print(f"Less than {CLOSE_SOON_MINUTES} minutes left!")
+                        else:
+                            print(f"{minutes_left:.1f} minutes remaining.")
 
-                    # Long-time check and ends loop
-                    hours_left = minutes_left / 60
-                    if hours_left > .583:
-                        print("More than 35min left on this truck, stopping scan.")
-                        break
+                        # Long-time check and ends loop after debug output
+                        if minutes_left > 35:
+                            stop_after_debug = True
+                    except Exception as e:
+                        print("Close time parse error:", e)
                 else:
                     print("No close time found; cannot compute minutes remaining.")
 
 
-                # -----Target Truck/mileage checks and Twilio alert. Build one big text blob: title + short + long + specs. Also prints the boolean to reference truck targe, low mileage, and should alert hits. 
+                # -----Target truck/mileage checks and Twilio alert. Build one big text blob: title + short + long + specs.
                 search_blob = " ".join([
                     title or "",
                     short_desc or "",
@@ -311,75 +288,109 @@ def scan_govdeals_once() -> int:
                     " ".join(specs_text_parts),
                 ])
 
-                truck_target = contains_any(search_blob, TARGET_KEYWORDS)
-                low_mileage = (miles_value is not None and miles_value <= 150_000)
-
-                # Closing time filter: now based only on minutes_left
-                close_soon_flag = (minutes_left is not None and minutes_left <= 30)
-
-                #Keywords. This tells me which keywords made it true since some vehicles i don't know why it was showing up
-                matched_keywords = [kw for kw in TARGET_KEYWORDS if kw in search_blob.lower()]
-
-                #Keywords.
-                # Override target if excluded terms are present
-                search_blob_lower = search_blob.lower()
-
-                matched_excludes = []
-                for kw in EXCLUDE_KEYWORDS:
-                    pattern = r"\b" + re.escape(kw.lower()) + r"\b"
-                    if re.search(pattern, search_blob_lower):
-                        matched_excludes.append(kw)
-
+                gas_eval = evaluate_gas_fast_flip(search_blob)
+                diesel_eval = evaluate_diesel_truck_filter(search_blob)
+                gas_match = gas_eval["gas_match"]
+                diesel_match = diesel_eval["diesel_match"]
+                target_match = gas_match or diesel_match
+                diesel_priority_level = diesel_eval["diesel_priority_level"] if diesel_match else None
+                specialty_keywords_matched = diesel_eval["specialty_keywords_matched"]
+                matched_excludes = find_exclude_keywords(search_blob)
                 exclude_hit = bool(matched_excludes)
 
-                if exclude_hit:
-                    truck_target = False
-
-
-                # Bid filter: current bid < 5000
-                bid_under_limit = False
-                if current_bid is not None:
-                    try:
-                        numeric_bid = float(current_bid)
-                        bid_under_limit = numeric_bid < 5000
-                    except ValueError:
-                        bid_under_limit = False
-
-                should_alert = (
-                    truck_target and
-                    low_mileage and
-                    close_soon_flag and
-                    bid_under_limit and 
-                    location_valid
+                # Missing miles fail open. Gas and diesel lanes keep their own mileage caps.
+                gas_mileage_ok = miles_value is None or miles_value < MAX_GAS_MILES
+                diesel_mileage_ok = miles_value is None or miles_value <= MAX_DIESEL_MILES
+                mileage_ok = (
+                    miles_value is None or
+                    (gas_match and gas_mileage_ok) or
+                    (diesel_match and diesel_mileage_ok)
                 )
 
+                # Closing time filter: now based only on minutes_left
+                close_soon_flag = (
+                    minutes_left is not None and
+                    0 <= minutes_left <= CLOSE_SOON_MINUTES
+                )
+
+                # Bid filter: current bid < 5000
+                numeric_bid = parse_bid_amount(current_bid)
+                bid_under_limit = (
+                    numeric_bid is not None and
+                    numeric_bid < MAX_GAS_BID
+                )
+
+                should_alert = (
+                    location_valid is True and
+                    bid_under_limit is True and
+                    mileage_ok is True and
+                    close_soon_flag is True and
+                    target_match is True and
+                    exclude_hit is False
+                )
+
+                if gas_match:
+                    target_label = "GAS FAST FLIP"
+                    matched_lane = gas_eval["matched_lane"]
+                    matched_rule_reason = gas_eval["matched_rule_reason"]
+                    debug_eval = gas_eval
+                elif diesel_match:
+                    target_label = "DIESEL TARGET"
+                    matched_lane = diesel_eval["matched_lane"]
+                    matched_rule_reason = diesel_eval["matched_rule_reason"]
+                    debug_eval = diesel_eval
+                else:
+                    target_label = "NO TARGET"
+                    matched_lane = None
+                    matched_rule_reason = "No gas or diesel target matched"
+                    debug_eval = gas_eval
+
+                alert_message = None
+                if should_alert:
+                    miles_text = miles_value if miles_value is not None else "Not found"
+                    bid_text = current_bid if current_bid is not None else "Not found"
+                    specialty_text = ", ".join(specialty_keywords_matched) if specialty_keywords_matched else "None"
+
+                    # SMS body: target lane, title, bid, miles, location, rule reason, specialty keywords, and direct link
+                    alert_lines = [target_label]
+                    if diesel_match:
+                        alert_lines.append(f"Priority: {diesel_priority_level}")
+                    alert_lines.extend([
+                        f"{title}",
+                        f"Bid: {bid_text} | Miles: {miles_text}",
+                        f"{location}",
+                        f"Matched lane: {matched_lane}",
+                        f"Matched rule: {matched_rule_reason}",
+                        f"Specialty keywords: {specialty_text}",
+                        f"{href}",
+                    ])
+                    alert_message = "\n".join(alert_lines)
+
                 print("\n[ALERT DEBUG]")
-                print(f"  location_valid (allowed):    {location_valid}  (location={location if location else 'Not found'})")
-                print(f"  exclude_hit (blocked keywords): {exclude_hit}  {matched_excludes}")
-                print(f"  truck_target (keywords hit): {truck_target} (matched={matched_keywords})")
-                print(f"  low_mileage (<=150,000):     {low_mileage}  (miles_value={miles_value})")
-                print(f"  close_soon (<=30 min):       {close_soon_flag}  (minutes_left={minutes_left})")
-                print(f"  bid_under_limit (<5000):     {bid_under_limit}  (current_bid={current_bid})")
-                print(f"  should_alert (ALL true):     {should_alert}")
+                print(f"  location_valid: {location_valid}")
+                print(f"  bid_under_limit: {bid_under_limit}")
+                print(f"  mileage_ok: {mileage_ok}")
+                print(f"  year_ok: {debug_eval['year_ok']}")
+                print(f"  make_ok: {debug_eval['make_ok']}")
+                print(f"  model_ok: {debug_eval['model_ok']}")
+                print(f"  engine_ok: {debug_eval['engine_ok']}")
+                print(f"  gas_fast_flip_match: {gas_match}")
+                print(f"  diesel_target_match: {diesel_match}")
+                print(f"  exclude_hit: {exclude_hit}")
+                print(f"  close_soon_flag: {close_soon_flag}")
+                print(f"  should_alert: {should_alert}")
 
                 if should_alert:
-                    # Build table description text (one line per item)
-                    specs_summary = "\n".join(specs_text_parts) if specs_text_parts else "No specs table."
-
-                    # SMS body: title, bid, miles, specs, and direct link
-                    alert_message = (
-                        f"{title}\n"
-                        f"Bid: {current_bid} | Miles: {miles_value}\n"
-                        f"{location}\n"
-                        f"{specs_summary}\n"
-                        f"Matched keywords: {matched_keywords}\n"
-                        f"{href}"
-                    )
-
-                    print("  -> ALERT TRIGGERED: sending Twilio SMS/voice now.")
                     send_alert(alert_message)
-                else:
-                    print("  -> No alert sent for this listing.")
+                    alerts_sent += 1
+
+                if stop_after_debug:
+                    print("Stopping scan because listing is beyond 35-minute window")
+
+                print("RESULT: ALERT SENT" if should_alert else "RESULT: NO ALERT SENT")
+
+                if stop_after_debug:
+                    break
             except Exception as e:
                 print("❌ Error on listing, skipping...")
                 print(f"URL: {href}")
