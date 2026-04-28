@@ -348,36 +348,79 @@ def scan_govdeals_once() -> int:
                 alert_message = None
                 if should_alert:
                     miles_text = miles_value if miles_value is not None else "Not found"
-                    bid_text = current_bid if current_bid is not None else "Not found"
-                    specialty_text = ", ".join(specialty_keywords_matched) if specialty_keywords_matched else "None"
+                    bid_text = numeric_bid if numeric_bid is not None else "Not found"
+                    year_text = debug_eval["year_value"] if debug_eval["year_value"] is not None else "Not found"
+                    make_text = debug_eval["make_value"] if debug_eval["make_value"] else "Not found"
+                    model_text = debug_eval["model_value"] if debug_eval["model_value"] else "Not found"
+                    engine_text = debug_eval["engine_value"] or debug_eval["engine_text"] or "Not found"
+                    title_restriction = "Not found"
+                    for spec in specs_text_parts:
+                        label, _, value = spec.partition(":")
+                        label_lower = label.lower()
+                        if "title" in label_lower and ("restriction" in label_lower or "status" in label_lower):
+                            title_restriction = value.strip() or "Not found"
+                            break
 
-                    # SMS body: target lane, title, bid, miles, location, rule reason, specialty keywords, and direct link
-                    alert_lines = [target_label]
-                    if diesel_match:
-                        alert_lines.append(f"Priority: {diesel_priority_level}")
-                    alert_lines.extend([
-                        f"{title}",
-                        f"Bid: {bid_text} | Miles: {miles_text}",
-                        f"{location}",
-                        f"Matched lane: {matched_lane}",
-                        f"Matched rule: {matched_rule_reason}",
-                        f"Specialty keywords: {specialty_text}",
-                        f"{href}",
-                    ])
+                    diesel_priority_text = diesel_priority_level if diesel_priority_level else "None"
+                    specialty_text = ", ".join(specialty_keywords_matched) if specialty_keywords_matched else "None"
+                    exclude_text = ", ".join(matched_excludes) if matched_excludes else "None"
+
+                    # SMS body stays compact: no full descriptions or raw specs table.
+                    alert_lines = [
+                        f"ALERT TYPE: {target_label}",
+                        f"Title: {title}",
+                        f"Location: {location if location else 'Not found'}",
+                        f"Bid: {bid_text}",
+                        f"Odometer/Miles: {miles_text}",
+                        f"Year: {year_text}",
+                        f"Make: {make_text}",
+                        f"Model: {model_text}",
+                        f"Engine: {engine_text}",
+                        f"Title Restriction: {title_restriction}",
+                        f"Gas match boolean: {gas_match}",
+                        f"Diesel match boolean: {diesel_match}",
+                        f"Diesel priority level: {diesel_priority_text}",
+                        f"Specialty keywords matched: {specialty_text}",
+                        f"Exclude keywords matched: {exclude_text}",
+                        f"Link: {href}",
+                    ]
                     alert_message = "\n".join(alert_lines)
 
+                debug_lane_results = debug_eval.get("all_lane_results", [])
+                debug_selected_result = None
+                if matched_lane:
+                    debug_selected_result = next(
+                        (result for result in debug_lane_results if result["rule"].lane == matched_lane),
+                        None,
+                    )
+                if debug_selected_result is None and debug_lane_results:
+                    debug_selected_result = max(debug_lane_results, key=lambda result: result["score"])
+
+                debug_rule = debug_selected_result["rule"] if debug_selected_result else None
+                allowed_years = f"{debug_rule.year_min}-{debug_rule.year_max}" if debug_rule else "Unknown"
+                debug_year = debug_eval["year_value"] if debug_eval["year_value"] is not None else "Not found"
+                debug_make = debug_eval["make_value"] if debug_eval["make_value"] else "Not found"
+                debug_model = debug_eval["model_value"] if debug_eval["model_value"] else "Not found"
+                debug_engine = debug_eval["engine_value"] or debug_eval["engine_text"] or "Not found"
+                debug_location = location if location else "Not found"
+                debug_bid = numeric_bid if numeric_bid is not None else current_bid
+                debug_miles = miles_value if miles_value is not None else "Not found"
+                debug_minutes = f"{minutes_left:.1f}" if minutes_left is not None else "Not found"
+                gas_matched_lane = gas_eval["matched_lane"] if gas_eval["matched_lane"] else "None"
+                diesel_matched_lane = diesel_eval["matched_lane"] if diesel_eval["matched_lane"] else "None"
+
                 print("\n[ALERT DEBUG]")
-                print(f"  location_valid: {location_valid}")
-                print(f"  bid_under_limit: {bid_under_limit}")
-                print(f"  mileage_ok: {mileage_ok}")
-                print(f"  year_ok: {debug_eval['year_ok']}")
-                print(f"  make_ok: {debug_eval['make_ok']}")
-                print(f"  model_ok: {debug_eval['model_ok']}")
-                print(f"  engine_ok: {debug_eval['engine_ok']}")
-                print(f"  gas_fast_flip_match: {gas_match}")
-                print(f"  diesel_target_match: {diesel_match}")
-                print(f"  exclude_hit: {exclude_hit}")
-                print(f"  close_soon_flag: {close_soon_flag}")
+                print(f"  location_valid: {location_valid} | location={debug_location}")
+                print(f"  bid_under_limit: {bid_under_limit} | bid={debug_bid if debug_bid is not None else 'Not found'} | cap={MAX_GAS_BID}")
+                print(f"  mileage_ok: {mileage_ok} | miles={debug_miles} | cap={MAX_GAS_MILES} gas / {MAX_DIESEL_MILES} diesel")
+                print(f"  year_ok: {debug_eval['year_ok']} | year={debug_year} | allowed={allowed_years}")
+                print(f"  make_ok: {debug_eval['make_ok']} | make={debug_make}")
+                print(f"  model_ok: {debug_eval['model_ok']} | model={debug_model}")
+                print(f"  engine_ok: {debug_eval['engine_ok']} | engine={debug_engine}")
+                print(f"  gas_match: {gas_match} | matched_lane={gas_matched_lane}")
+                print(f"  diesel_match: {diesel_match} | matched_lane={diesel_matched_lane}")
+                print(f"  exclude_hit: {exclude_hit} | matched={matched_excludes}")
+                print(f"  close_soon_flag: {close_soon_flag} | minutes_left={debug_minutes} | cap={CLOSE_SOON_MINUTES}")
                 print(f"  should_alert: {should_alert}")
 
                 if should_alert:
