@@ -132,32 +132,114 @@ SPECIALTY_TRUCK_KEYWORDS = {
 
 
 # -------------------------------
-# Excludes block alerting immediately
+# Hard excludes block alerting immediately.
+# Soft warnings are shown in debug/alerts only.
 # -------------------------------
-EXCLUDE_KEYWORDS = {
-    "bus",
-    "school bus",
-    "transit bus",
-    "shuttle",
-    "coach",
-    "passenger",
-    "garbage truck",
-    "rv",
-    "motorhome",
-    "sweeper",
-    "forklift",
-    "tractor",
-    "chassis only",
-    "cab and chassis",
-    "parts only",
+HARD_EXCLUDE_KEYWORDS = (
+    "no title",
     "salvage",
-    "6.4 Power Stroke",
-    "does not run",
-    "salvage title",
-    "major rust",
+    "parts only",
     "bad engine",
     "bad transmission",
-    "no title",
+    "major rust",
+)
+
+SOFT_WARNING_KEYWORDS = (
+    "passenger",
+    "unknown mileage",
+    "towed",
+    "rust",
+    "check engine",
+    "does not start",
+)
+
+# Backward-compatible name for older imports. This is intentionally hard-only.
+EXCLUDE_KEYWORDS = set(HARD_EXCLUDE_KEYWORDS)
+
+HARD_EXCLUDE_PATTERNS = {
+    "no title": (
+        r"\bno\s+titles?\b",
+        r"\btitles?\s+(?:is\s+|are\s+)?(?:missing|absent|unavailable|not\s+available|not\s+included)\b",
+        r"\bmissing\s+titles?\b",
+        r"\bwithout\s+(?:a\s+)?titles?\b",
+        r"\bbill\s+of\s+sale\s+only\b",
+    ),
+    "salvage": (
+        r"\bsalvage(?:d)?\b",
+        r"\bsalvage\s+titles?\b",
+        r"\brebuilt\s+salvage\b",
+    ),
+    "parts only": (
+        r"\bparts\s+only\b",
+        r"\bfor\s+parts\b",
+        r"\bparts\s+(?:vehicle|truck|car|unit)\b",
+        r"\b(?:vehicle|truck|car|unit)\s+for\s+parts\b",
+    ),
+    "bad engine": (
+        r"\bbad\s+engine\b",
+        r"\bengine\s+(?:is\s+)?bad\b",
+        r"\bblown\s+engine\b",
+        r"\bseized\s+engine\b",
+        r"\bengine\s+(?:failure|failed|seized|blown)\b",
+        r"\bneeds?\s+(?:a\s+)?(?:new\s+|replacement\s+)?engine\b",
+    ),
+    "bad transmission": (
+        r"\bbad\s+transmission\b",
+        r"\btransmission\s+(?:is\s+)?bad\b",
+        r"\btransmission\s+(?:failure|failed|slipping|inoperable)\b",
+        r"\bneeds?\s+(?:a\s+)?(?:new\s+|replacement\s+)?transmission\b",
+    ),
+    "major rust": (
+        r"\bmajor\s+rust\b",
+        r"\bsevere\s+rust\b",
+        r"\bheavy\s+rust\b",
+        r"\bextensive\s+rust\b",
+        r"\brust(?:ed)?\s+(?:through|out)\b",
+        r"\bframe\s+rust(?:ed)?\s+(?:through|out)?\b",
+    ),
+}
+
+SOFT_WARNING_PATTERNS = {
+    "passenger": (
+        r"\bpassengers?\b",
+        r"\bpassenger\s+(?:van|bus|vehicle|seat|seating)\b",
+    ),
+    "unknown mileage": (
+        r"\bunknown\s+(?:mileage|miles|odometer)\b",
+        r"\b(?:mileage|miles|odometer)\s+unknown\b",
+        r"\bodometer\s+(?:not\s+actual|exempt|unreadable|inoperable)\b",
+        r"\bnot\s+actual\s+(?:mileage|miles)\b",
+    ),
+    "towed": (
+        r"\btowed\b",
+        r"\btow\s+away\b",
+        r"\bmust\s+be\s+towed\b",
+        r"\bneeds?\s+(?:to\s+be\s+)?towed\b",
+    ),
+    "rust": (
+        r"\brust\b",
+        r"\brusty\b",
+        r"\bsurface\s+rust\b",
+        r"\brust(?:ed|ing)?\b",
+    ),
+    "check engine": (
+        r"\bcheck\s+engine\b",
+        r"\bcheck\s+engine\s+light\b",
+        r"\bcel\b",
+        r"\bservice\s+engine\s+soon\b",
+    ),
+    "does not start": (
+        r"\bdoes\s+not\s+start\b",
+        r"\bdoesn't\s+start\b",
+        r"\bwill\s+not\s+start\b",
+        r"\bwon't\s+start\b",
+        r"\bno\s+start\b",
+        r"\bcranks?\s+but\s+(?:does\s+not|doesn't|won't|will\s+not)\s+start\b",
+        r"\bdoes\s+not\s+run\b",
+        r"\bdoesn't\s+run\b",
+        r"\bwill\s+not\s+run\b",
+        r"\bwon't\s+run\b",
+    ),
 }
 
 
@@ -396,6 +478,27 @@ _OTHER_MODEL_PATTERNS = {
     "NPR": (r"\bnpr\b",),
 }
 
+MODEL_DISPLAY_QUALIFIER_PATTERNS = (
+    r"\s+police\s+utility\b.*$",
+    r"\s+police\s+interceptor\b.*$",
+    r"\s+(?:police|utility|awd|4wd|2wd|fwd|rwd)\b.*$",
+    r"\s+(?:crew|regular|extended|super|quad|double)\s+cab\b.*$",
+    r"\s+(?:supercrew|supercab|megacab)\b.*$",
+)
+
+KNOWN_TRUCK_CONTEXT_PATTERNS = (
+    r"\bf[\s-]?(?:150|250|350|450|550|650|750)\b",
+    r"\bsuper\s+duty\b",
+    r"\bsilverado\b",
+    r"\bsierra\b",
+    r"\bram\b",
+    r"\bdodge\s+ram\b",
+    r"\b(?:1500|2500|3500)(?:\s*hd)?\b",
+    r"\binternational\s+4300\b",
+    r"\bfreightliner\s+m2\b",
+    r"\bm2\s+106\b",
+)
+
 _APPROVED_ENGINE_PATTERNS = {
     "5.0 V8": (
         r"\b5\.0\s*(?:l|liter|litre)?\b(?:.{0,40}\bv8\b)?",
@@ -582,6 +685,44 @@ def find_model(text: str) -> Optional[str]:
     return None
 
 
+def clean_model_display(model: Optional[str]) -> Optional[str]:
+    """
+    Clean model strings for display only. Evaluation still uses the original
+    listing text and find_model() results.
+    """
+    clean_model = normalize_text(model or "")
+    if not clean_model:
+        return None
+
+    model_patterns = {}
+    model_patterns.update(_MODEL_PATTERNS)
+    model_patterns.update(_OTHER_MODEL_PATTERNS)
+
+    ordered_models = sorted(model_patterns, key=len, reverse=True)
+    for base_model in ordered_models:
+        for pattern in model_patterns[base_model]:
+            if re.search(pattern, clean_model, re.IGNORECASE):
+                return base_model
+
+    for pattern in MODEL_DISPLAY_QUALIFIER_PATTERNS:
+        cleaned = re.sub(pattern, "", clean_model, flags=re.IGNORECASE).strip()
+        if cleaned != clean_model:
+            return cleaned or clean_model
+
+    return clean_model
+
+
+def _normalize_structured_make(make: Optional[str]) -> Optional[str]:
+    clean_make = normalize_text(make or "")
+    if not clean_make:
+        return None
+    return find_make(clean_make) or clean_make
+
+
+def _normalize_structured_model(model: Optional[str]) -> Optional[str]:
+    return clean_model_display(model)
+
+
 def find_engine(text: str, make: Optional[str] = None, model: Optional[str] = None) -> dict:
     """
     Return exact approved/disallowed engine details when the listing states enough.
@@ -666,12 +807,34 @@ def find_diesel_engine(text: str) -> dict:
 
 
 def find_exclude_keywords(text: str) -> list[str]:
-    clean_text = (text or "").lower()
+    return find_hard_exclude_keywords(text)
+
+
+def _find_pattern_family_matches(text: str, pattern_families: dict[str, tuple[str, ...]]) -> list[str]:
+    clean_text = text or ""
     matches = []
-    for keyword in sorted(EXCLUDE_KEYWORDS):
-        if re.search(_keyword_pattern(keyword), clean_text, re.IGNORECASE):
-            matches.append(keyword)
+    for label, patterns in pattern_families.items():
+        if any(re.search(pattern, clean_text, re.IGNORECASE) for pattern in patterns):
+            matches.append(label)
     return matches
+
+
+def find_hard_exclude_keywords(text: str) -> list[str]:
+    return _find_pattern_family_matches(text, HARD_EXCLUDE_PATTERNS)
+
+
+def find_soft_warning_keywords(text: str) -> list[str]:
+    return _find_pattern_family_matches(text, SOFT_WARNING_PATTERNS)
+
+
+def find_exclude_keyword_groups(text: str) -> dict:
+    hard_matches = find_hard_exclude_keywords(text)
+    soft_matches = find_soft_warning_keywords(text)
+    return {
+        "hard_exclude_keywords_matched": hard_matches,
+        "hard_exclude_hit": bool(hard_matches),
+        "soft_warning_keywords_matched": soft_matches,
+    }
 
 
 def location_matches_alert_state(location: str) -> bool:
@@ -695,7 +858,7 @@ def parse_bid_amount(value: str | None) -> Optional[float]:
         return None
 
 
-def _status_for_rule(rule: GasFastFlipRule, year: Optional[int], make: Optional[str], model: Optional[str], engine: dict) -> dict:
+def _match_status_for_rule(rule: GasFastFlipRule, year: Optional[int], make: Optional[str], model: Optional[str], engine: dict) -> dict:
     engine_value = engine.get("value")
     engine_known = bool(engine.get("known"))
 
@@ -705,6 +868,27 @@ def _status_for_rule(rule: GasFastFlipRule, year: Optional[int], make: Optional[
         "model_ok": model is None or model in rule.models,
         "engine_ok": (not engine_known) or engine_value in rule.engines,
     }
+
+
+def _debug_status_for_rule(rule: GasFastFlipRule, year: Optional[int], make: Optional[str], model: Optional[str], engine: dict) -> dict:
+    engine_value = engine.get("value")
+    engine_known = bool(engine.get("known"))
+
+    return {
+        "year_ok": year is None or rule.year_min <= year <= rule.year_max,
+        "make_ok": make is not None and make in rule.makes,
+        "model_ok": model is not None and model in rule.models,
+        "engine_ok": (not engine_known) or engine_value in rule.engines,
+    }
+
+
+def _has_known_truck_context(text: str) -> bool:
+    clean_text = text or ""
+    return any(re.search(pattern, clean_text, re.IGNORECASE) for pattern in KNOWN_TRUCK_CONTEXT_PATTERNS)
+
+
+def _engine_match_has_vehicle_context(make: Optional[str], model: Optional[str], vehicle_context_text: str) -> bool:
+    return make is not None or model is not None or _has_known_truck_context(vehicle_context_text)
 
 
 def _known_match_score(statuses: dict, year: Optional[int], make: Optional[str], model: Optional[str], engine: dict) -> int:
@@ -729,28 +913,46 @@ def _known_match_score(statuses: dict, year: Optional[int], make: Optional[str],
     return score
 
 
-def evaluate_gas_fast_flip(text: str) -> dict:
+def evaluate_gas_fast_flip(
+    text: str,
+    structured_make: Optional[str] = None,
+    structured_model: Optional[str] = None,
+    allow_make_model_fallback: bool = True,
+    vehicle_context_text: Optional[str] = None,
+) -> dict:
     """
     Evaluate the gas fast-flip lanes.
-    Missing year/make/model/engine values keep their *_ok debug flags open,
-    but a lane match still needs a gas engine or fuel clue.
+    Missing make/model values still fail open for lane matching, but returned
+    make_ok/model_ok debug flags are true only when a found value fits the lane.
     """
     clean_text = normalize_text(text)
     year = find_year(clean_text)
-    make = find_make(clean_text)
-    model = find_model(clean_text)
+    make = _normalize_structured_make(structured_make) if structured_make else (
+        find_make(clean_text) if allow_make_model_fallback else None
+    )
+    model = _normalize_structured_model(structured_model) if structured_model else (
+        find_model(clean_text) if allow_make_model_fallback else None
+    )
     engine = find_engine(clean_text, make, model)
     gas_control_ok = _gas_lane_control_ok(clean_text, engine)
+    vehicle_context_ok = _engine_match_has_vehicle_context(
+        make,
+        model,
+        normalize_text(vehicle_context_text if vehicle_context_text is not None else clean_text),
+    )
 
     lane_results = []
     for rule in GAS_FAST_FLIP_RULES:
-        statuses = _status_for_rule(rule, year, make, model, engine)
+        statuses = _match_status_for_rule(rule, year, make, model, engine)
+        debug_statuses = _debug_status_for_rule(rule, year, make, model, engine)
         lane_results.append(
             {
                 "rule": rule,
                 "statuses": statuses,
-                "matches": all(statuses.values()) and gas_control_ok,
+                "debug_statuses": debug_statuses,
+                "matches": all(statuses.values()) and gas_control_ok and vehicle_context_ok,
                 "fuel_control_ok": gas_control_ok,
+                "vehicle_context_ok": vehicle_context_ok,
                 "score": _known_match_score(statuses, year, make, model, engine),
             }
         )
@@ -759,6 +961,7 @@ def evaluate_gas_fast_flip(text: str) -> dict:
     selected = matched[0] if matched else max(lane_results, key=lambda result: result["score"])
     selected_rule = selected["rule"]
     selected_statuses = selected["statuses"]
+    selected_debug_statuses = selected["debug_statuses"]
 
     return {
         "gas_rule": bool(matched),
@@ -772,37 +975,56 @@ def evaluate_gas_fast_flip(text: str) -> dict:
         "engine_text": engine.get("text") or "",
         "engine_known": bool(engine.get("known")),
         "year_ok": selected_statuses["year_ok"],
-        "make_ok": selected_statuses["make_ok"],
-        "model_ok": selected_statuses["model_ok"],
+        "make_ok": selected_debug_statuses["make_ok"],
+        "model_ok": selected_debug_statuses["model_ok"],
         "engine_ok": selected_statuses["engine_ok"],
         "fuel_control_ok": gas_control_ok,
+        "vehicle_context_ok": vehicle_context_ok,
         "all_lane_results": lane_results,
     }
 
 
-def evaluate_diesel_truck_filter(text: str) -> dict:
+def evaluate_diesel_truck_filter(
+    text: str,
+    structured_make: Optional[str] = None,
+    structured_model: Optional[str] = None,
+    allow_make_model_fallback: bool = True,
+    vehicle_context_text: Optional[str] = None,
+) -> dict:
     """
     Evaluate the diesel truck lane.
-    Missing year/make/model/engine values keep their *_ok debug flags open,
-    but a lane match still needs a diesel engine or fuel clue.
+    Missing make/model values still fail open for lane matching, but returned
+    make_ok/model_ok debug flags are true only when a found value fits the lane.
     """
     clean_text = normalize_text(text)
     year = find_year(clean_text)
-    make = find_make(clean_text)
-    model = find_model(clean_text)
+    make = _normalize_structured_make(structured_make) if structured_make else (
+        find_make(clean_text) if allow_make_model_fallback else None
+    )
+    model = _normalize_structured_model(structured_model) if structured_model else (
+        find_model(clean_text) if allow_make_model_fallback else None
+    )
     engine = find_diesel_engine(clean_text)
     diesel_control_ok = _diesel_lane_control_ok(clean_text, engine)
+    vehicle_context_ok = _engine_match_has_vehicle_context(
+        make,
+        model,
+        normalize_text(vehicle_context_text if vehicle_context_text is not None else clean_text),
+    )
     specialty = find_specialty_keywords(clean_text)
 
     lane_results = []
     for rule in DIESEL_TRUCK_FILTER:
-        statuses = _status_for_rule(rule, year, make, model, engine)
+        statuses = _match_status_for_rule(rule, year, make, model, engine)
+        debug_statuses = _debug_status_for_rule(rule, year, make, model, engine)
         lane_results.append(
             {
                 "rule": rule,
                 "statuses": statuses,
-                "matches": all(statuses.values()) and diesel_control_ok,
+                "debug_statuses": debug_statuses,
+                "matches": all(statuses.values()) and diesel_control_ok and vehicle_context_ok,
                 "fuel_control_ok": diesel_control_ok,
+                "vehicle_context_ok": vehicle_context_ok,
                 "score": _known_match_score(statuses, year, make, model, engine),
             }
         )
@@ -811,6 +1033,7 @@ def evaluate_diesel_truck_filter(text: str) -> dict:
     selected = matched[0] if matched else max(lane_results, key=lambda result: result["score"])
     selected_rule = selected["rule"]
     selected_statuses = selected["statuses"]
+    selected_debug_statuses = selected["debug_statuses"]
     diesel_match = bool(matched)
     priority_level = specialty["priority_level"] or ("standard" if diesel_match else None)
 
@@ -827,9 +1050,10 @@ def evaluate_diesel_truck_filter(text: str) -> dict:
         "engine_text": engine.get("text") or "",
         "engine_known": bool(engine.get("known")),
         "year_ok": selected_statuses["year_ok"],
-        "make_ok": selected_statuses["make_ok"],
-        "model_ok": selected_statuses["model_ok"],
+        "make_ok": selected_debug_statuses["make_ok"],
+        "model_ok": selected_debug_statuses["model_ok"],
         "engine_ok": selected_statuses["engine_ok"],
         "fuel_control_ok": diesel_control_ok,
+        "vehicle_context_ok": vehicle_context_ok,
         "all_lane_results": lane_results,
     }

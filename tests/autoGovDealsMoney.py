@@ -29,9 +29,11 @@ from core.autoKeywords_GovDeals import (
     MAX_DIESEL_MILES,
     MAX_GAS_BID,
     MAX_GAS_MILES,
+    clean_model_display,
     evaluate_diesel_truck_filter,
     evaluate_gas_fast_flip,
-    find_exclude_keywords,
+    find_hard_exclude_keywords,
+    find_soft_warning_keywords,
     location_matches_alert_state,
     parse_bid_amount,
 )
@@ -145,6 +147,9 @@ def scan_govdeals_once() -> int:
 
                 #-----Table Description. Prepare holders for specs text + miles
                 specs_text_parts = []
+                specs_table_found = False
+                specs_make_value = None
+                specs_model_value = None
                 miles_value = None
 
                 try:
@@ -155,6 +160,7 @@ def scan_govdeals_once() -> int:
                     )
 
                     if rows:
+                        specs_table_found = True
                         print("\nDescription specs:")
                         for row in rows:
                             cols = row.find_elements(By.TAG_NAME, "td")
@@ -168,6 +174,13 @@ def scan_govdeals_once() -> int:
 
                                 # Try to extract numeric miles from Odometer or Miles rows
                                 label_lower = label.lower()
+                                label_key = re.sub(r"[^a-z0-9]+", " ", label_lower).strip()
+
+                                if label_key in ("manufacturer", "make") and value:
+                                    specs_make_value = value
+                                elif label_key == "model" and value:
+                                    specs_model_value = value
+
                                 if label_lower.startswith("odometer") or label_lower.startswith("miles"):
                                     mileage_match = re.search(r"([\d,]+(?:\.\d+)?)", value)
                                     if mileage_match:
@@ -288,15 +301,29 @@ def scan_govdeals_once() -> int:
                     " ".join(specs_text_parts),
                 ])
 
-                gas_eval = evaluate_gas_fast_flip(search_blob)
-                diesel_eval = evaluate_diesel_truck_filter(search_blob)
+                allow_make_model_fallback = not specs_table_found
+                gas_eval = evaluate_gas_fast_flip(
+                    search_blob,
+                    structured_make=specs_make_value,
+                    structured_model=specs_model_value,
+                    allow_make_model_fallback=allow_make_model_fallback,
+                    vehicle_context_text=title,
+                )
+                diesel_eval = evaluate_diesel_truck_filter(
+                    search_blob,
+                    structured_make=specs_make_value,
+                    structured_model=specs_model_value,
+                    allow_make_model_fallback=allow_make_model_fallback,
+                    vehicle_context_text=title,
+                )
                 gas_match = gas_eval["gas_match"]
                 diesel_match = diesel_eval["diesel_match"]
                 target_match = gas_match or diesel_match
                 diesel_priority_level = diesel_eval["diesel_priority_level"] if diesel_match else None
                 specialty_keywords_matched = diesel_eval["specialty_keywords_matched"]
-                matched_excludes = find_exclude_keywords(search_blob)
-                exclude_hit = bool(matched_excludes)
+                hard_exclude_keywords_matched = find_hard_exclude_keywords(search_blob)
+                soft_warning_keywords_matched = find_soft_warning_keywords(search_blob)
+                hard_exclude_hit = bool(hard_exclude_keywords_matched)
 
                 # Missing miles fail open. Gas and diesel lanes keep their own mileage caps.
                 gas_mileage_ok = miles_value is None or miles_value < MAX_GAS_MILES
@@ -326,7 +353,7 @@ def scan_govdeals_once() -> int:
                     mileage_ok is True and
                     close_soon_flag is True and
                     target_match is True and
-                    exclude_hit is False
+                    not hard_exclude_hit
                 )
 
                 if gas_match:
@@ -351,7 +378,7 @@ def scan_govdeals_once() -> int:
                     bid_text = numeric_bid if numeric_bid is not None else "Not found"
                     year_text = debug_eval["year_value"] if debug_eval["year_value"] is not None else "Not found"
                     make_text = debug_eval["make_value"] if debug_eval["make_value"] else "Not found"
-                    model_text = debug_eval["model_value"] if debug_eval["model_value"] else "Not found"
+                    model_text = clean_model_display(debug_eval["model_value"]) or "Not found"
                     engine_text = debug_eval["engine_value"] or debug_eval["engine_text"] or "Not found"
                     title_restriction = "Not found"
                     for spec in specs_text_parts:
@@ -363,7 +390,8 @@ def scan_govdeals_once() -> int:
 
                     diesel_priority_text = diesel_priority_level if diesel_priority_level else "None"
                     specialty_text = ", ".join(specialty_keywords_matched) if specialty_keywords_matched else "None"
-                    exclude_text = ", ".join(matched_excludes) if matched_excludes else "None"
+                    hard_exclude_text = ", ".join(hard_exclude_keywords_matched) if hard_exclude_keywords_matched else "None"
+                    soft_warning_text = ", ".join(soft_warning_keywords_matched) if soft_warning_keywords_matched else "None"
 
                     # SMS body stays compact: no full descriptions or raw specs table.
                     alert_lines = [
@@ -381,7 +409,8 @@ def scan_govdeals_once() -> int:
                         f"Diesel match boolean: {diesel_match}",
                         f"Diesel priority level: {diesel_priority_text}",
                         f"Specialty keywords matched: {specialty_text}",
-                        f"Exclude keywords matched: {exclude_text}",
+                        f"Hard exclude keywords matched: {hard_exclude_text}",
+                        f"Soft warning keywords matched: {soft_warning_text}",
                         f"Link: {href}",
                     ]
                     alert_message = "\n".join(alert_lines)
@@ -400,7 +429,7 @@ def scan_govdeals_once() -> int:
                 allowed_years = f"{debug_rule.year_min}-{debug_rule.year_max}" if debug_rule else "Unknown"
                 debug_year = debug_eval["year_value"] if debug_eval["year_value"] is not None else "Not found"
                 debug_make = debug_eval["make_value"] if debug_eval["make_value"] else "Not found"
-                debug_model = debug_eval["model_value"] if debug_eval["model_value"] else "Not found"
+                debug_model = clean_model_display(debug_eval["model_value"]) or "Not found"
                 debug_engine = debug_eval["engine_value"] or debug_eval["engine_text"] or "Not found"
                 debug_location = location if location else "Not found"
                 debug_bid = numeric_bid if numeric_bid is not None else current_bid
@@ -419,7 +448,8 @@ def scan_govdeals_once() -> int:
                 print(f"  engine_ok: {debug_eval['engine_ok']} | engine={debug_engine}")
                 print(f"  gas_match: {gas_match} | matched_lane={gas_matched_lane}")
                 print(f"  diesel_match: {diesel_match} | matched_lane={diesel_matched_lane}")
-                print(f"  exclude_hit: {exclude_hit} | matched={matched_excludes}")
+                print(f"  hard_exclude_hit: {hard_exclude_hit} | matched={hard_exclude_keywords_matched}")
+                print(f"  soft_warning_keywords_matched: {soft_warning_keywords_matched}")
                 print(f"  close_soon_flag: {close_soon_flag} | minutes_left={debug_minutes} | cap={CLOSE_SOON_MINUTES}")
                 print(f"  should_alert: {should_alert}")
 
