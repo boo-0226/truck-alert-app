@@ -3,6 +3,7 @@
 import html
 import os
 import platform
+import random
 import re
 import sys
 import time
@@ -48,6 +49,8 @@ DETAIL_TIME_LEFT_SELECTOR = "[id^='timeLeftValue']"
 RUN_ONCE = os.getenv("PUBLIC_SURPLUS_RUN_ONCE", "0").strip().lower() in ("1", "true", "yes", "on")
 MAX_TEST_LISTINGS = int(os.getenv("PUBLIC_SURPLUS_MAX_TEST_LISTINGS", "10"))
 LOOP_SLEEP_SECONDS = 300
+LISTING_REQUEST_SLEEP_MIN_SECONDS = 2.0
+LISTING_REQUEST_SLEEP_MAX_SECONDS = 5.0
 
 
 STATE_CODE_TO_NAME = {
@@ -832,6 +835,18 @@ def _print_alert_debug(evaluation: dict):
     print("\n".join(evaluation["alert_debug_lines"]))
 
 
+def _sleep_between_listing_requests(index: int):
+    if index <= 1:
+        return
+
+    delay = random.uniform(
+        LISTING_REQUEST_SLEEP_MIN_SECONDS,
+        LISTING_REQUEST_SLEEP_MAX_SECONDS,
+    )
+    print(f"Pausing {delay:.1f}s before next Public Surplus listing request...")
+    time.sleep(delay)
+
+
 def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
     alerts_sent = 0
     driver, wait = create_driver()
@@ -860,6 +875,7 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
                 print(f"Visiting Public Surplus listing {index}: {listing.get('listing_url')}")
                 print(f"Listing region: {listing.get('region_text') or 'Not found'}")
 
+                _sleep_between_listing_requests(index)
                 driver.get(listing["listing_url"])
                 detail = parse_detail_page(driver, listing)
                 detail_minutes_left = detail.get("minutes_left")

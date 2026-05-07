@@ -1,4 +1,4 @@
-# file: src/core/govdeals_daemon.py
+# file: src/core/autoPublicSurplus_daemon.py
 
 import json
 import logging
@@ -8,25 +8,24 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from tests.autoGovDealsMoney import scan_govdeals_once
+from tests.auto_public_surplus import scan_public_surplus_once
 
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
 COOLDOWN_ON_ERROR_SECONDS = 60    # wait 1 minute after an error
 LOG_DIR = Path("logs")
-LOG_FILE = LOG_DIR / "govdeals_daemon.log"
-HEALTH_FILE = LOG_DIR / "health_govdeals.json"
+LOG_FILE = LOG_DIR / "public_surplus_daemon.log"
+HEALTH_FILE = LOG_DIR / "health_public_surplus.json"
 # ----------------------------
 
 
 def setup_logging() -> logging.Logger:
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    logger = logging.getLogger("govdeals_daemon")
+    logger = logging.getLogger("public_surplus_daemon")
     logger.setLevel(logging.INFO)
 
-    # Small rotating log so disk doesn't fill up.
     handler = logging.handlers.RotatingFileHandler(
         LOG_FILE, maxBytes=1_000_000, backupCount=3
     )
@@ -37,7 +36,6 @@ def setup_logging() -> logging.Logger:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-    # Also log to stdout for local testing and service logs.
     stream = logging.StreamHandler()
     stream.setFormatter(formatter)
     logger.addHandler(stream)
@@ -64,19 +62,30 @@ def write_health(
 
 def main() -> None:
     logger = setup_logging()
-    logger.info("GovDeals daemon starting up")
+    logger.info("Public Surplus daemon starting up")
+    print("\n==============================")
+    print("PUBLIC SURPLUS DAEMON STARTED")
+    print("==============================")
 
     alerts_total = 0
 
     while True:
         loop_start = datetime.now(timezone.utc)
-        logger.info("Starting scan loop at %s", loop_start.isoformat())
-
         alerts_this_run = 0
 
         try:
-            alerts_this_run = scan_govdeals_once()
+            print("\n=== PUBLIC SURPLUS SCAN STARTED ===")
+            logger.info("Public Surplus scan started at %s", loop_start.isoformat())
+
+            alerts_this_run = scan_public_surplus_once(max_test_listings=None)
             alerts_total += alerts_this_run
+
+            print(f"Public Surplus scan completed. Alerts this run: {alerts_this_run}")
+            logger.info(
+                "Public Surplus scan completed. Alerts this run: %s | Total alerts: %s",
+                alerts_this_run,
+                alerts_total,
+            )
 
             write_health(
                 status="ok",
@@ -85,16 +94,13 @@ def main() -> None:
                 alerts_total=alerts_total,
             )
 
-            logger.info(
-                "Scan finished. Alerts this run: %s | Total alerts: %s",
-                alerts_this_run,
-                alerts_total,
-            )
+            print(f"Sleeping for {LOOP_SLEEP_SECONDS} seconds before next Public Surplus scan...")
             logger.info("Sleeping %s seconds before next scan", LOOP_SLEEP_SECONDS)
             time.sleep(LOOP_SLEEP_SECONDS)
 
         except Exception as e:
-            logger.exception("Fatal error during scan loop: %s", e)
+            print(f"Public Surplus scan exception: {e}")
+            logger.exception("Public Surplus scan exception: %s", e)
 
             write_health(
                 status="error",
@@ -103,8 +109,9 @@ def main() -> None:
                 alerts_total=alerts_total,
             )
 
+            print(f"Cooling down for {COOLDOWN_ON_ERROR_SECONDS} seconds after exception...")
             logger.info(
-                "Cooling down for %s seconds after error",
+                "Cooling down for %s seconds after exception",
                 COOLDOWN_ON_ERROR_SECONDS,
             )
             time.sleep(COOLDOWN_ON_ERROR_SECONDS)
