@@ -7,21 +7,24 @@ Virmach ( need to cancel this and digital ocean if cloudzy works)
 cloudzy used github to logon. 
 
 
->>>>>>>>How to check on program in the server. 
+>>>>>>>>How to check on program in the server (******These are ran in two seperate windows now*******). 
 
 Step 1: (Local Laptop) open remote desktop connection or typ mstc and spin up server. 
 
 Step 2: (Server Side-SS) Open powershell and type check status of code first: 
 > cd truck-alert-app
 > & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper
+> & "C:\nssm\nssm-2.24\win64\nssm.exe" status PublicSurplusSniper
 results: SERVICE_RUNNING
 
 Step 3: (SS) Stop the program and check status:
 
 > & "C:\nssm\nssm-2.24\win64\nssm.exe" stop GovDealsSniper
+> & "C:\nssm\nssm-2.24\win64\nssm.exe" stop PublicSurplusSniper
 results: unexpected status SERVICE_STOP_PENDING in response to STOP control. 
 
 > C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" status GovDealsSniper
+> C:\Users\Administrator> & "C:\nssm\nssm-2.24\win64\nssm.exe" status PublicSurplusSniper
 results: SERVICE_STOPPED 
 
 Step 4: (SS) Run the program manual on the server. Make sure you're in the right directory first and run. 

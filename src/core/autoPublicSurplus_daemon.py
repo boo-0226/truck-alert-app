@@ -8,12 +8,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from tests.auto_public_surplus import scan_public_surplus_once
-
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
-COOLDOWN_ON_ERROR_SECONDS = 60    # wait 1 minute after an error
 LOG_DIR = Path("logs")
 LOG_FILE = LOG_DIR / "public_surplus_daemon.log"
 HEALTH_FILE = LOG_DIR / "health_public_surplus.json"
@@ -77,6 +74,8 @@ def main() -> None:
             print("\n=== PUBLIC SURPLUS SCAN STARTED ===")
             logger.info("Public Surplus scan started at %s", loop_start.isoformat())
 
+            from tests.auto_public_surplus import scan_public_surplus_once
+
             alerts_this_run = scan_public_surplus_once(max_test_listings=None)
             alerts_total += alerts_this_run
 
@@ -94,12 +93,8 @@ def main() -> None:
                 alerts_total=alerts_total,
             )
 
-            print(f"Sleeping for {LOOP_SLEEP_SECONDS} seconds before next Public Surplus scan...")
-            logger.info("Sleeping %s seconds before next scan", LOOP_SLEEP_SECONDS)
-            time.sleep(LOOP_SLEEP_SECONDS)
-
         except Exception as e:
-            print(f"Public Surplus scan exception: {e}")
+            print(f"Error: {e}")
             logger.exception("Public Surplus scan exception: %s", e)
 
             write_health(
@@ -109,12 +104,9 @@ def main() -> None:
                 alerts_total=alerts_total,
             )
 
-            print(f"Cooling down for {COOLDOWN_ON_ERROR_SECONDS} seconds after exception...")
-            logger.info(
-                "Cooling down for %s seconds after exception",
-                COOLDOWN_ON_ERROR_SECONDS,
-            )
-            time.sleep(COOLDOWN_ON_ERROR_SECONDS)
+        print("Sleeping 300 seconds...")
+        logger.info("Sleeping %s seconds before next scan", LOOP_SLEEP_SECONDS)
+        time.sleep(LOOP_SLEEP_SECONDS)
 
 
 if __name__ == "__main__":
