@@ -2,22 +2,20 @@
 
 import json
 import logging
-import logging.handlers
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
 try:
-    from .decision_log import cleanup_old_decision_logs
+    from .decision_log import cleanup_legacy_log_files, cleanup_old_decision_logs
 except ImportError:
-    from decision_log import cleanup_old_decision_logs
+    from decision_log import cleanup_legacy_log_files, cleanup_old_decision_logs
 
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
 LOG_DIR = Path("logs")
-LOG_FILE = LOG_DIR / "public_surplus_daemon.log"
 HEALTH_FILE = LOG_DIR / "health_public_surplus.json"
 # ----------------------------
 
@@ -27,20 +25,17 @@ def setup_logging() -> logging.Logger:
 
     logger = logging.getLogger("public_surplus_daemon")
     logger.setLevel(logging.INFO)
+    logger.handlers.clear()
 
-    handler = logging.handlers.RotatingFileHandler(
-        LOG_FILE, maxBytes=1_000_000, backupCount=3
-    )
     formatter = logging.Formatter(
         "%(asctime)s [%(levelname)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
 
     stream = logging.StreamHandler()
     stream.setFormatter(formatter)
     logger.addHandler(stream)
+    logger.propagate = False
 
     return logger
 
@@ -67,6 +62,8 @@ def main() -> None:
     logger.info("Public Surplus daemon starting up")
     deleted_logs = cleanup_old_decision_logs()
     logger.info("Decision log retention cleanup deleted %s old files", deleted_logs)
+    deleted_legacy_logs = cleanup_legacy_log_files()
+    logger.info("Legacy log cleanup deleted %s old files", deleted_legacy_logs)
     print("\n==============================")
     print("PUBLIC SURPLUS DAEMON STARTED")
     print("==============================")

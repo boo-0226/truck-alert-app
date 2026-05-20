@@ -45,9 +45,10 @@ DIGEST_MAX_LINES    = _int_env("DIGEST_MAX_LINES", 10)  # limit lines in SMS
 TWILIO_MESSAGING_SID = os.getenv("TWILIO_MESSAGING_SID", "")
 
 
-# Healthcheck (daily heartbeat SMS)
-HEALTHCHECK_ENABLED = os.getenv("HEALTHCHECK_ENABLED", "1").lower() in ("1","true","yes","y")
-HEALTHCHECK_MINUTES = _int_env("HEALTHCHECK_MINUTES", 24 * 60)  # default: once per day
+# Legacy heartbeat disabled.
+# The daily digest/Daily Check flow is the single daily health notification.
+HEALTHCHECK_ENABLED = False
+HEALTHCHECK_MINUTES = 0
 
 # Separate SMS controls (so digest can send while per-item alerts are muted)
 ALERTS_SMS_ENABLED  = os.getenv("ALERTS_SMS_ENABLED", "0").lower() in ("1","true","yes","y")  # per-vehicle SMS

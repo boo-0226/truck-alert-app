@@ -2,7 +2,6 @@
 
 import json
 import logging
-import logging.handlers
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,16 +10,15 @@ from typing import Optional
 from tests.autoGovDealsMoney import scan_govdeals_once
 
 try:
-    from .decision_log import cleanup_old_decision_logs
+    from .decision_log import cleanup_legacy_log_files, cleanup_old_decision_logs
 except ImportError:
-    from decision_log import cleanup_old_decision_logs
+    from decision_log import cleanup_legacy_log_files, cleanup_old_decision_logs
 
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
 COOLDOWN_ON_ERROR_SECONDS = 60    # wait 1 minute after an error
 LOG_DIR = Path("logs")
-LOG_FILE = LOG_DIR / "govdeals_daemon.log"
 HEALTH_FILE = LOG_DIR / "health_govdeals.json"
 # ----------------------------
 
@@ -30,22 +28,17 @@ def setup_logging() -> logging.Logger:
 
     logger = logging.getLogger("govdeals_daemon")
     logger.setLevel(logging.INFO)
+    logger.handlers.clear()
 
-    # Small rotating log so disk doesn't fill up.
-    handler = logging.handlers.RotatingFileHandler(
-        LOG_FILE, maxBytes=1_000_000, backupCount=3
-    )
     formatter = logging.Formatter(
         "%(asctime)s [%(levelname)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
 
-    # Also log to stdout for local testing and service logs.
     stream = logging.StreamHandler()
     stream.setFormatter(formatter)
     logger.addHandler(stream)
+    logger.propagate = False
 
     return logger
 
@@ -72,6 +65,8 @@ def main() -> None:
     logger.info("GovDeals daemon starting up")
     deleted_logs = cleanup_old_decision_logs()
     logger.info("Decision log retention cleanup deleted %s old files", deleted_logs)
+    deleted_legacy_logs = cleanup_legacy_log_files()
+    logger.info("Legacy log cleanup deleted %s old files", deleted_legacy_logs)
 
     alerts_total = 0
 

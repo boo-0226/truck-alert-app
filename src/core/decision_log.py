@@ -17,6 +17,15 @@ LOG_DIR = PROJECT_ROOT / "logs"
 LOCK_TIMEOUT_SECONDS = 10
 LOCK_STALE_SECONDS = 60
 RETENTION_DAYS = 14
+LEGACY_LOG_PATTERNS = (
+    "govdeals.log",
+    "publicsurplus.log",
+    "public_surplus.log",
+    "multi_*.log",
+    "proxibid_govdeals_*.log",
+    "govdeals_daemon.log.*",
+    "public_surplus_daemon.log.*",
+)
 _last_cleanup_day: str | None = None
 
 CSV_FIELDS = [
@@ -103,6 +112,26 @@ def cleanup_old_decision_logs(retention_days: int = RETENTION_DAYS) -> int:
                 pass
             except OSError as exc:
                 print(f"Could not delete old decision log {path}: {exc}")
+
+    return deleted_count
+
+
+def cleanup_legacy_log_files() -> int:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    deleted_count = 0
+
+    for glob_pattern in LEGACY_LOG_PATTERNS:
+        for path in LOG_DIR.glob(glob_pattern):
+            if path.name.startswith(("decisions_", "daily_report_", "health_")):
+                continue
+
+            try:
+                path.unlink()
+                deleted_count += 1
+            except FileNotFoundError:
+                pass
+            except OSError as exc:
+                print(f"Could not delete legacy log {path}: {exc}")
 
     return deleted_count
 

@@ -84,7 +84,7 @@ def compose_digest(rows: List[Dict]) -> str:
       [Site] Title … City, ST | $X | TL=1h 23m
     """
     if not rows:
-        return "Daily check: no listings collected."
+        return "Daily Check: no listings collected."
 
     # Filter: target-only, time window, price present
     pick = []
@@ -102,7 +102,7 @@ def compose_digest(rows: List[Dict]) -> str:
         pick.append(r)
 
     if not pick:
-        return f"Daily check: no target trucks in next {DIGEST_HOURS}h."
+        return f"Daily Check: no target trucks in next {DIGEST_HOURS}h."
 
     # Sort by soonest end
     pick.sort(key=lambda x: x.get("secs", 1_000_000_000))
@@ -118,7 +118,7 @@ def compose_digest(rows: List[Dict]) -> str:
         tl    = _mmss(r.get("secs"))
         lines.append(f"[{site}] {title} | {city}, {state} | {price} | TL={tl}")
 
-    body = "DAILY TRUCK DIGEST\n" + "\n".join(lines)
+    body = "Daily Check:\n" + "\n".join(lines)
     # hard cap to keep carriers happy
     return (body[:1300] + "…") if len(body) > 1300 else body
 
