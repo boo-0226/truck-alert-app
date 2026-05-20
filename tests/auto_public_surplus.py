@@ -38,6 +38,7 @@ from core.autoKeywords_GovDeals import (
     find_soft_warning_keywords,
     location_matches_alert_state,
 )
+from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert as send_twilio_alert
 
 
@@ -835,6 +836,39 @@ def _print_alert_debug(evaluation: dict):
     print("\n".join(evaluation["alert_debug_lines"]))
 
 
+def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
+    debug_eval = evaluation["debug_eval"]
+    log_decision({
+        "source": "Public Surplus",
+        "url": listing.get("listing_url"),
+        "title": detail.get("title"),
+        "location": detail.get("location") or listing.get("region_text"),
+        "current_bid": evaluation["current_bid"],
+        "minutes_left": evaluation["minutes_left"],
+        "year": evaluation["year_value"],
+        "make": evaluation["make_value"],
+        "model": clean_model_display(evaluation["model_value"]),
+        "engine": evaluation["engine_value"],
+        "mileage": evaluation["miles_value"],
+        "gas_match": evaluation["gas_match"],
+        "diesel_match": evaluation["diesel_match"],
+        "diesel_priority_level": evaluation["diesel_priority_level"],
+        "specialty_keywords_matched": evaluation["specialty_keywords_matched"],
+        "hard_exclude_hit": evaluation["hard_exclude_hit"],
+        "hard_exclude_keywords_matched": evaluation["hard_exclude_keywords_matched"],
+        "soft_warning_keywords_matched": evaluation["soft_warning_keywords_matched"],
+        "location_valid": evaluation["location_valid"],
+        "bid_under_limit": evaluation["bid_under_limit"],
+        "mileage_ok": evaluation["mileage_ok"],
+        "close_soon_flag": evaluation["close_soon_flag"],
+        "should_alert": evaluation["should_alert"],
+        "year_ok": debug_eval["year_ok"],
+        "make_ok": debug_eval["make_ok"],
+        "model_ok": debug_eval["model_ok"],
+        "engine_ok": debug_eval["engine_ok"],
+    })
+
+
 def _sleep_between_listing_requests(index: int):
     if index <= 1:
         return
@@ -883,6 +917,9 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
                 print(f"Detail time left: {detail.get('time_left_text') or 'Not found'}")
                 print(f"Current bid: {_display_current_bid(detail.get('current_bid'))}")
 
+                evaluation = evaluate_truck(listing, detail)
+                _log_public_surplus_decision(listing, detail, evaluation)
+
                 if detail_minutes_left is not None and detail_minutes_left > CLOSE_SOON_MINUTES:
                     print(
                         "Stopping scan because detail page countdown is beyond "
@@ -891,8 +928,6 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
                         f"({_display_minutes(detail_minutes_left)} minutes)"
                     )
                     break
-
-                evaluation = evaluate_truck(listing, detail)
 
                 _print_alert_debug(evaluation)
 

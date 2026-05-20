@@ -8,6 +8,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
+try:
+    from .decision_log import cleanup_old_decision_logs
+except ImportError:
+    from decision_log import cleanup_old_decision_logs
+
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
@@ -60,6 +65,8 @@ def write_health(
 def main() -> None:
     logger = setup_logging()
     logger.info("Public Surplus daemon starting up")
+    deleted_logs = cleanup_old_decision_logs()
+    logger.info("Decision log retention cleanup deleted %s old files", deleted_logs)
     print("\n==============================")
     print("PUBLIC SURPLUS DAEMON STARTED")
     print("==============================")

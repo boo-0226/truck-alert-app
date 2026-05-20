@@ -10,6 +10,11 @@ from typing import Optional
 
 from tests.autoGovDealsMoney import scan_govdeals_once
 
+try:
+    from .decision_log import cleanup_old_decision_logs
+except ImportError:
+    from decision_log import cleanup_old_decision_logs
+
 
 # ---------- CONFIG ----------
 LOOP_SLEEP_SECONDS = 300          # 5 minutes between scans
@@ -65,6 +70,8 @@ def write_health(
 def main() -> None:
     logger = setup_logging()
     logger.info("GovDeals daemon starting up")
+    deleted_logs = cleanup_old_decision_logs()
+    logger.info("Decision log retention cleanup deleted %s old files", deleted_logs)
 
     alerts_total = 0
 

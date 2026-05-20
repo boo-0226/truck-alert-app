@@ -50,9 +50,12 @@ Step 2(Server side): Now pull on server side. pull up powershell
 
 Step 3(Recommend running manual live first)
 
+(*****Run in separate windows******)
 >C:\Users\Administrator\truck-alert-app> python -m src.core.autoGovDeals_daemon
+>C:\Users\Administrator\truck-alert-app> python -m src.core.PublicSurplusSniper
+
  
 >ctrl + c 
 
-Step 4: (SS) Spin it up in the background. 
+Step 4: (SS) Spin it up in the background (In the background it handles running both seperate already manually i need to run in sepearte windows). 
 > C:\Users\Administrator\truck-alert-app> & "C:\nssm\nssm-2.24\win64\nssm.exe" start GovDealsSniper

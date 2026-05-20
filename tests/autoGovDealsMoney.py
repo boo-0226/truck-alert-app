@@ -37,6 +37,7 @@ from core.autoKeywords_GovDeals import (
     location_matches_alert_state,
     parse_bid_amount,
 )
+from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert
 
 
@@ -437,6 +438,36 @@ def scan_govdeals_once() -> int:
                 debug_minutes = f"{minutes_left:.1f}" if minutes_left is not None else "Not found"
                 gas_matched_lane = gas_eval["matched_lane"] if gas_eval["matched_lane"] else "None"
                 diesel_matched_lane = diesel_eval["matched_lane"] if diesel_eval["matched_lane"] else "None"
+
+                log_decision({
+                    "source": "GovDeals",
+                    "url": href,
+                    "title": title,
+                    "location": location,
+                    "current_bid": numeric_bid,
+                    "minutes_left": minutes_left,
+                    "year": debug_eval["year_value"],
+                    "make": debug_eval["make_value"],
+                    "model": clean_model_display(debug_eval["model_value"]),
+                    "engine": debug_eval["engine_value"] or debug_eval["engine_text"],
+                    "mileage": miles_value,
+                    "gas_match": gas_match,
+                    "diesel_match": diesel_match,
+                    "diesel_priority_level": diesel_priority_level,
+                    "specialty_keywords_matched": specialty_keywords_matched,
+                    "hard_exclude_hit": hard_exclude_hit,
+                    "hard_exclude_keywords_matched": hard_exclude_keywords_matched,
+                    "soft_warning_keywords_matched": soft_warning_keywords_matched,
+                    "location_valid": location_valid,
+                    "bid_under_limit": bid_under_limit,
+                    "mileage_ok": mileage_ok,
+                    "close_soon_flag": close_soon_flag,
+                    "should_alert": should_alert,
+                    "year_ok": debug_eval["year_ok"],
+                    "make_ok": debug_eval["make_ok"],
+                    "model_ok": debug_eval["model_ok"],
+                    "engine_ok": debug_eval["engine_ok"],
+                })
 
                 print("\n[ALERT DEBUG]")
                 print(f"  location_valid: {location_valid} | location={debug_location}")
