@@ -53,6 +53,7 @@ CSV_FIELDS = [
     "mileage_ok",
     "close_soon_flag",
     "should_alert",
+    "classification",
     "block_reason",
 ]
 
@@ -219,6 +220,29 @@ def _format_value(value: Any) -> str:
     return str(value)
 
 
+def _is_near_miss(record: dict[str, Any]) -> bool:
+    return (
+        not _as_bool(record.get("should_alert"))
+        and (_as_bool(record.get("gas_match")) or _as_bool(record.get("diesel_match")))
+        and 1 <= _failed_final_filter_count(record) <= 2
+    )
+
+
+def classify_decision(record: dict[str, Any]) -> str:
+    if _as_bool(record.get("should_alert")):
+        return "ALERT"
+    if _is_near_miss(record):
+        return "WATCHLIST"
+    return "REJECT"
+
+
+def _row_classification(row: dict[str, Any]) -> str:
+    classification = str(row.get("classification") or "").strip().upper()
+    if classification in ("ALERT", "WATCHLIST", "REJECT"):
+        return classification
+    return classify_decision(row)
+
+
 def compute_block_reasons(record: dict[str, Any]) -> list[str]:
     if _as_bool(record.get("should_alert")):
         return ["alert_sent"]
@@ -264,7 +288,32 @@ def _normalized_row(record: dict[str, Any]) -> dict[str, str]:
     row = dict(record)
     row.setdefault("timestamp", datetime.now().isoformat(timespec="seconds"))
     row["block_reason"] = ";".join(compute_block_reasons(row))
+    row["classification"] = classify_decision(row)
     return {field: _format_value(row.get(field)) for field in CSV_FIELDS}
+
+
+def _ensure_csv_schema(path: Path) -> None:
+    if not path.exists() or path.stat().st_size == 0:
+        return
+
+    with path.open("r", newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        if reader.fieldnames == CSV_FIELDS:
+            return
+        existing_rows = list(reader)
+
+    tmp_path = path.with_suffix(".schema.tmp")
+    with tmp_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+        for existing_row in existing_rows:
+            row = dict(existing_row)
+            if not row.get("block_reason"):
+                row["block_reason"] = ";".join(compute_block_reasons(row))
+            row["classification"] = classify_decision(row)
+            writer.writerow({field: _format_value(row.get(field)) for field in CSV_FIELDS})
+
+    tmp_path.replace(path)
 
 
 def log_decision(record: dict[str, Any]) -> None:
@@ -276,13 +325,15 @@ def log_decision(record: dict[str, Any]) -> None:
 
         with _daily_log_lock(day_key):
             path = _csv_path(day_key)
-            file_exists = path.exists()
+            if path.exists():
+                _ensure_csv_schema(path)
+            file_has_rows = path.exists() and path.stat().st_size > 0
 
             for attempt in range(3):
                 try:
                     with path.open("a", newline="", encoding="utf-8") as handle:
                         writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
-                        if not file_exists:
+                        if not file_has_rows:
                             writer.writeheader()
                         writer.writerow(row)
                     break
@@ -334,6 +385,7 @@ def _near_miss_sort_key(row: dict[str, str]) -> tuple[float, float, str]:
 
 
 def _listing_line(row: dict[str, str]) -> str:
+    classification = _row_classification(row)
     title = row.get("title") or "Untitled"
     source = row.get("source") or "Unknown"
     bid = row.get("current_bid") or "Not found"
@@ -341,7 +393,7 @@ def _listing_line(row: dict[str, str]) -> str:
     location = row.get("location") or "Not found"
     reasons = row.get("block_reason") or "None"
     url = row.get("url") or ""
-    return f"- [{source}] {title} | bid={bid} | minutes={minutes} | location={location} | reasons={reasons} | {url}"
+    return f"- [{classification}] [{source}] {title} | bid={bid} | minutes={minutes} | location={location} | reasons={reasons} | {url}"
 
 
 def _reason_counts(rows: list[dict[str, str]]) -> Counter:
@@ -352,12 +404,17 @@ def _reason_counts(rows: list[dict[str, str]]) -> Counter:
 
 
 def _summary_body(rows: list[dict[str, str]]) -> list[str]:
-    alerts = [row for row in rows if _as_bool(row.get("should_alert"))]
+    classification_counts = Counter(_row_classification(row) for row in rows)
+    alerts = classification_counts["ALERT"]
     reason_counts = _reason_counts(rows)
 
     lines = [
         f"total listings scanned: {len(rows)}",
-        f"total alerts sent: {len(alerts)}",
+        f"total alerts sent: {alerts}",
+        "count by classification:",
+        f"- ALERT: {classification_counts['ALERT']}",
+        f"- WATCHLIST: {classification_counts['WATCHLIST']}",
+        f"- REJECT: {classification_counts['REJECT']}",
         "count by block_reason:",
     ]
 
@@ -374,15 +431,9 @@ def update_daily_report(day_key: str | None = None) -> None:
     day_key = day_key or _today_key()
     rows = _read_rows(day_key)
 
-    alerts = [row for row in rows if _as_bool(row.get("should_alert"))]
-    near_misses = [
-        row
-        for row in rows
-        if not _as_bool(row.get("should_alert"))
-        and (_as_bool(row.get("gas_match")) or _as_bool(row.get("diesel_match")))
-        and 1 <= _failed_final_filter_count(row) <= 2
-    ]
-    near_misses = sorted(near_misses, key=_near_miss_sort_key)[:20]
+    alerts = [row for row in rows if _row_classification(row) == "ALERT"]
+    watchlist = [row for row in rows if _row_classification(row) == "WATCHLIST"]
+    watchlist = sorted(watchlist, key=_near_miss_sort_key)[:20]
     govdeals_rows = [row for row in rows if row.get("source") == "GovDeals"]
     public_surplus_rows = [row for row in rows if row.get("source") == "Public Surplus"]
 
@@ -405,9 +456,9 @@ def update_daily_report(day_key: str | None = None) -> None:
         lines.append("- none")
 
     lines.extend(["", "5. Near Misses"])
-    lines.append("top 20 near misses:")
-    if near_misses:
-        lines.extend(_listing_line(row) for row in near_misses)
+    lines.append("top 20 watchlist near misses:")
+    if watchlist:
+        lines.extend(_listing_line(row) for row in watchlist)
     else:
         lines.append("- none")
 
