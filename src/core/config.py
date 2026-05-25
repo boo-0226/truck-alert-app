@@ -34,7 +34,7 @@ TWILIO_TOKEN        = os.getenv("TWILIO_TOKEN", "")
 TWILIO_FROM         = os.getenv("TWILIO_FROM", "")
 ALERT_TO            = os.getenv("ALERT_TO", "")
 
-# Daily digest (SMS list of upcoming trucks)
+# Daily Check (single SMS health summary for both scrapers)
 DIGEST_ENABLED      = os.getenv("DIGEST_ENABLED", "1").lower() in ("1","true","yes","y")
 DIGEST_LOCAL_HOUR   = _int_env("DIGEST_LOCAL_HOUR", 9)  # send after this local hour
 DIGEST_HOURS        = _int_env("DIGEST_HOURS", 48)      # list items ending within next N hours

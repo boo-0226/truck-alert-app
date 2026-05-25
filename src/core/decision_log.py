@@ -18,9 +18,6 @@ LOCK_TIMEOUT_SECONDS = 10
 LOCK_STALE_SECONDS = 60
 RETENTION_DAYS = 14
 LEGACY_LOG_PATTERNS = (
-    "govdeals.log",
-    "publicsurplus.log",
-    "public_surplus.log",
     "multi_*.log",
     "proxibid_govdeals_*.log",
     "govdeals_daemon.log.*",

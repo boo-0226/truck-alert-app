@@ -80,9 +80,9 @@ if __name__ == "__main__":
                 if DIGEST_ENABLED:
                     sent = try_send_digest(rows, DIGEST_LOCAL_HOUR)
                     if sent:
-                        print("Daily digest SMS sent.")
+                        print("Daily Check SMS sent.")
             except Exception as e:
-                print(f"Digest send failed: {e}")
+                print(f"Daily Check send failed: {e}")
 
             sleep_secs = BASE_SLEEP
             if isinstance(soonest, int):

@@ -58,8 +58,8 @@ LOT_ID_RE   = re.compile(r"[?&]lot=(\d+)")
 
 # ----------------- helpers -----------------
 
-def _get(url, params=None, timeout=20):
-    r = requests.get(url, headers=HEADERS, params=params, timeout=timeout)
+def _get(url, params=None):
+    r = requests.get(url, headers=HEADERS, params=params, timeout=30)
     r.raise_for_status()
     return r
 

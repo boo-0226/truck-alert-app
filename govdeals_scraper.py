@@ -349,7 +349,7 @@ def run_cycle(pages, page_delay, alerts_enabled):
         payload = build_payload(page=page)
         print(f"🔎 Requesting page {page} from maestro.lqdt1.com …")
         try:
-            r = requests.post(URL, headers=headers, json=payload, timeout=15)
+            r = requests.post(URL, headers=headers, json=payload, timeout=30)
         except requests.exceptions.RequestException as e:
             print(f"⚠️ Page {page}: network error: {e}")
             break

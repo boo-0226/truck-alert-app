@@ -143,7 +143,7 @@ def _parse_fragment(html: str) -> List[Dict]:
 
 def _fetch_html(url: str) -> Optional[str]:
     try:
-        r = requests.get(url, headers=_headers(), timeout=20)
+        r = requests.get(url, headers=_headers(), timeout=30)
         if r.status_code != 200:
             dprint(f"[Proxibid] HTTP {r.status_code} for {url}")
             return None

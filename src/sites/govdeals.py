@@ -351,10 +351,10 @@ def fetch_listings(pages: int | None = None,
     while page <= max_pages:
         # request (with 400 retry fallback you already added)
         try:
-            r = requests.post(URL, headers=headers, json=build_payload(page, use_category=True), timeout=15)
+            r = requests.post(URL, headers=headers, json=build_payload(page, use_category=True), timeout=30)
             if r.status_code == 400:
                 dprint("[GD] 400 with categoryIds — retrying without categoryIds")
-                r = requests.post(URL, headers=headers, json=build_payload(page, use_category=False), timeout=15)
+                r = requests.post(URL, headers=headers, json=build_payload(page, use_category=False), timeout=30)
         except requests.exceptions.RequestException as e:
             dprint(f"[GD] net error page {page}: {e}")
             add_error("GovDeals", "request", f"network error page {page}: {e}")

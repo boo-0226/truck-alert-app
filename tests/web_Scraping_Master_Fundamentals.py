@@ -10,7 +10,7 @@ headers = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=headers, timeout=30)
 
 t = response.text
 
