@@ -141,14 +141,12 @@ STRUCTURED_FIELD_ALIASES = {
 def create_driver():
     system = platform.system().lower()
     options = Options()
-    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--headless=new")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
-    headless_env = os.getenv("PUBLIC_SURPLUS_HEADLESS", "").strip().lower()
-    run_headless = system != "windows" or headless_env in ("1", "true", "yes", "on")
-    if run_headless:
-        options.add_argument("--headless=new")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--remote-debugging-port=0")
 
     timeout = 20 if system == "windows" else 30
     driver = webdriver.Chrome(options=options)
@@ -883,10 +881,11 @@ def _sleep_between_listing_requests(index: int):
 
 def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
     alerts_sent = 0
-    driver, wait = create_driver()
+    driver = None
     seen_this_run = set()
 
     try:
+        driver, wait = create_driver()
         driver.get(BASE_URL)
         wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         listings = parse_listing_cards(driver)
@@ -946,7 +945,8 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
                 continue
 
     finally:
-        driver.quit()
+        if driver is not None:
+            driver.quit()
 
     return alerts_sent
 

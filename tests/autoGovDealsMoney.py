@@ -54,18 +54,23 @@ def create_driver():
 
     if system == "windows":
         options = Options()
-        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--headless=new")
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
-        # options.add_argument("--headless=new")  # optional
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--remote-debugging-port=0")
         timeout = 20
 
     else:
         # Linux server
         options = Options()
         options.add_argument("--headless=new")
+        options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--remote-debugging-port=0")
         timeout = 30
 
     driver = webdriver.Chrome(options=options)
@@ -78,9 +83,11 @@ def create_driver():
 def scan_govdeals_once() -> int:
 
     alerts_sent = 0
-    driver, wait = create_driver()
+    driver = None
 
     try:
+        driver, wait = create_driver()
+
         #----- Links. Go into gov deals site it is transportaion and closing soon so it is in order from closing soon to closing later
         driver.get("https://www.govdeals.com/en/transportation/filters?so=asc&sf=auctionclose") 
 
@@ -503,7 +510,8 @@ def scan_govdeals_once() -> int:
 
     finally:
 
-        driver.quit() # Need this to quit or it will stay running
+        if driver is not None:
+            driver.quit() # Need this to quit or it will stay running
     
 
     return alerts_sent
