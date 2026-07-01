@@ -171,6 +171,117 @@ def parse_bid_cents(value):
             return None
     return None
 
+
+MILEAGE_NUMBER_RE = re.compile(r"(\d[\d,]*(?:\.\d+)?)")
+MILEAGE_DESC_PATTERNS = [
+    re.compile(r"\blast\s+known\s+mileage\s*[-:#]?\s*(\d[\d,]*(?:\.\d+)?)", re.IGNORECASE),
+    re.compile(r"\blast\s+reported\s+odometer\s+(?:was\s+)?(\d[\d,]*(?:\.\d+)?)", re.IGNORECASE),
+    re.compile(
+        r"\bodometer(?:\s+(?:reading|miles|mi))?\s*"
+        r"(?:is|was|reads|shows|showing|listed\s+as|[-:#])?\s*"
+        r"(\d[\d,]*(?:\.\d+)?)",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bmileage\s*"
+        r"(?:is|was|reads|shows|showing|listed\s+as|[-:#])?\s*"
+        r"(\d[\d,]*(?:\.\d+)?)",
+        re.IGNORECASE,
+    ),
+]
+
+
+def parse_mileage_number(value):
+    if value in (None, ""):
+        return None
+    if isinstance(value, (int, float)):
+        if value < 0:
+            return None
+        return int(float(value))
+
+    match = MILEAGE_NUMBER_RE.search(str(value).strip())
+    if not match:
+        return None
+
+    try:
+        return int(float(match.group(1).replace(",", "")))
+    except (TypeError, ValueError):
+        return None
+
+
+def iter_attribute_group_values(obj):
+    if isinstance(obj, list):
+        for item in obj:
+            yield from iter_attribute_group_values(item)
+        return
+
+    if not isinstance(obj, dict):
+        return
+
+    label = (
+        obj.get("label")
+        or obj.get("name")
+        or obj.get("displayName")
+        or obj.get("attributeName")
+        or obj.get("assetAttributeName")
+    )
+    value = (
+        obj.get("value")
+        or obj.get("displayValue")
+        or obj.get("attributeValue")
+        or obj.get("assetAttributeValue")
+    )
+    if label is not None:
+        yield label, value
+
+    for key in (
+        "attributes",
+        "assetAttributes",
+        "attributeValues",
+        "values",
+        "items",
+        "children",
+        "assetAttributeGroupValues",
+    ):
+        if key in obj:
+            yield from iter_attribute_group_values(obj.get(key))
+
+
+def is_odometer_label(label):
+    normalized = re.sub(r"[^a-z0-9]+", " ", str(label or "").lower()).strip()
+    return normalized in {"odometer", "odometer reading", "odometer miles"}
+
+
+def parse_mileage_from_asset_long_desc(text):
+    if not isinstance(text, str) or not text.strip():
+        return None
+
+    for pattern in MILEAGE_DESC_PATTERNS:
+        match = pattern.search(text)
+        if match:
+            return parse_mileage_number(match.group(1))
+
+    return None
+
+
+def extract_mileage(item):
+    mileage = parse_mileage_number(item.get("meterCount"))
+
+    if mileage is None:
+        for label, value in iter_attribute_group_values(item.get("assetAttributeGroups") or []):
+            if is_odometer_label(label):
+                mileage = parse_mileage_number(value)
+                if mileage is not None:
+                    break
+
+    if mileage is None:
+        long_desc = item.get("assetLongDesc") or item.get("assetLongDescription") or ""
+        mileage = parse_mileage_from_asset_long_desc(long_desc)
+
+    mileage_display = f"{mileage:,}" if mileage is not None else "Not found"
+    return mileage, mileage_display
+
+
 def seconds_remaining(item) -> typing.Optional[int]:
     """Return seconds remaining or None."""
     # 1) direct seconds fields
@@ -403,6 +514,7 @@ def run_cycle(pages, page_delay, alerts_enabled):
         desc  = item.get("assetLongDescription", "") or ""
         cat   = item.get("categoryName", "") or ""
         text  = " ".join([title, desc, cat]).lower()
+        mileage, mileage_display = extract_mileage(item)
 
         # price
         bid_cents = None
@@ -436,6 +548,9 @@ def run_cycle(pages, page_delay, alerts_enabled):
             "asset_id": asset_id,
             "title": title, "city": city, "state": state,
             "bid_cents": bid_cents, "secs": secs,
+            "mileage": mileage,
+            "mileage_display": mileage_display,
+            "mileage_ok": True,
             "display": f"[{idx}] {title} | {city}, {state} | 💰 {format_dollars(bid_cents)} | ⏰ {end_human} | id={asset_id}"
         }
 

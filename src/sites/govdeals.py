@@ -1,6 +1,7 @@
 # file path: /src/sites/govdeals.py
 # Purpose: adapter for GovDeals; returns normalized listings
 import os
+import re
 import uuid, random, time as _time, requests
 from datetime import timezone, datetime, timedelta
 from typing import List, Dict, Optional, Any
@@ -308,6 +309,117 @@ def _parse_items_container(data: Dict[str, Any]) -> List[Dict]:
                     return items
     return []
 
+
+_MILEAGE_NUMBER_RE = re.compile(r"(\d[\d,]*(?:\.\d+)?)")
+_MILEAGE_DESC_PATTERNS = [
+    re.compile(r"\blast\s+known\s+mileage\s*[-:#]?\s*(\d[\d,]*(?:\.\d+)?)", re.IGNORECASE),
+    re.compile(r"\blast\s+reported\s+odometer\s+(?:was\s+)?(\d[\d,]*(?:\.\d+)?)", re.IGNORECASE),
+    re.compile(
+        r"\bodometer(?:\s+(?:reading|miles|mi))?\s*"
+        r"(?:is|was|reads|shows|showing|listed\s+as|[-:#])?\s*"
+        r"(\d[\d,]*(?:\.\d+)?)",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bmileage\s*"
+        r"(?:is|was|reads|shows|showing|listed\s+as|[-:#])?\s*"
+        r"(\d[\d,]*(?:\.\d+)?)",
+        re.IGNORECASE,
+    ),
+]
+
+
+def _parse_mileage_number(value: Any) -> Optional[int]:
+    if value in (None, ""):
+        return None
+    if isinstance(value, (int, float)):
+        if value < 0:
+            return None
+        return int(float(value))
+
+    match = _MILEAGE_NUMBER_RE.search(str(value).strip())
+    if not match:
+        return None
+
+    try:
+        return int(float(match.group(1).replace(",", "")))
+    except (TypeError, ValueError):
+        return None
+
+
+def _iter_attribute_group_values(obj: Any):
+    if isinstance(obj, list):
+        for item in obj:
+            yield from _iter_attribute_group_values(item)
+        return
+
+    if not isinstance(obj, dict):
+        return
+
+    label = _first(
+        obj.get("label"),
+        obj.get("name"),
+        obj.get("displayName"),
+        obj.get("attributeName"),
+        obj.get("assetAttributeName"),
+    )
+    value = _first(
+        obj.get("value"),
+        obj.get("displayValue"),
+        obj.get("attributeValue"),
+        obj.get("assetAttributeValue"),
+    )
+    if label is not None:
+        yield label, value
+
+    for key in (
+        "attributes",
+        "assetAttributes",
+        "attributeValues",
+        "values",
+        "items",
+        "children",
+        "assetAttributeGroupValues",
+    ):
+        if key in obj:
+            yield from _iter_attribute_group_values(obj.get(key))
+
+
+def _is_odometer_label(label: Any) -> bool:
+    normalized = re.sub(r"[^a-z0-9]+", " ", str(label or "").lower()).strip()
+    return normalized in {"odometer", "odometer reading", "odometer miles"}
+
+
+def _parse_mileage_from_asset_long_desc(text: Any) -> Optional[int]:
+    if not isinstance(text, str) or not text.strip():
+        return None
+
+    for pattern in _MILEAGE_DESC_PATTERNS:
+        match = pattern.search(text)
+        if match:
+            return _parse_mileage_number(match.group(1))
+
+    return None
+
+
+def _extract_mileage(item: Dict[str, Any]) -> tuple[Optional[int], str]:
+    mileage = _parse_mileage_number(item.get("meterCount"))
+
+    if mileage is None:
+        for label, value in _iter_attribute_group_values(item.get("assetAttributeGroups") or []):
+            if _is_odometer_label(label):
+                mileage = _parse_mileage_number(value)
+                if mileage is not None:
+                    break
+
+    if mileage is None:
+        long_desc = item.get("assetLongDesc") or item.get("assetLongDescription") or ""
+        mileage = _parse_mileage_from_asset_long_desc(long_desc)
+
+    mileage_display = f"{mileage:,}" if mileage is not None else "Not found"
+    return mileage, mileage_display
+
+
 # ---------- main fetch + normalize ----------
 
 SEVEN_DAYS_DEFAULT = 7 * 86400
@@ -419,6 +531,7 @@ def normalize(items: List[Dict]) -> List[Dict]:
         cat   = (item.get("categoryName") or "").strip()
         city  = item.get("locationCity") or "Unknown"
         state = item.get("locationState") or ""
+        mileage, mileage_display = _extract_mileage(item)
 
         # ----- price -----
         bid = None
@@ -466,6 +579,9 @@ def normalize(items: List[Dict]) -> List[Dict]:
             "bid_cents": bid,
             "secs": secs,
             "url": url,
+            "mileage": mileage,
+            "mileage_display": mileage_display,
+            "mileage_ok": True,
             "engine_67": is_engine_67(text),
             "blocked": blocked_ld or (not target),
             "target": target and not blocked_ld,
