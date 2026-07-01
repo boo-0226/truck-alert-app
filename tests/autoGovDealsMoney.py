@@ -43,6 +43,9 @@ from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert
 
 
+GOVDEALS_URL = "https://www.govdeals.com/en/transportation/texas/filters?stateName=Louisiana%5EAlabama%5ETennessee%5EArkansas%5EMississippi%5EMissouri%5EOklahoma&so=asc&sf=auctionclose"
+GOVDEALS_LISTING_SELECTOR = "a[name='lnkAssetDetails'][href*='/asset/']"
+
 
 # This function is for if keywords appear in the check then mark as true. 
 def contains_any(text: str, keywords: set) -> bool:
@@ -57,7 +60,6 @@ def create_driver():
     options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 
     chrome_args = [
-        "--headless=new",
         "--disable-gpu",
         "--no-sandbox",
         "--disable-dev-shm-usage",
@@ -70,6 +72,9 @@ def create_driver():
         "--no-first-run",
         "--disable-default-apps",
     ]
+    if system != "windows":
+        options.add_argument("--headless=new")
+
     for arg in chrome_args:
         options.add_argument(arg)
 
@@ -109,21 +114,51 @@ def scan_govdeals_once() -> int:
         driver, wait = create_driver()
 
         #----- Links. Go into gov deals site it is transportaion and closing soon so it is in order from closing soon to closing later
-        driver.get("https://www.govdeals.com/en/transportation/filters?so=asc&sf=auctionclose") 
+        driver.get(GOVDEALS_URL)
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+        wait.until(
+            lambda d: "access denied" in (d.title or "").lower()
+            or d.find_elements(By.CSS_SELECTOR, GOVDEALS_LISTING_SELECTOR)
+        )
+
+        link_elems = driver.find_elements(By.CSS_SELECTOR, GOVDEALS_LISTING_SELECTOR)
+        page_title = driver.title.strip()
 
         #Links. This finds all the links/href first and throw it into an array. 
-        link_elems = wait.until(EC.presence_of_all_elements_located((By.XPATH, "(//a[@name='lnkAssetDetails'])"))) # Pulls in the wait for 15 and then it is saying to use the xpath and i give the exmaple which is the tag with name lnkAssetDetails
-        hrefs = [a.get_attribute("href") for a in link_elems] # Need this the get the actually href/link
+        hrefs = []
+        skipped_online_auction_hrefs = []
+        seen = set()
+        skipped_seen = set()
 
         #Links. Remove duplicates but keep order
-        seen = set()
-        unique_hrefs = []
-        for url in hrefs:
-            if url not in seen:
-                seen.add(url)
-                unique_hrefs.append(url)
+        for link in link_elems:
+            href = link.get_attribute("href")
+            if not href:
+                continue
 
-        hrefs = unique_hrefs
+            link_text = (link.text or "").strip()
+            if link_text.upper() == "ONLINE AUCTION":
+                if href not in seen and href not in skipped_seen:
+                    skipped_seen.add(href)
+                    skipped_online_auction_hrefs.append(href)
+                continue
+
+            if href not in seen:
+                seen.add(href)
+                hrefs.append(href)
+
+        for href in skipped_online_auction_hrefs:
+            if href not in seen:
+                seen.add(href)
+                hrefs.append(href)
+
+        print(f"GovDeals current_url: {driver.current_url}")
+        print(f"GovDeals title: {page_title}")
+        print(f"GovDeals listing count: {len(hrefs)}")
+
+        if "access denied" in page_title.lower():
+            print("GovDeals Access Denied page detected. Returning 0 alerts for this scan.")
+            return 0
 
         print(f"Found {len(hrefs)} unique listing links on this page")# print out the href/link count
 
