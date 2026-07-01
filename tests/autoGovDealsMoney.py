@@ -3,6 +3,8 @@
 import os
 import sys
 import platform
+import shutil
+import tempfile
 import time
 import re
 import html
@@ -51,32 +53,50 @@ def contains_any(text: str, keywords: set) -> bool:
 # Create a Chrome driver + wait object.
 def create_driver():
     system = platform.system().lower()
+    options = Options()
+    options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-    if system == "windows":
-        options = Options()
-        options.add_argument("--headless=new")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1920,1080")
-        options.add_argument("--remote-debugging-port=0")
-        timeout = 20
+    chrome_args = [
+        "--headless=new",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-size=1920,1080",
+        "--remote-debugging-port=0",
+        "--disable-extensions",
+        "--disable-background-networking",
+        "--disable-sync",
+        "--metrics-recording-only",
+        "--no-first-run",
+        "--disable-default-apps",
+    ]
+    for arg in chrome_args:
+        options.add_argument(arg)
 
-    else:
-        # Linux server
-        options = Options()
-        options.add_argument("--headless=new")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1920,1080")
-        options.add_argument("--remote-debugging-port=0")
-        timeout = 30
+    profile_dir = tempfile.mkdtemp(prefix="truck_sniper_chrome_")
+    options.add_argument(f"--user-data-dir={profile_dir}")
 
-    driver = webdriver.Chrome(options=options)
+    timeout = 20 if system == "windows" else 30
+
+    try:
+        driver = webdriver.Chrome(options=options)
+    except Exception:
+        shutil.rmtree(profile_dir, ignore_errors=True)
+        raise
+
+    driver._truck_sniper_profile_dir = profile_dir
 
     wait = WebDriverWait(driver, timeout)
     return driver, wait
+
+
+def _quit_driver(driver):
+    profile_dir = getattr(driver, "_truck_sniper_profile_dir", None)
+    try:
+        driver.quit()
+    finally:
+        if profile_dir:
+            shutil.rmtree(profile_dir, ignore_errors=True)
 
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
@@ -511,7 +531,7 @@ def scan_govdeals_once() -> int:
     finally:
 
         if driver is not None:
-            driver.quit() # Need this to quit or it will stay running
+            _quit_driver(driver) # Need this to quit or it will stay running
     
 
     return alerts_sent

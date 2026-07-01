@@ -5,7 +5,9 @@ import os
 import platform
 import random
 import re
+import shutil
 import sys
+import tempfile
 import time
 from typing import Any, Optional
 from urllib.parse import parse_qs, urljoin, urlparse
@@ -141,17 +143,48 @@ STRUCTURED_FIELD_ALIASES = {
 def create_driver():
     system = platform.system().lower()
     options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--remote-debugging-port=0")
+    options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+    chrome_args = [
+        "--headless=new",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-size=1920,1080",
+        "--remote-debugging-port=0",
+        "--disable-extensions",
+        "--disable-background-networking",
+        "--disable-sync",
+        "--metrics-recording-only",
+        "--no-first-run",
+        "--disable-default-apps",
+    ]
+    for arg in chrome_args:
+        options.add_argument(arg)
+
+    profile_dir = tempfile.mkdtemp(prefix="truck_sniper_chrome_")
+    options.add_argument(f"--user-data-dir={profile_dir}")
 
     timeout = 20 if system == "windows" else 30
-    driver = webdriver.Chrome(options=options)
+
+    try:
+        driver = webdriver.Chrome(options=options)
+    except Exception:
+        shutil.rmtree(profile_dir, ignore_errors=True)
+        raise
+
+    driver._truck_sniper_profile_dir = profile_dir
     wait = WebDriverWait(driver, timeout)
     return driver, wait
+
+
+def _quit_driver(driver):
+    profile_dir = getattr(driver, "_truck_sniper_profile_dir", None)
+    try:
+        driver.quit()
+    finally:
+        if profile_dir:
+            shutil.rmtree(profile_dir, ignore_errors=True)
 
 
 def send_alert(message: str):
@@ -946,7 +979,7 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
 
     finally:
         if driver is not None:
-            driver.quit()
+            _quit_driver(driver)
 
     return alerts_sent
 
