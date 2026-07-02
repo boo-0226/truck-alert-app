@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Optional
 
-from tests.autoGovDealsMoney import scan_govdeals_once
+from tests.autoGovDealsMoney import get_last_scan_error, scan_govdeals_once
 
 try:
     from .decision_log import cleanup_legacy_log_files, cleanup_old_decision_logs
@@ -134,14 +134,19 @@ def main() -> None:
             alerts_this_run = scan_govdeals_once()
             alerts_total += alerts_this_run
             loop_completed = utc_now_iso()
+            scan_error = get_last_scan_error()
 
             write_health(
                 scan_started=loop_start,
                 scan_completed=loop_completed,
-                success=True,
+                success=not bool(scan_error),
                 alerts_this_run=alerts_this_run,
+                error_message=scan_error,
             )
             send_daily_check_if_due(logger)
+
+            if scan_error:
+                logger.error("GovDeals scan completed with API error: %s", scan_error)
 
             logger.info(
                 "Scan finished. Alerts this run: %s | Total alerts: %s",

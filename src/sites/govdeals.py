@@ -2,7 +2,7 @@
 # Purpose: adapter for GovDeals; returns normalized listings
 import os
 import re
-import uuid, random, time as _time, requests
+import random, time as _time, requests
 from datetime import timezone, datetime, timedelta
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote_plus
@@ -15,14 +15,14 @@ from src.core.utils import (
 from src.core.diagnostics import add_error
 from src.core.timeparse import seconds_remaining
 from src.sites.govdeals_http import (
-    GOVDEALS_TOKEN_MISSING_MESSAGE,
-    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    GOVDEALS_SEARCH_URL,
     build_govdeals_headers,
-    govdeals_access_token,
-    govdeals_biz_id,
+    build_govdeals_search_payload,
+    prime_govdeals_session,
+    safe_govdeals_headers,
 )
 
-URL = "https://maestro.lqdt1.com/search/list"
+URL = GOVDEALS_SEARCH_URL
 
 # this was my patch fix for the hour time off -----> GD_TIME_OFFSET_SECONDS = -3600  # subtract 60 minutes from GovDeals times
 
@@ -32,33 +32,7 @@ def build_headers():
     return build_govdeals_headers()
 
 def build_payload(page=1, use_category=True):
-    payload = {
-        "categoryIds": "6" if use_category else "",
-        "businessId": govdeals_biz_id(),
-        "searchText": "*",
-        "isQAL": False,
-        "locationId": None,
-        "model": "",
-        "makebrand": "",
-        "auctionTypeId": None,
-        "page": page,
-        "displayRows": 24,
-        "sortField": "auctionclose",
-        "sortOrder": "asc",
-        "sessionId": str(uuid.uuid4()),
-        "requestType": "search",
-        "responseStyle": "productsOnly",
-        "facets": [
-            "categoryName","auctionTypeID","condition","saleEventName","sellerDisplayName",
-            "product_pricecents","isReserveMet","hasBuyNowPrice","isReserveNotMet",
-            "sellerType","warehouseId","region","currencyTypeCode","categoryName","tierId",
-        ],
-        "facetsFilter": [],
-        "timeType": "",
-        "sellerTypeId": None,
-        "accountIds": [],
-    }
-    return payload
+    return build_govdeals_search_payload(page=page)
 
 # ---------- time helpers (tz fix + recursive scan) ----------
 
@@ -445,35 +419,26 @@ def fetch_listings(pages: int | None = None,
     all_items, seen = [], set()
     total_raw = 0
     page = 1
+    session = requests.Session()
+    prime_govdeals_session(session)
 
     dprint(f"[GD] fetch_listings horizon={horizon}s (~{round(horizon/86400,2)}d) max_pages={max_pages} delay={delay}")
 
-    if not govdeals_access_token():
-        dprint(f"[GD] {GOVDEALS_TOKEN_MISSING_MESSAGE}")
-        add_error("GovDeals", "auth", GOVDEALS_TOKEN_MISSING_MESSAGE)
-        return []
-
     while page <= max_pages:
-        # request (with 400 retry fallback you already added)
+        payload = build_payload(page, use_category=True)
+        headers = build_headers()
         try:
-            r = requests.post(URL, headers=build_headers(), json=build_payload(page, use_category=True), timeout=30)
-            if r.status_code == 400:
-                dprint("[GD] 400 with categoryIds — retrying without categoryIds")
-                r = requests.post(URL, headers=build_headers(), json=build_payload(page, use_category=False), timeout=30)
+            r = session.post(URL, headers=headers, json=payload, timeout=30)
         except requests.exceptions.RequestException as e:
             dprint(f"[GD] net error page {page}: {e}")
             add_error("GovDeals", "request", f"network error page {page}: {e}")
             break
 
-        if r.status_code == 401:
-            msg = GOVDEALS_UNAUTHORIZED_MESSAGE
-            dprint(f"[GD] {msg}")
-            add_error("GovDeals", "auth", msg)
-            return []
-
         ct = (r.headers.get("Content-Type") or "").lower()
         if r.status_code != 200 or "application/json" not in ct:
             dprint(f"[GD] bad response page {page} ({r.status_code}) body={r.text[:300]}")
+            dprint(f"[GD] payload page {page}: {payload}")
+            dprint(f"[GD] safe headers page {page}: {safe_govdeals_headers(headers)}")
             add_error("GovDeals", "http", f"bad response page {page}: {r.status_code}")
             break
 

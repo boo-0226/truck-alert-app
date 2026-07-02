@@ -1,6 +1,7 @@
 # file: tests/autoGovDealsMoney.py
 
 import html
+import json
 import os
 import re
 import sys
@@ -34,79 +35,36 @@ from core.autoKeywords_GovDeals import (
 from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert
 from sites.govdeals_http import (
-    GOVDEALS_TOKEN_MISSING_MESSAGE,
-    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    GOVDEALS_DETAIL_URL_TEMPLATE,
+    GOVDEALS_SEARCH_URL,
+    build_govdeals_detail_payload,
     build_govdeals_headers,
-    govdeals_access_token,
-    govdeals_biz_id,
-    govdeals_site_id,
+    build_govdeals_search_payload,
+    prime_govdeals_session,
+    safe_govdeals_headers,
 )
 
 
-GOVDEALS_SEARCH_URL = "https://maestro.lqdt1.com/search/list"
-GOVDEALS_DETAIL_URL_TEMPLATE = "https://maestro.lqdt1.com/assets/{asset_id}/{account_id}/false"
-
-GOVDEALS_SEARCH_PAYLOAD = {
-    "categoryIds": "",
-    "businessId": "GD",
-    "searchText": "*",
-    "isQAL": False,
-    "locationId": None,
-    "model": "",
-    "makebrand": "",
-    "auctionTypeId": None,
-    "page": 1,
-    "displayRows": 120,
-    "sortField": "auctionclose",
-    "sortOrder": "asc",
-    "sessionId": "truck-sniper-session",
-    "requestType": "search",
-    "responseStyle": "fullResponse",
-    "facets": [
-        "categoryName",
-        "auctionTypeID",
-        "condition",
-        "saleEventName",
-        "sellerDisplayName",
-        "product_pricecents",
-        "isReserveMet",
-        "hasBuyNowPrice",
-        "isReserveNotMet",
-        "sellerType",
-        "warehouseId",
-        "region",
-        "currencyTypeCode",
-        "countryDesc",
-        "stateDesc",
-        "city",
-        "tierId",
-    ],
-    "facetsFilter": [
-        '{!tag=product_category_external_id}product_category_external_id:"t6"',
-        '{!tag=region}region:"Americas"',
-        '{!tag=countryDesc}countryDesc:"United\\ States\\ of\\ America"',
-        '{!tag=stateDesc}stateDesc:"Texas"',
-        '{!tag=stateDesc}stateDesc:"Louisiana"',
-        '{!tag=stateDesc}stateDesc:"Alabama"',
-        '{!tag=stateDesc}stateDesc:"Tennessee"',
-        '{!tag=stateDesc}stateDesc:"Arkansas"',
-        '{!tag=stateDesc}stateDesc:"Mississippi"',
-        '{!tag=stateDesc}stateDesc:"Missouri"',
-        '{!tag=stateDesc}stateDesc:"Oklahoma"',
-    ],
-    "timeType": "",
-    "sellerTypeId": None,
-    "accountIds": [],
-}
-
-GOVDEALS_DETAIL_PAYLOAD = {
-    "businessId": "GD",
-    "siteId": 1,
-}
+_LAST_SCAN_ERROR: str | None = None
 
 
-class GovDealsAuthError(RuntimeError):
+class GovDealsApiError(RuntimeError):
     pass
+
+
+def _reset_last_scan_error() -> None:
+    global _LAST_SCAN_ERROR
+    _LAST_SCAN_ERROR = None
+
+
+def _set_last_scan_error(message: str) -> None:
+    global _LAST_SCAN_ERROR
+    _LAST_SCAN_ERROR = message
+
+
+def get_last_scan_error() -> str | None:
+    return _LAST_SCAN_ERROR
+
 
 STATE_ABBREVIATIONS = {
     "AL": "Alabama",
@@ -160,32 +118,39 @@ def _clean_api_text(value: Any) -> str:
     return text.strip()
 
 
-def _govdeals_payload(payload: dict) -> dict:
-    prepared = dict(payload)
-    prepared["businessId"] = govdeals_biz_id(str(prepared.get("businessId") or "GD"))
-    if "siteId" in prepared:
-        prepared["siteId"] = govdeals_site_id(prepared.get("siteId") or 1)
-    return prepared
+def _print_api_failure(context: str, response: requests.Response, payload: dict, headers: dict) -> None:
+    print(f"GovDeals {context} status code: {response.status_code}")
+    print("GovDeals API response text first 1000 chars:")
+    print((response.text or "")[:1000])
+    print("GovDeals API payload used:")
+    print(json.dumps(payload, default=str, sort_keys=True))
+    print("GovDeals API safe headers used:")
+    print(json.dumps(safe_govdeals_headers(headers), sort_keys=True))
 
 
-def _post_json(url: str, payload: dict) -> dict:
-    if not govdeals_access_token():
-        raise GovDealsAuthError(GOVDEALS_TOKEN_MISSING_MESSAGE)
-
-    response = requests.post(
+def _post_json(session: requests.Session, url: str, payload: dict, context: str) -> dict:
+    headers = build_govdeals_headers()
+    response = session.post(
         url,
-        headers=build_govdeals_headers(),
-        json=_govdeals_payload(payload),
+        headers=headers,
+        json=payload,
         timeout=30,
     )
-    if response.status_code == 401:
-        raise GovDealsAuthError(GOVDEALS_UNAUTHORIZED_MESSAGE)
-    response.raise_for_status()
-    return response.json()
+    print(f"GovDeals {context} status code: {response.status_code}")
+
+    if response.status_code != 200:
+        _print_api_failure(context, response, payload, headers)
+        raise GovDealsApiError(f"GovDeals {context} API failed with status {response.status_code}")
+
+    try:
+        return response.json()
+    except ValueError as exc:
+        _print_api_failure(context, response, payload, headers)
+        raise GovDealsApiError(f"GovDeals {context} API returned non-JSON response") from exc
 
 
-def _search_govdeals() -> list[dict]:
-    data = _post_json(GOVDEALS_SEARCH_URL, GOVDEALS_SEARCH_PAYLOAD)
+def _search_govdeals(session: requests.Session) -> list[dict]:
+    data = _post_json(session, GOVDEALS_SEARCH_URL, build_govdeals_search_payload(), "search/list")
     results = data.get("assetSearchResults")
     if isinstance(results, list):
         return results
@@ -198,9 +163,9 @@ def _search_govdeals() -> list[dict]:
     return []
 
 
-def _fetch_detail(asset_id: Any, account_id: Any) -> dict:
+def _fetch_detail(session: requests.Session, asset_id: Any, account_id: Any) -> dict:
     url = GOVDEALS_DETAIL_URL_TEMPLATE.format(asset_id=asset_id, account_id=account_id)
-    data = _post_json(url, GOVDEALS_DETAIL_PAYLOAD)
+    data = _post_json(session, url, build_govdeals_detail_payload(), f"detail {asset_id}/{account_id}")
     if not isinstance(data, dict):
         return {}
 
@@ -214,6 +179,46 @@ def _fetch_detail(asset_id: Any, account_id: Any) -> dict:
 
 def _build_listing_url(asset_id: Any, account_id: Any) -> str:
     return f"https://www.govdeals.com/en/asset/{asset_id}/{account_id}"
+
+
+def _log_list_data_decision(listing: dict, href: str, minutes_left: float | None) -> None:
+    title = _clean_api_text(
+        _first(listing.get("assetShortDescription"), listing.get("shortDescription"))
+    ) or "Untitled"
+    location = _location_from_api(listing, {})
+    current_bid = _current_bid_from_api(listing, {})
+    numeric_bid = parse_bid_amount(current_bid)
+    close_soon_flag = minutes_left is not None and 0 <= minutes_left <= CLOSE_SOON_MINUTES
+
+    log_decision({
+        "source": "GovDeals",
+        "url": href,
+        "title": title,
+        "location": location,
+        "current_bid": numeric_bid,
+        "minutes_left": minutes_left,
+        "year": listing.get("modelYear"),
+        "make": listing.get("makebrand"),
+        "model": clean_model_display(listing.get("model")),
+        "engine": None,
+        "mileage": None,
+        "gas_match": False,
+        "diesel_match": False,
+        "diesel_priority_level": None,
+        "specialty_keywords_matched": [],
+        "hard_exclude_hit": False,
+        "hard_exclude_keywords_matched": [],
+        "soft_warning_keywords_matched": [],
+        "location_valid": location_matches_alert_state(location),
+        "bid_under_limit": numeric_bid is not None and numeric_bid < MAX_GAS_BID,
+        "mileage_ok": True,
+        "close_soon_flag": close_soon_flag,
+        "should_alert": False,
+        "year_ok": True,
+        "make_ok": True,
+        "model_ok": True,
+        "engine_ok": True,
+    })
 
 
 def _state_display(value: Any) -> str:
@@ -667,27 +672,37 @@ def _process_listing(listing: dict, detail: dict, href: str, minutes_left: float
 
 # Run one full scan of GovDeals and send Twilio alerts. Returns: number of alerts sent in this pass.
 def scan_govdeals_once() -> int:
+    _reset_last_scan_error()
     alerts_sent = 0
-
-    if not govdeals_access_token():
-        print(GOVDEALS_TOKEN_MISSING_MESSAGE)
-        return 0
+    detail_calls = 0
+    listings_inside_window = 0
+    session = requests.Session()
+    prime_govdeals_session(session)
 
     try:
-        listings = _search_govdeals()
-    except GovDealsAuthError as exc:
-        print(str(exc))
+        listings = _search_govdeals(session)
+    except GovDealsApiError as exc:
+        message = str(exc)
+        print(message)
+        _set_last_scan_error(message)
+        return 0
+    except requests.exceptions.RequestException as exc:
+        message = f"GovDeals search/list network error: {exc}"
+        print(message)
+        _set_last_scan_error(message)
         return 0
     except Exception as exc:
+        message = f"GovDeals API search error: {exc}"
         print("GovDeals API search error. Returning 0 alerts for this scan.")
         print(f"Error: {exc}")
+        _set_last_scan_error(message)
         return 0
 
     if not listings:
-        print("GovDeals API returned no results. Returning 0 alerts for this scan.")
+        print("GovDeals API returned 0 listings")
         return 0
 
-    print(f"GovDeals API listing count: {len(listings)}")
+    print(f"GovDeals API assetSearchResults returned: {len(listings)}")
 
     for index, listing in enumerate(listings, start=1):
         asset_id = _first(listing.get("assetId"), listing.get("id"))
@@ -714,23 +729,33 @@ def scan_govdeals_once() -> int:
             )
             break
 
+        listings_inside_window += 1
+
         try:
             print("\n====================")
             print(f"Visiting GovDeals API listing {index}: {href}")
 
-            detail = _fetch_detail(asset_id, account_id)
+            detail_calls += 1
+            detail = _fetch_detail(session, asset_id, account_id)
             if _process_listing(listing, detail, href, minutes_left):
                 alerts_sent += 1
 
-        except GovDealsAuthError as exc:
-            print(str(exc))
-            return 0
+        except GovDealsApiError as exc:
+            print("GovDeals detail API failure, using list/card data for decision row.")
+            print(f"URL: {href}")
+            print(f"Error: {exc}")
+            _log_list_data_decision(listing, href, minutes_left)
+            continue
         except Exception as exc:
             print("Error on GovDeals API listing, skipping...")
             print(f"URL: {href}")
             print(f"Error: {exc}")
+            _log_list_data_decision(listing, href, minutes_left)
             continue
 
+    print(f"GovDeals listings inside {CLOSE_SOON_MINUTES}-minute window: {listings_inside_window}")
+    print(f"GovDeals detail API calls made: {detail_calls}")
+    print(f"GovDeals alerts this run: {alerts_sent}")
     return alerts_sent
 
 

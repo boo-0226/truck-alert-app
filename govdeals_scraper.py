@@ -3,7 +3,6 @@ import os
 import re
 import json
 import time
-import uuid
 import random
 import requests
 import sys
@@ -13,11 +12,11 @@ from pathlib import Path
 from argparse import ArgumentParser
 from dotenv import load_dotenv
 from src.sites.govdeals_http import (
-    GOVDEALS_TOKEN_MISSING_MESSAGE,
-    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    GOVDEALS_SEARCH_URL,
     build_govdeals_headers,
-    govdeals_access_token,
-    govdeals_biz_id,
+    build_govdeals_search_payload,
+    prime_govdeals_session,
+    safe_govdeals_headers,
 )
 
 load_dotenv()
@@ -36,7 +35,7 @@ def dprint(*args, **kwargs):
         print(*args, **kwargs)
 
 
-URL = "https://maestro.lqdt1.com/search/list"
+URL = GOVDEALS_SEARCH_URL
 
 # ---- Alert thresholds (env-overridable) ----
 # ---- Alert thresholds (env-overridable) ----
@@ -99,37 +98,7 @@ def build_headers():
     return build_govdeals_headers()
 
 def build_payload(page=1):
-    return {
-        "categoryIds": "",
-        "businessId": govdeals_biz_id(),
-        "searchText": "*",
-        "isQAL": False,
-        "locationId": None,
-        "model": "",
-        "makebrand": "",
-        "auctionTypeId": None,
-        "page": page,
-        "displayRows": 24,
-        # Try "ending soon" sort; if ignored server falls back.
-        "sortField": "auctionclose",   # UI shows sf=auctionclose
-        "sortOrder": "asc",            # so=asc
-        "sessionId": str(uuid.uuid4()),
-        "requestType": "search",
-        "responseStyle": "productsOnly",
-        "facets": [
-            "categoryName","auctionTypeID","condition","saleEventName","sellerDisplayName",
-            "product_pricecents","isReserveMet","hasBuyNowPrice","isReserveNotMet",
-            "sellerType","warehouseId","region","currencyTypeCode","categoryName","tierId",
-        ],
-        # Server-side: Trucks categories from /en/trucks
-        "facetsFilter": [
-            '{!tag=product_category_external_id}product_category_external_id:"t6"',
-            '{!tag=product_category_external_id}product_category_external_id:"94C"',
-        ],
-        "timeType": "",
-        "sellerTypeId": None,
-        "accountIds": [],
-    }
+    return build_govdeals_search_payload(page=page)
 
 # ---------------- parsing ----------------
 def parse_bid_cents(value):
@@ -430,18 +399,17 @@ def alert_truck(client, itm, alerts_enabled=True):
 # ---------------- main cycle ----------------
 def run_cycle(pages, page_delay, alerts_enabled):
     """Returns soonest secs (under $5k) seen this cycle for adaptive sleep, or None."""
-    if not govdeals_access_token():
-        print(GOVDEALS_TOKEN_MISSING_MESSAGE)
-        return None
-
+    session = requests.Session()
+    prime_govdeals_session(session)
     all_listings = []
     seen_ids = set()
 
     for page in range(1, pages + 1):
         payload = build_payload(page=page)
+        headers = build_headers()
         print(f"🔎 Requesting page {page} from maestro.lqdt1.com …")
         try:
-            r = requests.post(URL, headers=build_headers(), json=payload, timeout=30)
+            r = session.post(URL, headers=headers, json=payload, timeout=30)
         except requests.exceptions.RequestException as e:
             print(f"⚠️ Page {page}: network error: {e}")
             break
@@ -453,10 +421,31 @@ def run_cycle(pages, page_delay, alerts_enabled):
             print("⚠️ Rate limited (HTTP 429). Stopping this cycle.")
             break
         if r.status_code == 401:
-            print(GOVDEALS_UNAUTHORIZED_MESSAGE)
+            print("GovDeals API request failed with status 401")
+            print("GovDeals API response text first 1000 chars:")
+            print(r.text[:1000])
+            print("GovDeals API payload used:")
+            print(json.dumps(payload, default=str, sort_keys=True))
+            print("GovDeals API safe headers used:")
+            print(json.dumps(safe_govdeals_headers(headers), sort_keys=True))
             return None
         if r.status_code >= 500:
             print(f"⚠️ Server error {r.status_code}. Stopping this cycle.")
+            print("GovDeals API response text first 1000 chars:")
+            print(r.text[:1000])
+            print("GovDeals API payload used:")
+            print(json.dumps(payload, default=str, sort_keys=True))
+            print("GovDeals API safe headers used:")
+            print(json.dumps(safe_govdeals_headers(headers), sort_keys=True))
+            break
+        if r.status_code != 200:
+            print(f"GovDeals API request failed with status {r.status_code}")
+            print("GovDeals API response text first 1000 chars:")
+            print(r.text[:1000])
+            print("GovDeals API payload used:")
+            print(json.dumps(payload, default=str, sort_keys=True))
+            print("GovDeals API safe headers used:")
+            print(json.dumps(safe_govdeals_headers(headers), sort_keys=True))
             break
         if "application/json" not in ct.lower():
             print("⚠️ Non-JSON (likely blocked). First 400 chars:")
