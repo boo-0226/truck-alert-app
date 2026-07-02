@@ -33,18 +33,18 @@ from core.autoKeywords_GovDeals import (
 )
 from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert
+from sites.govdeals_http import (
+    GOVDEALS_TOKEN_MISSING_MESSAGE,
+    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    build_govdeals_headers,
+    govdeals_access_token,
+    govdeals_biz_id,
+    govdeals_site_id,
+)
 
 
 GOVDEALS_SEARCH_URL = "https://maestro.lqdt1.com/search/list"
 GOVDEALS_DETAIL_URL_TEMPLATE = "https://maestro.lqdt1.com/assets/{asset_id}/{account_id}/false"
-
-GOVDEALS_HEADERS = {
-    "Accept": "application/json, text/plain, */*",
-    "Content-Type": "application/json",
-    "Origin": "https://www.govdeals.com",
-    "Referer": "https://www.govdeals.com/",
-    "User-Agent": "Mozilla/5.0",
-}
 
 GOVDEALS_SEARCH_PAYLOAD = {
     "categoryIds": "",
@@ -104,6 +104,10 @@ GOVDEALS_DETAIL_PAYLOAD = {
     "siteId": 1,
 }
 
+
+class GovDealsAuthError(RuntimeError):
+    pass
+
 STATE_ABBREVIATIONS = {
     "AL": "Alabama",
     "AR": "Arkansas",
@@ -156,13 +160,26 @@ def _clean_api_text(value: Any) -> str:
     return text.strip()
 
 
+def _govdeals_payload(payload: dict) -> dict:
+    prepared = dict(payload)
+    prepared["businessId"] = govdeals_biz_id(str(prepared.get("businessId") or "GD"))
+    if "siteId" in prepared:
+        prepared["siteId"] = govdeals_site_id(prepared.get("siteId") or 1)
+    return prepared
+
+
 def _post_json(url: str, payload: dict) -> dict:
+    if not govdeals_access_token():
+        raise GovDealsAuthError(GOVDEALS_TOKEN_MISSING_MESSAGE)
+
     response = requests.post(
         url,
-        headers=GOVDEALS_HEADERS,
-        json=payload,
+        headers=build_govdeals_headers(),
+        json=_govdeals_payload(payload),
         timeout=30,
     )
+    if response.status_code == 401:
+        raise GovDealsAuthError(GOVDEALS_UNAUTHORIZED_MESSAGE)
     response.raise_for_status()
     return response.json()
 
@@ -652,8 +669,15 @@ def _process_listing(listing: dict, detail: dict, href: str, minutes_left: float
 def scan_govdeals_once() -> int:
     alerts_sent = 0
 
+    if not govdeals_access_token():
+        print(GOVDEALS_TOKEN_MISSING_MESSAGE)
+        return 0
+
     try:
         listings = _search_govdeals()
+    except GovDealsAuthError as exc:
+        print(str(exc))
+        return 0
     except Exception as exc:
         print("GovDeals API search error. Returning 0 alerts for this scan.")
         print(f"Error: {exc}")
@@ -698,6 +722,9 @@ def scan_govdeals_once() -> int:
             if _process_listing(listing, detail, href, minutes_left):
                 alerts_sent += 1
 
+        except GovDealsAuthError as exc:
+            print(str(exc))
+            return 0
         except Exception as exc:
             print("Error on GovDeals API listing, skipping...")
             print(f"URL: {href}")

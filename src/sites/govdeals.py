@@ -14,38 +14,27 @@ from src.core.utils import (
 )
 from src.core.diagnostics import add_error
 from src.core.timeparse import seconds_remaining
+from src.sites.govdeals_http import (
+    GOVDEALS_TOKEN_MISSING_MESSAGE,
+    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    build_govdeals_headers,
+    govdeals_access_token,
+    govdeals_biz_id,
+)
 
 URL = "https://maestro.lqdt1.com/search/list"
-
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
-]
 
 # this was my patch fix for the hour time off -----> GD_TIME_OFFSET_SECONDS = -3600  # subtract 60 minutes from GovDeals times
 
 # ---------- headers + payload ----------
 
 def build_headers():
-    return {
-        "accept": "application/json, text/plain, */*",
-        "content-type": "application/json",
-        "origin": "https://www.govdeals.com",
-        "referer": "https://www.govdeals.com/en/trucks",
-        "host": "maestro.lqdt1.com",
-        "user-agent": random.choice(USER_AGENTS),
-        "x-api-key": "af93060f-337e-428c-87b8-c74b5837d6cd",
-        "ocp-apim-subscription-key": "cf620d1d8f904b5797507dc5fd1fdb80",
-        "x-api-correlation-id": str(uuid.uuid4()),
-        "x-ecom-session-id": str(uuid.uuid4()),
-        "x-user-id": "-1",
-        "x-user-timezone": "America/Chicago",
-    }
+    return build_govdeals_headers()
 
 def build_payload(page=1, use_category=True):
     payload = {
         "categoryIds": "6" if use_category else "",
-        "businessId": "GD",
+        "businessId": govdeals_biz_id(),
         "searchText": "*",
         "isQAL": False,
         "locationId": None,
@@ -453,24 +442,34 @@ def fetch_listings(pages: int | None = None,
     delay     = _env_float("GOVDEALS_PAGE_DELAY", 4.5) if page_delay is None else page_delay
     horizon   = _env_int("GOVDEALS_TIME_HORIZON_SECS", SEVEN_DAYS_DEFAULT) if horizon_secs is None else horizon_secs
 
-    headers = build_headers()
     all_items, seen = [], set()
     total_raw = 0
     page = 1
 
     dprint(f"[GD] fetch_listings horizon={horizon}s (~{round(horizon/86400,2)}d) max_pages={max_pages} delay={delay}")
 
+    if not govdeals_access_token():
+        dprint(f"[GD] {GOVDEALS_TOKEN_MISSING_MESSAGE}")
+        add_error("GovDeals", "auth", GOVDEALS_TOKEN_MISSING_MESSAGE)
+        return []
+
     while page <= max_pages:
         # request (with 400 retry fallback you already added)
         try:
-            r = requests.post(URL, headers=headers, json=build_payload(page, use_category=True), timeout=30)
+            r = requests.post(URL, headers=build_headers(), json=build_payload(page, use_category=True), timeout=30)
             if r.status_code == 400:
                 dprint("[GD] 400 with categoryIds — retrying without categoryIds")
-                r = requests.post(URL, headers=headers, json=build_payload(page, use_category=False), timeout=30)
+                r = requests.post(URL, headers=build_headers(), json=build_payload(page, use_category=False), timeout=30)
         except requests.exceptions.RequestException as e:
             dprint(f"[GD] net error page {page}: {e}")
             add_error("GovDeals", "request", f"network error page {page}: {e}")
             break
+
+        if r.status_code == 401:
+            msg = GOVDEALS_UNAUTHORIZED_MESSAGE
+            dprint(f"[GD] {msg}")
+            add_error("GovDeals", "auth", msg)
+            return []
 
         ct = (r.headers.get("Content-Type") or "").lower()
         if r.status_code != 200 or "application/json" not in ct:

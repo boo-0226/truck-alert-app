@@ -12,6 +12,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from argparse import ArgumentParser
 from dotenv import load_dotenv
+from src.sites.govdeals_http import (
+    GOVDEALS_TOKEN_MISSING_MESSAGE,
+    GOVDEALS_UNAUTHORIZED_MESSAGE,
+    build_govdeals_headers,
+    govdeals_access_token,
+    govdeals_biz_id,
+)
 
 load_dotenv()
 
@@ -30,11 +37,6 @@ def dprint(*args, **kwargs):
 
 
 URL = "https://maestro.lqdt1.com/search/list"
-
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
-]
 
 # ---- Alert thresholds (env-overridable) ----
 # ---- Alert thresholds (env-overridable) ----
@@ -94,36 +96,12 @@ def parse_args():
 
 # ---------------- HTTP ----------------
 def build_headers():
-    return {
-        "accept": "application/json, text/plain, */*",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-US,en;q=0.9",
-        "connection": "keep-alive",
-        "content-type": "application/json",
-        "host": "maestro.lqdt1.com",
-        "origin": "https://www.govdeals.com",
-        "referer": "https://www.govdeals.com/en/trucks",
-        "ocp-apim-subscription-key": "cf620d1d8f904b5797507dc5fd1fdb80",
-        "x-api-key": "af93060f-337e-428c-87b8-c74b5837d6cd",
-        "user-agent": random.choice(USER_AGENTS),
-        "sec-ch-ua": '"Not)A;Brand";v="8", "Chromium";v="138", "Microsoft Edge";v="138"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": '"Windows"',
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
-        "x-api-correlation-id": str(uuid.uuid4()),
-        "x-ecom-session-id": str(uuid.uuid4()),
-        "x-page-unique-id": "aHR0cHM6Ly93d3cuZ292ZGVhbHMuY29tL2VuL3RydWNrcw==",
-        "x-referer": "https://www.govdeals.com/en/trucks",
-        "x-user-id": "-1",
-        "x-user-timezone": "America/Chicago",
-    }
+    return build_govdeals_headers()
 
 def build_payload(page=1):
     return {
         "categoryIds": "",
-        "businessId": "GD",
+        "businessId": govdeals_biz_id(),
         "searchText": "*",
         "isQAL": False,
         "locationId": None,
@@ -452,7 +430,10 @@ def alert_truck(client, itm, alerts_enabled=True):
 # ---------------- main cycle ----------------
 def run_cycle(pages, page_delay, alerts_enabled):
     """Returns soonest secs (under $5k) seen this cycle for adaptive sleep, or None."""
-    headers = build_headers()
+    if not govdeals_access_token():
+        print(GOVDEALS_TOKEN_MISSING_MESSAGE)
+        return None
+
     all_listings = []
     seen_ids = set()
 
@@ -460,7 +441,7 @@ def run_cycle(pages, page_delay, alerts_enabled):
         payload = build_payload(page=page)
         print(f"🔎 Requesting page {page} from maestro.lqdt1.com …")
         try:
-            r = requests.post(URL, headers=headers, json=payload, timeout=30)
+            r = requests.post(URL, headers=build_headers(), json=payload, timeout=30)
         except requests.exceptions.RequestException as e:
             print(f"⚠️ Page {page}: network error: {e}")
             break
@@ -471,6 +452,9 @@ def run_cycle(pages, page_delay, alerts_enabled):
         if r.status_code == 429:
             print("⚠️ Rate limited (HTTP 429). Stopping this cycle.")
             break
+        if r.status_code == 401:
+            print(GOVDEALS_UNAUTHORIZED_MESSAGE)
+            return None
         if r.status_code >= 500:
             print(f"⚠️ Server error {r.status_code}. Stopping this cycle.")
             break
