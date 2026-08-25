@@ -52,6 +52,19 @@ CSV_FIELDS = [
     "should_alert",
     "classification",
     "block_reason",
+    "target_strategy",
+    "carvana_score",
+    "carvana_model_key",
+    "carvana_positive_signals",
+    "carvana_negative_signals",
+    "carvana_block_reasons",
+    "carvana_next_action",
+    "vin",
+    "trim",
+    "cab",
+    "drivetrain",
+    "fuel",
+    "mileage_display",
 ]
 
 
@@ -244,6 +257,11 @@ def compute_block_reasons(record: dict[str, Any]) -> list[str]:
     if _as_bool(record.get("should_alert")):
         return ["alert_sent"]
 
+    if str(record.get("target_strategy") or "").strip().upper() == "CARVANA_GAS":
+        carvana_reasons = _as_list(record.get("carvana_block_reasons"))
+        if carvana_reasons:
+            return carvana_reasons
+
     reasons = []
 
     if not _as_bool(record.get("location_valid")):
@@ -285,7 +303,7 @@ def _normalized_row(record: dict[str, Any]) -> dict[str, str]:
     row = dict(record)
     row.setdefault("timestamp", datetime.now().isoformat(timespec="seconds"))
     row["block_reason"] = ";".join(compute_block_reasons(row))
-    row["classification"] = classify_decision(row)
+    row["classification"] = _row_classification(row)
     return {field: _format_value(row.get(field)) for field in CSV_FIELDS}
 
 
@@ -307,7 +325,7 @@ def _ensure_csv_schema(path: Path) -> None:
             row = dict(existing_row)
             if not row.get("block_reason"):
                 row["block_reason"] = ";".join(compute_block_reasons(row))
-            row["classification"] = classify_decision(row)
+            row["classification"] = _row_classification(row)
             writer.writerow({field: _format_value(row.get(field)) for field in CSV_FIELDS})
 
     tmp_path.replace(path)
@@ -385,12 +403,22 @@ def _listing_line(row: dict[str, str]) -> str:
     classification = _row_classification(row)
     title = row.get("title") or "Untitled"
     source = row.get("source") or "Unknown"
+    strategy = row.get("target_strategy") or ""
+    score = row.get("carvana_score") or ""
+    action = row.get("carvana_next_action") or ""
     bid = row.get("current_bid") or "Not found"
     minutes = row.get("minutes_left") or "Not found"
     location = row.get("location") or "Not found"
     reasons = row.get("block_reason") or "None"
     url = row.get("url") or ""
-    return f"- [{classification}] [{source}] {title} | bid={bid} | minutes={minutes} | location={location} | reasons={reasons} | {url}"
+    strategy_part = f" [{strategy}]" if strategy else ""
+    score_part = f" | score={score}" if score else ""
+    action_part = f" | action={action}" if action else ""
+    return (
+        f"- [{classification}] [{source}]{strategy_part} {title} | bid={bid} | "
+        f"minutes={minutes} | location={location}{score_part}{action_part} | "
+        f"reasons={reasons} | {url}"
+    )
 
 
 def _reason_counts(rows: list[dict[str, str]]) -> Counter:

@@ -60,6 +60,65 @@ def place_call(client, say_text: str):
     client.calls.create(to=ALERT_TO, from_=TWILIO_FROM, twiml=twiml)
 
 
+def _is_carvana_gas(itm: Dict) -> bool:
+    return itm.get("target_strategy") == "CARVANA_GAS"
+
+
+def _known(value) -> str:
+    if value in (None, ""):
+        return "UNKNOWN"
+    return str(value)
+
+
+def _vehicle_label(itm: Dict) -> str:
+    parts = [
+        str(itm.get("year")) if itm.get("year") not in (None, "") else "",
+        str(itm.get("make")) if itm.get("make") not in (None, "") else "",
+        str(itm.get("model")) if itm.get("model") not in (None, "") else "",
+        str(itm.get("trim")) if itm.get("trim") not in (None, "") else "",
+    ]
+    label = " ".join(part for part in parts if part).strip()
+    return label or _known(itm.get("title"))
+
+
+def _carvana_mileage_display(itm: Dict) -> str:
+    mileage = itm.get("mileage_display")
+    if mileage not in (None, ""):
+        return str(mileage)
+    mileage = itm.get("mileage")
+    if mileage in (None, ""):
+        return "UNKNOWN"
+    try:
+        return f"{int(mileage):,}"
+    except (TypeError, ValueError):
+        return str(mileage)
+
+
+def _carvana_sms(prefix: str, itm: Dict, dollars: str, mins: int, rem: int) -> str:
+    line = (
+        f"{itm.get('site', 'Auction')} {prefix}: CARVANA_GAS score {_known(itm.get('carvana_score'))} | "
+        f"{_vehicle_label(itm)} | {itm.get('city', 'Unknown')}, {itm.get('state', '')} | "
+        f"{dollars} | {mins}m {rem}s\n"
+        f"mi {_carvana_mileage_display(itm)} | eng {_known(itm.get('engine'))} | "
+        f"drive {_known(itm.get('drivetrain'))} | cab {_known(itm.get('cab'))}\n"
+        f"VIN {_known(itm.get('vin'))} | {itm.get('carvana_next_action') or 'GET CARVANA QUOTE'}"
+    )
+    url = itm.get("url")
+    if url:
+        line += f"\n{url}"
+    return line
+
+
+def _carvana_voice(itm: Dict, dollars: str, mins: int, rem: int) -> str:
+    text = (
+        f"Carvana gas alert. Get Carvana quote. {_vehicle_label(itm)}. "
+        f"Current bid {dollars}. Time left {mins} minutes {rem} seconds."
+    )
+    if itm.get("url"):
+        text += " I texted the link."
+    return text
+
+
 def evaluate_and_alert(cache: dict, listings: Iterable[Dict], alerts_enabled: bool) -> Optional[int]:
     """
     listings: iterable of dicts with keys:
@@ -120,7 +179,9 @@ def evaluate_and_alert(cache: dict, listings: Iterable[Dict], alerts_enabled: bo
                     url = itm.get("url")
 
                     # Voice: if we have a link, tell user we texted it
-                    if url:
+                    if _is_carvana_gas(itm):
+                        say_text = _carvana_voice(itm, dollars, mins, rem)
+                    elif url:
                         say_text = (
                             f"Early alert. {itm['site']}. {itm['title']}. "
                             f"Current bid {dollars}. Time left {mins} minutes {rem} seconds. "
@@ -133,12 +194,15 @@ def evaluate_and_alert(cache: dict, listings: Iterable[Dict], alerts_enabled: bo
                         )
 
                     # SMS body (put link on its own line so it’s clickable)
-                    msg = (
-                        f"{itm['site']} EARLY: {itm['title']} | {itm['city']}, {itm['state']} | "
-                        f"{dollars} | {mins}m {rem}s"
-                    )
-                    if url:
-                        msg += f"\n{url}"
+                    if _is_carvana_gas(itm):
+                        msg = _carvana_sms("EARLY", itm, dollars, mins, rem)
+                    else:
+                        msg = (
+                            f"{itm['site']} EARLY: {itm['title']} | {itm['city']}, {itm['state']} | "
+                            f"{dollars} | {mins}m {rem}s"
+                        )
+                        if url:
+                            msg += f"\n{url}"
 
                     print("🔔 " + msg.replace("\n", " | "))
 
@@ -175,7 +239,9 @@ def evaluate_and_alert(cache: dict, listings: Iterable[Dict], alerts_enabled: bo
             url = itm.get("url")
 
             # Voice: mention link only if we’ll text one
-            if url:
+            if _is_carvana_gas(itm):
+                say_text = _carvana_voice(itm, dollars, mins, rem)
+            elif url:
                 say_text = (
                     f"{itm['site']} alert. {itm['title']}. "
                     f"Current bid {dollars}. Time left {mins} minutes {rem} seconds. "
@@ -188,12 +254,15 @@ def evaluate_and_alert(cache: dict, listings: Iterable[Dict], alerts_enabled: bo
                 )
 
             # SMS body + URL on new line if present
-            line = (
-                f"{itm['site']} ALERT: {itm['title']} | {itm['city']}, {itm['state']} | "
-                f"{dollars} | {mins}m {rem}s"
-            )
-            if url:
-                line += f"\n{url}"
+            if _is_carvana_gas(itm):
+                line = _carvana_sms("ALERT", itm, dollars, mins, rem)
+            else:
+                line = (
+                    f"{itm['site']} ALERT: {itm['title']} | {itm['city']}, {itm['state']} | "
+                    f"{dollars} | {mins}m {rem}s"
+                )
+                if url:
+                    line += f"\n{url}"
 
             print("🚨 " + line.replace("\n", " | "))
 

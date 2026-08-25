@@ -8,6 +8,7 @@ from src.core.utils import (
     dprint, parse_bid_cents, format_dollars,
     is_target_vehicle, annotate_tags,  # use unified targeting from utils.py
 )
+from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
 # seconds_remaining not used here; RB gives event-level close only
 # from src.core.timeparse import seconds_remaining
 
@@ -262,6 +263,7 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
                 "tags": ["event"],
                 "engine_67": False,
                 "blocked": False,
+                "target": False,
             })
             continue
 
@@ -284,9 +286,10 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
 
             text = (title or "").lower()
             tags = annotate_tags(text)
-            blocked = not is_target_vehicle(text)  # true target = diesel+specialty OR cummins
+            diesel_target = is_target_vehicle(text)  # true target = diesel+specialty OR cummins
+            blocked = not diesel_target
 
-            rows.append({
+            row = {
                 "site": "ReneBates",
                 "asset_id": str(asset_id),
                 "title": title,
@@ -297,7 +300,32 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
                 "tags": tags,
                 "engine_67": ("6.7" in text) or ("power stroke" in text) or ("cummins" in text),
                 "blocked": blocked,
+                "target": diesel_target,
+            }
+
+            carvana_result = classify_carvana_gas({
+                "title": title,
+                "bid_cents": bid,
+                "secs": secs_event,
+                "url": url,
             })
+
+            if diesel_target and not blocked:
+                row["target_strategy"] = "DIESEL_COMMERCIAL"
+            elif carvana_result.get("classification") == "ALERT":
+                row.update(carvana_result_to_row_fields(carvana_result))
+                row["target"] = True
+                row["blocked"] = False
+            elif carvana_result.get("classification") == "WATCHLIST":
+                row.update(carvana_result_to_row_fields(carvana_result))
+                row["target"] = False
+                row["blocked"] = False
+            elif carvana_result.get("is_carvana_candidate"):
+                row.update(carvana_result_to_row_fields(carvana_result))
+                row["target"] = False
+                row["blocked"] = True
+
+            rows.append(row)
 
     return rows
 

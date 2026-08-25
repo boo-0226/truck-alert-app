@@ -11,6 +11,7 @@ from src.core.utils import (
     is_engine_67, BLOCKED_MODELS,
     is_target_vehicle, annotate_tags,
 )
+from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
 from src.core.timeparse import seconds_remaining
 
 # ---- Config (env-overridable via .env if you want) ----
@@ -126,7 +127,7 @@ def _parse_fragment(html: str) -> List[Dict]:
         target   = is_target_vehicle(text)
         tags     = annotate_tags(text)
 
-        out.append({
+        row = {
             "site": "Proxibid",
             "asset_id": lid,
             "title": title,
@@ -138,7 +139,31 @@ def _parse_fragment(html: str) -> List[Dict]:
             "target": target,
             "tags": tags,
             "url": url,
+        }
+
+        carvana_result = classify_carvana_gas({
+            "title": title,
+            "bid_cents": bid_cents,
+            "secs": secs,
+            "url": url,
         })
+
+        if target and not blocked:
+            row["target_strategy"] = "DIESEL_COMMERCIAL"
+        elif carvana_result.get("classification") == "ALERT":
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = True
+            row["blocked"] = False
+        elif carvana_result.get("classification") == "WATCHLIST":
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = False
+            row["blocked"] = False
+        elif carvana_result.get("is_carvana_candidate"):
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = False
+            row["blocked"] = True
+
+        out.append(row)
     return out
 
 def _fetch_html(url: str) -> Optional[str]:

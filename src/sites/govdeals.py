@@ -12,10 +12,13 @@ from src.core.utils import (
     is_specialty_body, has_cummins, is_engine_67,
     annotate_tags, BLOCKED_MODELS
 )
+from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
 from src.core.diagnostics import add_error
 from src.core.timeparse import seconds_remaining
 from src.sites.govdeals_http import (
+    GOVDEALS_DETAIL_URL_TEMPLATE,
     GOVDEALS_SEARCH_URL,
+    build_govdeals_detail_payload,
     build_govdeals_headers,
     build_govdeals_search_payload,
     prime_govdeals_session,
@@ -383,6 +386,162 @@ def _extract_mileage(item: Dict[str, Any]) -> tuple[Optional[int], str]:
     return mileage, mileage_display
 
 
+def _govdeals_detail_enabled() -> bool:
+    return os.getenv("GOVDEALS_DETAIL_ENABLED", "1").strip().lower() in ("1", "true", "yes", "on")
+
+
+def _detail_root(data: Any) -> Dict[str, Any]:
+    if isinstance(data, list):
+        for item in data:
+            root = _detail_root(item)
+            if root:
+                return root
+        return {}
+
+    if not isinstance(data, dict):
+        return {}
+
+    detail_keys = {
+        "assetId",
+        "assetLongDesc",
+        "assetLongDescription",
+        "assetAttributeGroups",
+        "vinserial",
+        "meterCount",
+    }
+    if any(key in data for key in detail_keys):
+        return data
+
+    for key in ("asset", "assetDetail", "assetDetails", "data", "payload", "result"):
+        root = _detail_root(data.get(key))
+        if root:
+            return root
+
+    return {}
+
+
+def _fetch_govdeals_detail(session: requests.Session, asset_id: Optional[str], account_id: Optional[str]) -> Dict[str, Any]:
+    if not (asset_id and account_id) or not _govdeals_detail_enabled():
+        return {}
+
+    url = GOVDEALS_DETAIL_URL_TEMPLATE.format(asset_id=asset_id, account_id=account_id)
+    try:
+        resp = session.post(
+            url,
+            headers=build_headers(),
+            json=build_govdeals_detail_payload(),
+            timeout=30,
+        )
+    except requests.exceptions.RequestException as exc:
+        dprint(f"[GD] detail net error asset={asset_id} account={account_id}: {exc}")
+        add_error("GovDeals", "detail", f"network error asset {asset_id}: {exc}")
+        return {}
+
+    ct = (resp.headers.get("Content-Type") or "").lower()
+    if resp.status_code != 200 or "application/json" not in ct:
+        dprint(f"[GD] detail bad response asset={asset_id} account={account_id}: {resp.status_code}")
+        add_error("GovDeals", "detail", f"bad response asset {asset_id}: {resp.status_code}")
+        return {}
+
+    try:
+        return _detail_root(resp.json())
+    except ValueError:
+        add_error("GovDeals", "detail", f"invalid JSON asset {asset_id}")
+        return {}
+
+
+def _attribute_lookup(item: Dict[str, Any]) -> Dict[str, Any]:
+    attrs: Dict[str, Any] = {}
+    for label, value in _iter_attribute_group_values(item.get("assetAttributeGroups") or []):
+        key = re.sub(r"[^a-z0-9]+", " ", str(label or "").lower()).strip()
+        if key and value not in (None, "") and key not in attrs:
+            attrs[key] = value
+    return attrs
+
+
+def _attr_first(attrs: Dict[str, Any], *labels: str) -> Any:
+    for label in labels:
+        key = re.sub(r"[^a-z0-9]+", " ", label.lower()).strip()
+        value = attrs.get(key)
+        if value not in (None, ""):
+            return value
+    return None
+
+
+def _carvana_listing_from_govdeals(
+    item: Dict[str, Any],
+    detail: Dict[str, Any],
+    *,
+    title: str,
+    desc: str,
+    cat: str,
+    city: str,
+    state: str,
+    bid: Optional[int],
+    secs: Optional[int],
+    url: str,
+) -> Dict[str, Any]:
+    src = dict(item)
+    src.update(detail or {})
+    attrs = _attribute_lookup(src)
+    mileage, mileage_display = _extract_mileage(src)
+
+    detail_desc = _first(
+        src.get("assetLongDesc"),
+        src.get("assetLongDescription"),
+        src.get("longDescription"),
+        desc,
+    )
+    detail_cat = " ".join(
+        str(value)
+        for value in (
+            cat,
+            src.get("catDesc"),
+            src.get("parentCatDesc"),
+            src.get("categoryName"),
+        )
+        if value
+    )
+
+    return {
+        "title": title,
+        "desc": detail_desc,
+        "category": detail_cat,
+        "city": _first(src.get("city"), src.get("locationCity"), city),
+        "state": _first(src.get("state"), src.get("locationState"), state),
+        "bid_cents": bid,
+        "secs": secs,
+        "url": url,
+        "year": _first(src.get("year"), src.get("assetYear"), _attr_first(attrs, "Year", "Model Year")),
+        "make": _first(src.get("make"), src.get("makebrand"), _attr_first(attrs, "Make")),
+        "model": _first(src.get("model"), _attr_first(attrs, "Model")),
+        "trim": _first(src.get("trim"), _attr_first(attrs, "Trim")),
+        "cab": _attr_first(attrs, "Cab", "Cab Type", "Body Style"),
+        "drivetrain": _attr_first(attrs, "Drivetrain", "Drive Type", "Drive"),
+        "engine": _first(src.get("engine"), _attr_first(attrs, "Engine Type", "Engine")),
+        "fuel": _first(src.get("fuel"), _attr_first(attrs, "Fuel", "Fuel Type")),
+        "condition": _first(src.get("condition"), _attr_first(attrs, "Condition")),
+        "vin": _first(src.get("vin"), src.get("vinserial"), _attr_first(attrs, "VIN", "VIN/Serial", "VIN Serial")),
+        "mileage": mileage,
+        "mileage_display": mileage_display,
+    }
+
+
+def _should_fetch_carvana_detail(
+    rough_result: Dict[str, Any],
+    secs: Optional[int],
+    detail_horizon_secs: Optional[int],
+) -> bool:
+    if not rough_result.get("is_carvana_candidate"):
+        return False
+    if isinstance(secs, int) and detail_horizon_secs is not None and secs > detail_horizon_secs:
+        return False
+    return any(
+        rough_result.get(field) in (None, "", "UNKNOWN")
+        for field in ("mileage", "vin", "trim", "cab", "drivetrain", "engine")
+    )
+
+
 # ---------- main fetch + normalize ----------
 
 SEVEN_DAYS_DEFAULT = 7 * 86400
@@ -480,14 +639,18 @@ def fetch_listings(pages: int | None = None,
         _time.sleep(max(0.0, delay + random.uniform(-1.0, 1.25)))
 
     dprint(f"[GD] total raw={total_raw}, unique kept={len(all_items)}")
-    rows = normalize(all_items)
+    rows = normalize(all_items, detail_session=session, detail_horizon_secs=horizon)
     return rows
 
 
 
 
 
-def normalize(items: List[Dict]) -> List[Dict]:
+def normalize(
+    items: List[Dict],
+    detail_session: Optional[requests.Session] = None,
+    detail_horizon_secs: Optional[int] = SEVEN_DAYS_DEFAULT,
+) -> List[Dict]:
     out: List[Dict] = []
     for idx, item in enumerate(items, start=1):
         title = (item.get("assetShortDescription") or item.get("shortDescription") or "").strip()
@@ -533,12 +696,49 @@ def normalize(items: List[Dict]) -> List[Dict]:
         acct_id, asset_id_for_url = _extract_ids(item, known_asset=raw_asset_id)
         url = _build_gd_url(item, asset_id_for_url, acct_id)
 
+        carvana_listing = _carvana_listing_from_govdeals(
+            item,
+            {},
+            title=title,
+            desc=desc,
+            cat=cat,
+            city=city,
+            state=state,
+            bid=bid,
+            secs=secs,
+            url=url,
+        )
+        carvana_result = classify_carvana_gas(carvana_listing)
+
+        if (
+            detail_session is not None
+            and _should_fetch_carvana_detail(carvana_result, secs, detail_horizon_secs)
+            and asset_id_for_url
+            and acct_id
+        ):
+            detail = _fetch_govdeals_detail(detail_session, asset_id_for_url, acct_id)
+            if detail:
+                carvana_listing = _carvana_listing_from_govdeals(
+                    item,
+                    detail,
+                    title=title,
+                    desc=desc,
+                    cat=cat,
+                    city=city,
+                    state=state,
+                    bid=bid,
+                    secs=secs,
+                    url=url,
+                )
+                carvana_result = classify_carvana_gas(carvana_listing)
+
         row = {
             "site": "GovDeals",
             "asset_id": raw_asset_id,          # asset id (for your downstream logic)
             "gd_account_id": acct_id,          # debug visibility
             "gd_asset_id": asset_id_for_url,   # debug visibility (used in URL)
             "title": title or "Untitled",
+            "desc": carvana_listing.get("desc") or desc,
             "city": city, "state": state,
             "bid_cents": bid,
             "secs": secs,
@@ -551,5 +751,21 @@ def normalize(items: List[Dict]) -> List[Dict]:
             "target": target and not blocked_ld,
             "tags": tags,
         }
+
+        if row["target"] and not row["blocked"]:
+            row["target_strategy"] = "DIESEL_COMMERCIAL"
+        elif carvana_result.get("classification") == "ALERT":
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = True
+            row["blocked"] = False
+        elif carvana_result.get("classification") == "WATCHLIST":
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = False
+            row["blocked"] = False
+        elif carvana_result.get("is_carvana_candidate"):
+            row.update(carvana_result_to_row_fields(carvana_result))
+            row["target"] = False
+            row["blocked"] = True
+
         out.append(row)
     return out

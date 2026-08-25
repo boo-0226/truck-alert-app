@@ -25,6 +25,31 @@ from src.sites import govdeals
 from src.sites import renebates
 from src.sites import proxibid
 
+from src.core.utils import format_dollars, is_target_vehicle
+
+
+CARVANA_PASSTHROUGH_FIELDS = (
+    "target_strategy",
+    "classification",
+    "carvana_score",
+    "carvana_model_key",
+    "carvana_positive_signals",
+    "carvana_negative_signals",
+    "carvana_block_reasons",
+    "carvana_next_action",
+    "vin",
+    "year",
+    "make",
+    "model",
+    "trim",
+    "cab",
+    "drivetrain",
+    "engine",
+    "fuel",
+    "mileage",
+    "mileage_display",
+)
+
 
 # ======================
 # Config (env-driven)
@@ -50,6 +75,32 @@ RENEBATES_PAGES: int = _get_env_int("RENEBATES_PAGES", 2)
 RENEBATES_DELAY_SECS: float = _get_env_float("RENEBATES_DELAY_SECS", 1.0)
 
 PROXIBID_PAGES_MAX: int = _get_env_int("PROXIBID_PAGES_MAX", 30)  # already in your .env for other code paths
+
+
+def _normalize_row(row: Dict) -> Dict:
+    """
+    Keep adapter rows flexible, but guarantee the old alert-facing basics.
+    Unknown fields are intentionally preserved for strategy/report metadata.
+    """
+    out = dict(row or {})
+
+    text_for_target = " ".join(
+        str(out.get(key) or "")
+        for key in ("title", "desc", "description", "category", "tags")
+    )
+
+    if "target" not in out:
+        out["target"] = is_target_vehicle(text_for_target)
+    if "blocked" not in out:
+        out["blocked"] = not bool(out.get("target", False))
+    if "bid_display" not in out:
+        out["bid_display"] = format_dollars(out.get("bid_cents"))
+
+    for field in CARVANA_PASSTHROUGH_FIELDS:
+        if field in row:
+            out[field] = row[field]
+
+    return out
 
 
 # ======================
@@ -145,7 +196,7 @@ def collect_all() -> List[Dict]:
         if key in seen:
             continue
         seen.add(key)
-        deduped.append(r)
+        deduped.append(_normalize_row(r))
 
     dprint(f"[COLLECT] merged={len(out)} deduped={len(deduped)}")
     return deduped

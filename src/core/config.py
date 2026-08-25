@@ -12,6 +12,13 @@ def _int_env(name: str, default: int) -> int:
     except ValueError:
         return default
 
+def _float_env(name: str, default: float) -> float:
+    v = os.getenv(name, "").strip()
+    try:
+        return float(v) if v else default
+    except ValueError:
+        return default
+
 def _dollars_to_cents_env(name: str, default_dollars: int) -> int:
     v = os.getenv(name, "").strip().replace("$","").replace(",","")
     try:
@@ -53,5 +60,17 @@ HEALTHCHECK_MINUTES = 0
 # Separate SMS controls (so digest can send while per-item alerts are muted)
 ALERTS_SMS_ENABLED  = os.getenv("ALERTS_SMS_ENABLED", "0").lower() in ("1","true","yes","y")  # per-vehicle SMS
 DIGEST_SMS_ENABLED  = os.getenv("DIGEST_SMS_ENABLED", "1").lower() in ("1","true","yes","y")  # daily list SMS
+
+
+# Carvana gas strategy knobs. These do not scrape Carvana or invent offers;
+# they are defaults for candidate scoring and future manual deal math.
+MIN_CARVANA_NET_PROFIT = _float_env("MIN_CARVANA_NET_PROFIT", 3500.0)
+CARVANA_DEFAULT_SHIPPING = _float_env("CARVANA_DEFAULT_SHIPPING", 700.0)
+CARVANA_DEFAULT_REPAIR_RESERVE = _float_env("CARVANA_DEFAULT_REPAIR_RESERVE", 1000.0)
+CARVANA_DEFAULT_FIXED_COSTS = _float_env("CARVANA_DEFAULT_FIXED_COSTS", 500.0)
+CARVANA_DEFAULT_SAFETY_BUFFER = _float_env("CARVANA_DEFAULT_SAFETY_BUFFER", 1000.0)
+CARVANA_DEFAULT_BUYER_PREMIUM_RATE = _float_env("CARVANA_DEFAULT_BUYER_PREMIUM_RATE", 0.125)
+CARVANA_GAS_MIN_ALERT_SCORE = _int_env("CARVANA_GAS_MIN_ALERT_SCORE", 75)
+CARVANA_GAS_MIN_WATCHLIST_SCORE = _int_env("CARVANA_GAS_MIN_WATCHLIST_SCORE", 50)
 
 
