@@ -31,6 +31,10 @@ CSV_FIELDS = [
     "url",
     "title",
     "location",
+    "state",
+    "normalized_state",
+    "location_allowed",
+    "location_block_reason",
     "current_bid",
     "minutes_left",
     "year",
@@ -279,6 +283,8 @@ def compute_block_reasons(record: dict[str, Any]) -> list[str]:
     if _as_bool(record.get("should_alert")):
         return ["alert_sent"]
 
+    location_reason = str(record.get("location_block_reason") or "").strip()
+
     if str(record.get("target_strategy") or "").strip().upper() == "CONSUMER_GAS_LIQUID":
         consumer_reasons = _as_list(record.get("block_reasons")) or _as_list(record.get("decision_reasons"))
         if consumer_reasons:
@@ -286,7 +292,9 @@ def compute_block_reasons(record: dict[str, Any]) -> list[str]:
 
     reasons = []
 
-    if not _as_bool(record.get("location_valid")):
+    if location_reason:
+        reasons.append(location_reason)
+    elif not _as_bool(record.get("location_valid")):
         reasons.append("blocked_location")
     if not _as_bool(record.get("bid_under_limit")):
         reasons.append("blocked_bid")
@@ -454,6 +462,7 @@ def _summary_body(rows: list[dict[str, str]]) -> list[str]:
     classification_counts = Counter(_row_classification(row) for row in rows)
     strategy_counts = Counter(row.get("target_strategy") or "NONE" for row in rows)
     broad_discovery_count = sum(1 for row in rows if _as_list(row.get("strategies_considered")))
+    location_block_counts = Counter(row.get("location_block_reason") for row in rows if row.get("location_block_reason"))
     alerts = classification_counts["ALERT"]
     reason_counts = _reason_counts(rows)
 
@@ -470,6 +479,9 @@ def _summary_body(rows: list[dict[str, str]]) -> list[str]:
         f"- ALERT: {classification_counts['ALERT']}",
         f"- WATCHLIST: {classification_counts['WATCHLIST']}",
         f"- REJECT: {classification_counts['REJECT']}",
+        "count by location_block_reason:",
+        f"- outside_target_state: {location_block_counts['outside_target_state']}",
+        f"- location_state_unknown: {location_block_counts['location_state_unknown']}",
         "count by block_reason:",
     ]
 

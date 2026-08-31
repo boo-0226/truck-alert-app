@@ -25,10 +25,14 @@ from src.sites import govdeals
 from src.sites import renebates
 from src.sites import proxibid
 
+from src.core.config import apply_location_guard
 from src.core.utils import format_dollars, is_target_vehicle
 
 
 STRATEGY_PASSTHROUGH_FIELDS = (
+    "location_allowed",
+    "location_block_reason",
+    "normalized_state",
     "target_strategy",
     "strategies_considered",
     "classification",
@@ -121,6 +125,8 @@ def _normalize_row(row: Dict) -> Dict:
     for field in STRATEGY_PASSTHROUGH_FIELDS:
         if field in row:
             out[field] = row[field]
+
+    apply_location_guard(out)
 
     return out
 

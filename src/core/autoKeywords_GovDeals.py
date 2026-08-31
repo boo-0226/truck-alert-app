@@ -4,6 +4,11 @@ import re
 from dataclasses import dataclass
 from typing import Optional
 
+try:
+    from src.core.config import is_allowed_state, target_state_names
+except ImportError:  # pragma: no cover - supports direct script execution with src on sys.path
+    from core.config import is_allowed_state, target_state_names
+
 
 # -------------------------------
 # Global alert filters
@@ -244,19 +249,9 @@ SOFT_WARNING_PATTERNS = {
 
 
 # -------------------------------
-# States allowed for alerting
-# Full state names only. Abbreviations like "TX" should not match.
+# States allowed for alerting. Centralized in config.py through TARGET_STATES.
 # -------------------------------
-ALERT_STATES = [
-    "Texas",
-    "Arkansas",
-    "Oklahoma",
-    "Louisiana",
-    "Mississippi",
-    "Alabama",
-    "Georgia",
-    "Florida",
-]
+ALERT_STATES = target_state_names()
 
 
 @dataclass(frozen=True)
@@ -838,12 +833,7 @@ def find_exclude_keyword_groups(text: str) -> dict:
 
 
 def location_matches_alert_state(location: str) -> bool:
-    clean_location = location or ""
-    for state in ALERT_STATES:
-        pattern = rf"(?<![A-Za-z]){re.escape(state)}(?![A-Za-z])"
-        if re.search(pattern, clean_location, re.IGNORECASE):
-            return True
-    return False
+    return is_allowed_state(location)
 
 
 def parse_bid_amount(value: str | None) -> Optional[float]:

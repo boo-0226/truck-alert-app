@@ -4,6 +4,7 @@ from typing import List, Dict, Optional
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 
+from src.core.config import apply_location_guard
 from src.core.utils import (
     dprint, parse_bid_cents, format_dollars,
     is_target_vehicle, annotate_tags,  # use unified targeting from utils.py
@@ -336,6 +337,8 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
             if strategy_result.get("target_strategy"):
                 row["target"] = strategy_result["target"]
                 row["blocked"] = strategy_result["blocked"]
+
+            apply_location_guard(row, state)
 
             rows.append(row)
 

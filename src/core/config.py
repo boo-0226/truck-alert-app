@@ -1,6 +1,7 @@
 # /src/core/config.py
 # Purpose: load env + global thresholds/channels in one place
 import os
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,6 +26,157 @@ def _dollars_to_cents_env(name: str, default_dollars: int) -> int:
         return int(round(float(v) * 100)) if v else default_dollars * 100
     except ValueError:
         return default_dollars * 100
+
+
+STATE_CODE_TO_NAME = {
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AZ": "Arizona",
+    "AR": "Arkansas",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "HI": "Hawaii",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "IA": "Iowa",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "ME": "Maine",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MS": "Mississippi",
+    "MO": "Missouri",
+    "MT": "Montana",
+    "NE": "Nebraska",
+    "NV": "Nevada",
+    "NH": "New Hampshire",
+    "NJ": "New Jersey",
+    "NM": "New Mexico",
+    "NY": "New York",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PA": "Pennsylvania",
+    "RI": "Rhode Island",
+    "SC": "South Carolina",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VT": "Vermont",
+    "VA": "Virginia",
+    "WA": "Washington",
+    "WV": "West Virginia",
+    "WI": "Wisconsin",
+    "WY": "Wyoming",
+    "DC": "District of Columbia",
+}
+STATE_NAME_TO_CODE = {
+    re.sub(r"[^A-Z]+", " ", name.upper()).strip(): code
+    for code, name in STATE_CODE_TO_NAME.items()
+}
+
+
+def normalize_state(value: str | None) -> str:
+    if value in (None, ""):
+        return ""
+
+    clean = re.sub(r"[^A-Za-z]+", " ", str(value)).strip().upper()
+    if not clean:
+        return ""
+
+    compact = clean.replace(" ", "")
+    if compact in STATE_CODE_TO_NAME:
+        return compact
+    if clean in STATE_NAME_TO_CODE:
+        return STATE_NAME_TO_CODE[clean]
+
+    tokens = clean.split()
+    for token in tokens:
+        if token in STATE_CODE_TO_NAME:
+            return token
+
+    for state_name, code in STATE_NAME_TO_CODE.items():
+        if re.search(rf"\b{re.escape(state_name)}\b", clean):
+            return code
+
+    return ""
+
+
+def _target_states_env() -> frozenset[str]:
+    raw = os.getenv("TARGET_STATES", "TX")
+    states = {normalize_state(part) for part in raw.split(",")}
+    states.discard("")
+    return frozenset(states or {"TX"})
+
+
+TARGET_STATES = _target_states_env()
+
+
+def target_state_names() -> list[str]:
+    return [STATE_CODE_TO_NAME[code] for code in sorted(TARGET_STATES) if code in STATE_CODE_TO_NAME]
+
+
+def is_allowed_state(value: str | None) -> bool:
+    return normalize_state(value) in TARGET_STATES
+
+
+def location_block_reason(value: str | None) -> str:
+    state = normalize_state(value)
+    if not state:
+        return "location_state_unknown"
+    if state not in TARGET_STATES:
+        return "outside_target_state"
+    return ""
+
+
+def _reason_list(value):
+    if value in (None, ""):
+        return []
+    if isinstance(value, (list, tuple, set)):
+        return [str(item) for item in value if item not in (None, "")]
+    return [part.strip() for part in re.split(r"[;,]", str(value)) if part.strip()]
+
+
+def _append_reason(row: dict, field: str, reason: str) -> None:
+    reasons = _reason_list(row.get(field))
+    if reason and reason not in reasons:
+        reasons.append(reason)
+    row[field] = reasons
+
+
+def apply_location_guard(row: dict, state_value: str | None = None) -> dict:
+    raw_state = state_value
+    if raw_state in (None, ""):
+        for key in ("state", "locationState", "stateDesc", "region_text", "location"):
+            raw_state = row.get(key)
+            if raw_state not in (None, ""):
+                break
+
+    normalized_state = normalize_state(raw_state)
+    reason = location_block_reason(raw_state)
+    row["normalized_state"] = normalized_state
+    row["location_allowed"] = reason == ""
+    row["location_block_reason"] = reason
+
+    if reason:
+        row["target"] = False
+        row["blocked"] = True
+        row["classification"] = "REJECT"
+        _append_reason(row, "block_reasons", reason)
+        _append_reason(row, "decision_reasons", reason)
+
+    return row
 
 DEBUG               = os.getenv("DEBUG", "0").lower() in ("1","true","yes","y")
 SEND_SMS            = os.getenv("SEND_SMS", "1").lower() in ("1","true","yes","y")

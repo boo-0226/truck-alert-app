@@ -12,6 +12,7 @@ from src.core.utils import (
     is_specialty_body, has_cummins, is_engine_67,
     annotate_tags, BLOCKED_MODELS
 )
+from src.core.config import apply_location_guard
 from src.core.discovery import discover_vehicle_candidates
 from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
 from src.core.diagnostics import add_error
@@ -654,8 +655,8 @@ def normalize(
         title = (item.get("assetShortDescription") or item.get("shortDescription") or "").strip()
         desc  = (item.get("assetLongDescription")  or item.get("longDescription")  or "").strip()
         cat   = (item.get("categoryName") or "").strip()
-        city  = item.get("locationCity") or "Unknown"
-        state = item.get("locationState") or ""
+        city  = item.get("locationCity") or item.get("city") or "Unknown"
+        state = item.get("locationState") or item.get("stateDesc") or item.get("state") or ""
         mileage, mileage_display = _extract_mileage(item)
 
         # ----- price -----
@@ -770,6 +771,8 @@ def normalize(
         if strategy_result.get("target_strategy"):
             row["target"] = strategy_result["target"]
             row["blocked"] = strategy_result["blocked"]
+
+        apply_location_guard(row, state)
 
         out.append(row)
     return out

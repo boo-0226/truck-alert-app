@@ -39,10 +39,10 @@ from core.autoKeywords_GovDeals import (
     evaluate_gas_fast_flip,
     find_hard_exclude_keywords,
     find_soft_warning_keywords,
-    location_matches_alert_state,
 )
 from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert as send_twilio_alert
+from src.core.config import apply_location_guard, location_block_reason, normalize_state
 from src.core.consumer_gas_liquid import STRATEGY as CONSUMER_GAS_LIQUID
 from src.core.discovery import GAS_WORK_LOCAL
 from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
@@ -786,8 +786,18 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         and strategy_result.get("classification") == "ALERT"
     )
     gas_match = gas_work_match or consumer_gas_match
-    target_match = gas_match or diesel_match
     debug_eval = _selected_debug_eval(gas_eval, diesel_eval)
+
+    location_filter_text = _location_for_filter(listing, detail)
+    location_row = {
+        **strategy_fields,
+        "target": strategy_result.get("target"),
+        "blocked": strategy_result.get("blocked"),
+    }
+    apply_location_guard(location_row, location_filter_text)
+    strategy_fields.update(location_row)
+    final_target = bool(location_row.get("target"))
+    final_blocked = bool(location_row.get("blocked"))
 
     consumer_result = strategy_result.get("consumer_gas") or {}
     miles_value = consumer_result.get("mileage")
@@ -811,8 +821,7 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         and 0 <= minutes_left <= CLOSE_SOON_MINUTES
     )
 
-    location_filter_text = _location_for_filter(listing, detail)
-    location_valid = location_matches_alert_state(location_filter_text)
+    location_valid = bool(strategy_fields.get("location_allowed"))
 
     hard_exclude_keywords_matched = find_hard_exclude_keywords(search_blob)
     soft_warning_keywords_matched = find_soft_warning_keywords(search_blob)
@@ -823,7 +832,8 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         and bid_under_limit is True
         and mileage_ok is True
         and close_soon_flag is True
-        and target_match is True
+        and final_target is True
+        and final_blocked is False
         and not hard_exclude_hit
     )
 
@@ -847,15 +857,17 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         f"gas_match: {gas_match}",
         f"diesel_match: {diesel_match}",
         f"target_strategy: {strategy_result.get('target_strategy')}",
-        f"classification: {strategy_result.get('classification')}",
+        f"classification: {strategy_fields.get('classification')}",
         f"consumer_gas_score: {strategy_fields.get('consumer_gas_score')}",
-        f"decision_reasons: {strategy_result.get('decision_reasons')}",
+        f"decision_reasons: {strategy_fields.get('decision_reasons')}",
         f"diesel_priority_level: {diesel_eval['diesel_priority_level'] if diesel_match else None}",
         f"specialty_keywords_matched: {diesel_eval['specialty_keywords_matched']}",
         f"hard_exclude_keywords_matched: {hard_exclude_keywords_matched}",
         f"hard_exclude_hit: {hard_exclude_hit}",
         f"soft_warning_keywords_matched: {soft_warning_keywords_matched}",
         f"location_valid: {location_valid}",
+        f"location_allowed: {strategy_fields.get('location_allowed')}",
+        f"location_block_reason: {strategy_fields.get('location_block_reason') or 'None'}",
         f"current_bid: {current_bid}",
         f"bid_under_limit: {bid_under_limit}",
         f"mileage_ok: {mileage_ok}",
@@ -882,6 +894,8 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         "debug_eval": debug_eval,
         "strategy_result": strategy_result,
         **strategy_fields,
+        "target": final_target,
+        "blocked": final_blocked,
         "gas_match": gas_match,
         "legacy_gas_match": gas_eval["gas_match"],
         "gas_work_match": gas_work_match,
@@ -951,6 +965,7 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
         "url": listing.get("listing_url"),
         "title": detail.get("title"),
         "location": detail.get("location") or listing.get("region_text"),
+        "state": listing.get("region_text"),
         "current_bid": evaluation["current_bid"],
         "minutes_left": evaluation["minutes_left"],
         "year": evaluation["year_value"],
@@ -967,6 +982,9 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
         "hard_exclude_keywords_matched": evaluation["hard_exclude_keywords_matched"],
         "soft_warning_keywords_matched": evaluation["soft_warning_keywords_matched"],
         "location_valid": evaluation["location_valid"],
+        "location_allowed": evaluation.get("location_allowed"),
+        "location_block_reason": evaluation.get("location_block_reason"),
+        "normalized_state": evaluation.get("normalized_state"),
         "bid_under_limit": evaluation["bid_under_limit"],
         "mileage_ok": evaluation["mileage_ok"],
         "close_soon_flag": evaluation["close_soon_flag"],
@@ -1007,6 +1025,24 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
     })
 
 
+def _log_public_surplus_location_reject(listing: dict, reason: str):
+    log_decision({
+        "source": "Public Surplus",
+        "url": listing.get("listing_url"),
+        "title": "Public Surplus listing",
+        "location": listing.get("region_text"),
+        "state": listing.get("region_text"),
+        "location_valid": False,
+        "location_allowed": False,
+        "location_block_reason": reason,
+        "normalized_state": normalize_state(listing.get("region_text")),
+        "classification": "REJECT",
+        "block_reasons": [reason],
+        "decision_reasons": [reason],
+        "should_alert": False,
+    })
+
+
 def _sleep_between_listing_requests(index: int):
     if index <= 1:
         return
@@ -1042,6 +1078,13 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
             if auction_id in seen_this_run:
                 continue
             seen_this_run.add(auction_id)
+
+            region_text = listing.get("region_text") or ""
+            region_reason = location_block_reason(region_text) if region_text else ""
+            if region_reason == "outside_target_state":
+                print(f"Skipping Public Surplus listing outside target state: {region_text}")
+                _log_public_surplus_location_reject(listing, region_reason)
+                continue
 
             try:
                 print("\n====================")

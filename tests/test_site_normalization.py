@@ -45,7 +45,7 @@ def test_govdeals_generic_title_uses_description_for_consumer_gas_fields():
 def test_proxibid_parser_uses_container_text_for_consumer_gas_classification():
     html = """
     <div class="gallery-card">
-      <a href="/asp/LotDetail.asp?lid=123"><span class="lotTitle">2019 Ford F150 Pickup</span></a>
+      <a href="/asp/LotDetail.asp?lid=123"><span class="lotTitle">(Austin, TX) 2019 Ford F150 Pickup</span></a>
       <div class="lotDesc">5.0 V8 Lariat SuperCrew 4x4 38,000 miles runs and drives gas</div>
       <div class="currentPrice">$4,000</div>
       <div class="countdownTimer">

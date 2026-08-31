@@ -6,6 +6,7 @@ import time, random, requests, re
 from typing import List, Dict, Optional
 from bs4 import BeautifulSoup
 
+from src.core.config import apply_location_guard
 from src.core.utils import (
     dprint, parse_bid_cents,
     is_engine_67, BLOCKED_MODELS,
@@ -46,6 +47,7 @@ def _headers():
 
 LID_RE    = re.compile(r"lid=(\d+)")
 MONEY_RE  = re.compile(r"(?<!\w)\$?\s?([0-9]{1,3}(?:,[0-9]{3})*(?:\.[0-9]{2})?)")
+CITY_ST_RE = re.compile(r"^\(([^)]+)\)\s*(.*)$")
 
 def _secs_from_hm(hours_text: Optional[str], minutes_text: Optional[str]) -> Optional[int]:
     hrs = mins = 0
@@ -95,6 +97,16 @@ def _parse_fragment(html: str) -> List[Dict]:
 
         # location & city/state often appear in text near title; keep Unknown defaults
         city, state = "Unknown", ""
+        location_match = CITY_ST_RE.match(title)
+        if location_match:
+            location_text = location_match.group(1)
+            title = (location_match.group(2) or "").strip() or title
+            if "," in location_text:
+                city_part, state_part = location_text.rsplit(",", 1)
+                city = city_part.strip() or city
+                state = state_part.strip()[:2]
+            else:
+                city = location_text.strip() or city
 
         # price
         price_text = ""
@@ -167,6 +179,8 @@ def _parse_fragment(html: str) -> List[Dict]:
         if strategy_result.get("target_strategy"):
             row["target"] = strategy_result["target"]
             row["blocked"] = strategy_result["blocked"]
+
+        apply_location_guard(row, state)
 
         out.append(row)
     return out

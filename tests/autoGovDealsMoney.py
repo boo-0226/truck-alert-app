@@ -29,11 +29,11 @@ from core.autoKeywords_GovDeals import (
     evaluate_gas_fast_flip,
     find_hard_exclude_keywords,
     find_soft_warning_keywords,
-    location_matches_alert_state,
     parse_bid_amount,
 )
 from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert
+from core.config import location_block_reason, normalize_state
 from sites.govdeals_http import (
     GOVDEALS_DETAIL_URL_TEMPLATE,
     GOVDEALS_SEARCH_URL,
@@ -186,6 +186,8 @@ def _log_list_data_decision(listing: dict, href: str, minutes_left: float | None
         _first(listing.get("assetShortDescription"), listing.get("shortDescription"))
     ) or "Untitled"
     location = _location_from_api(listing, {})
+    location_reason = location_block_reason(location)
+    normalized_state = normalize_state(location)
     current_bid = _current_bid_from_api(listing, {})
     numeric_bid = parse_bid_amount(current_bid)
     close_soon_flag = minutes_left is not None and 0 <= minutes_left <= CLOSE_SOON_MINUTES
@@ -195,6 +197,10 @@ def _log_list_data_decision(listing: dict, href: str, minutes_left: float | None
         "url": href,
         "title": title,
         "location": location,
+        "state": normalized_state,
+        "normalized_state": normalized_state,
+        "location_allowed": not bool(location_reason),
+        "location_block_reason": location_reason,
         "current_bid": numeric_bid,
         "minutes_left": minutes_left,
         "year": listing.get("modelYear"),
@@ -209,7 +215,7 @@ def _log_list_data_decision(listing: dict, href: str, minutes_left: float | None
         "hard_exclude_hit": False,
         "hard_exclude_keywords_matched": [],
         "soft_warning_keywords_matched": [],
-        "location_valid": location_matches_alert_state(location),
+        "location_valid": not bool(location_reason),
         "bid_under_limit": numeric_bid is not None and numeric_bid < MAX_GAS_BID,
         "mileage_ok": True,
         "close_soon_flag": close_soon_flag,
@@ -442,7 +448,9 @@ def _process_listing(listing: dict, detail: dict, href: str, minutes_left: float
 
     location = _location_from_api(listing, detail)
     print("Location:", location)
-    location_valid = location_matches_alert_state(location)
+    location_reason = location_block_reason(location)
+    normalized_state = normalize_state(location)
+    location_valid = not bool(location_reason)
 
     attributes = list(_iter_attribute_values(detail.get("assetAttributeGroups") or []))
     specs_text_parts, specs_make_value, specs_model_value = _specs_from_api(listing, detail, attributes)
@@ -623,6 +631,10 @@ def _process_listing(listing: dict, detail: dict, href: str, minutes_left: float
         "url": href,
         "title": title,
         "location": location,
+        "state": normalized_state,
+        "normalized_state": normalized_state,
+        "location_allowed": not bool(location_reason),
+        "location_block_reason": location_reason,
         "current_bid": numeric_bid,
         "minutes_left": minutes_left,
         "year": debug_eval["year_value"],
@@ -650,6 +662,7 @@ def _process_listing(listing: dict, detail: dict, href: str, minutes_left: float
 
     print("\n[ALERT DEBUG]")
     print(f"  location_valid: {location_valid} | location={debug_location}")
+    print(f"  location_block_reason: {location_reason or 'None'}")
     print(f"  bid_under_limit: {bid_under_limit} | bid={debug_bid if debug_bid is not None else 'Not found'} | cap={MAX_GAS_BID}")
     print(f"  mileage_ok: {mileage_ok} | miles={debug_miles} | cap={MAX_GAS_MILES} gas / {MAX_DIESEL_MILES} diesel")
     print(f"  year_ok: {debug_eval['year_ok']} | year={debug_year} | allowed={allowed_years}")
