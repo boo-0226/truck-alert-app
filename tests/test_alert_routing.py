@@ -1,5 +1,9 @@
 from src.core import alerts
-from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
+from src.core.consumer_gas_liquid import (
+    STRATEGY as CONSUMER_GAS_LIQUID,
+    classify_consumer_gas_liquid,
+    consumer_gas_result_to_row_fields,
+)
 
 
 def _base_row():
@@ -15,31 +19,34 @@ def _base_row():
     }
 
 
-def test_carvana_alert_row_uses_existing_target_gate(monkeypatch):
+def test_consumer_gas_alert_row_uses_existing_target_gate(monkeypatch):
     monkeypatch.setattr(alerts, "mark_alerted", lambda *args, **kwargs: None)
     monkeypatch.setattr(alerts, "save_cache", lambda *args, **kwargs: None)
-    result = classify_carvana_gas({
+    result = classify_consumer_gas_liquid({
         "title": "2019 Chevrolet Silverado 1500 LTZ Crew Cab 4WD 50k miles 5.3 V8"
-    })
+    }, current_year=2026)
     row = _base_row()
-    row.update(carvana_result_to_row_fields(result))
+    row.update(consumer_gas_result_to_row_fields(result))
     row["target"] = True
     row["blocked"] = False
 
     assert row["target"] is True
     assert row["blocked"] is False
     assert row["classification"] == "ALERT"
-    assert row["target_strategy"] == "CARVANA_GAS"
+    assert row["target_strategy"] == CONSUMER_GAS_LIQUID
     assert alerts.evaluate_and_alert({}, [row], alerts_enabled=False) == 300
 
 
-def test_carvana_watchlist_does_not_enter_twilio_path(monkeypatch):
+def test_consumer_gas_watchlist_does_not_enter_twilio_path(monkeypatch):
     monkeypatch.setattr(alerts, "mark_alerted", lambda *args, **kwargs: None)
     monkeypatch.setattr(alerts, "save_cache", lambda *args, **kwargs: None)
-    result = classify_carvana_gas({"title": "2019 Chevrolet Silverado 1500 WT 2WD 67k miles"})
+    result = classify_consumer_gas_liquid(
+        {"title": "2019 Ford F-150 King Ranch SuperCrew 4WD mileage unknown"},
+        current_year=2026,
+    )
     row = _base_row()
     row["asset_id"] = "route-watch"
-    row.update(carvana_result_to_row_fields(result))
+    row.update(consumer_gas_result_to_row_fields(result))
     row["target"] = False
     row["blocked"] = False
 
@@ -48,7 +55,7 @@ def test_carvana_watchlist_does_not_enter_twilio_path(monkeypatch):
 
     monkeypatch.setattr(alerts, "twilio_client", fail_twilio_client)
 
-    assert row["classification"] in {"WATCHLIST", "REJECT"}
+    assert row["classification"] == "WATCHLIST"
     assert alerts.evaluate_and_alert({}, [row], alerts_enabled=True) is None
 
 

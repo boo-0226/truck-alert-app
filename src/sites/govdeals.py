@@ -12,7 +12,8 @@ from src.core.utils import (
     is_specialty_body, has_cummins, is_engine_67,
     annotate_tags, BLOCKED_MODELS
 )
-from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
+from src.core.discovery import discover_vehicle_candidates
+from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
 from src.core.diagnostics import add_error
 from src.core.timeparse import seconds_remaining
 from src.sites.govdeals_http import (
@@ -468,7 +469,7 @@ def _attr_first(attrs: Dict[str, Any], *labels: str) -> Any:
     return None
 
 
-def _carvana_listing_from_govdeals(
+def _strategy_listing_from_govdeals(
     item: Dict[str, Any],
     detail: Dict[str, Any],
     *,
@@ -527,19 +528,16 @@ def _carvana_listing_from_govdeals(
     }
 
 
-def _should_fetch_carvana_detail(
-    rough_result: Dict[str, Any],
+def _should_fetch_strategy_detail(
+    discovery: Dict[str, Any],
     secs: Optional[int],
     detail_horizon_secs: Optional[int],
 ) -> bool:
-    if not rough_result.get("is_carvana_candidate"):
+    if not discovery.get("discovered"):
         return False
     if isinstance(secs, int) and detail_horizon_secs is not None and secs > detail_horizon_secs:
         return False
-    return any(
-        rough_result.get(field) in (None, "", "UNKNOWN")
-        for field in ("mileage", "vin", "trim", "cab", "drivetrain", "engine")
-    )
+    return bool(discovery.get("needs_detail"))
 
 
 # ---------- main fetch + normalize ----------
@@ -696,7 +694,10 @@ def normalize(
         acct_id, asset_id_for_url = _extract_ids(item, known_asset=raw_asset_id)
         url = _build_gd_url(item, asset_id_for_url, acct_id)
 
-        carvana_listing = _carvana_listing_from_govdeals(
+        diesel_target = target and not blocked_ld
+        diesel_blocked = blocked_ld or (not target)
+
+        strategy_listing = _strategy_listing_from_govdeals(
             item,
             {},
             title=title,
@@ -708,17 +709,17 @@ def normalize(
             secs=secs,
             url=url,
         )
-        carvana_result = classify_carvana_gas(carvana_listing)
+        discovery = discover_vehicle_candidates(strategy_listing)
 
         if (
             detail_session is not None
-            and _should_fetch_carvana_detail(carvana_result, secs, detail_horizon_secs)
+            and _should_fetch_strategy_detail(discovery, secs, detail_horizon_secs)
             and asset_id_for_url
             and acct_id
         ):
             detail = _fetch_govdeals_detail(detail_session, asset_id_for_url, acct_id)
             if detail:
-                carvana_listing = _carvana_listing_from_govdeals(
+                strategy_listing = _strategy_listing_from_govdeals(
                     item,
                     detail,
                     title=title,
@@ -730,7 +731,20 @@ def normalize(
                     secs=secs,
                     url=url,
                 )
-                carvana_result = classify_carvana_gas(carvana_listing)
+                discovery = discover_vehicle_candidates(strategy_listing)
+
+        strategy_result = classify_listing_strategies(
+            strategy_listing,
+            diesel_result={
+                "strategy": "DIESEL_COMMERCIAL",
+                "classification": "ALERT" if diesel_target else "REJECT",
+                "target": diesel_target,
+                "blocked": diesel_blocked,
+                "engine_67": is_engine_67(text),
+                "tags": tags,
+                "decision_reasons": ["diesel_commercial_existing_match"] if diesel_target else ["diesel_commercial_existing_no_match"],
+            },
+        )
 
         row = {
             "site": "GovDeals",
@@ -738,7 +752,7 @@ def normalize(
             "gd_account_id": acct_id,          # debug visibility
             "gd_asset_id": asset_id_for_url,   # debug visibility (used in URL)
             "title": title or "Untitled",
-            "desc": carvana_listing.get("desc") or desc,
+            "desc": strategy_listing.get("desc") or desc,
             "city": city, "state": state,
             "bid_cents": bid,
             "secs": secs,
@@ -747,25 +761,15 @@ def normalize(
             "mileage_display": mileage_display,
             "mileage_ok": True,
             "engine_67": is_engine_67(text),
-            "blocked": blocked_ld or (not target),
-            "target": target and not blocked_ld,
+            "blocked": diesel_blocked,
+            "target": diesel_target,
             "tags": tags,
         }
 
-        if row["target"] and not row["blocked"]:
-            row["target_strategy"] = "DIESEL_COMMERCIAL"
-        elif carvana_result.get("classification") == "ALERT":
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = True
-            row["blocked"] = False
-        elif carvana_result.get("classification") == "WATCHLIST":
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = False
-            row["blocked"] = False
-        elif carvana_result.get("is_carvana_candidate"):
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = False
-            row["blocked"] = True
+        row.update(strategy_result_to_row_fields(strategy_result))
+        if strategy_result.get("target_strategy"):
+            row["target"] = strategy_result["target"]
+            row["blocked"] = strategy_result["blocked"]
 
         out.append(row)
     return out

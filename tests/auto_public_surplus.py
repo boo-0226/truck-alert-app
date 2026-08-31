@@ -17,8 +17,9 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
 SRC_DIR = os.path.join(PROJECT_ROOT, "src")
 
-if SRC_DIR not in sys.path:
-    sys.path.insert(0, SRC_DIR)
+for import_path in (PROJECT_ROOT, SRC_DIR):
+    if import_path not in sys.path:
+        sys.path.insert(0, import_path)
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -42,6 +43,9 @@ from core.autoKeywords_GovDeals import (
 )
 from core.decision_log import log_decision
 from core.autoTwilio_Alerts import send_alert as send_twilio_alert
+from src.core.consumer_gas_liquid import STRATEGY as CONSUMER_GAS_LIQUID
+from src.core.discovery import GAS_WORK_LOCAL
+from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
 
 
 BASE_URL = "https://www.publicsurplus.com/sms/browse/cataucs?catid=4"
@@ -713,6 +717,40 @@ def _selected_debug_eval(gas_eval: dict, diesel_eval: dict) -> dict:
     return gas_eval
 
 
+def _legacy_gas_work_existing(gas_eval: dict) -> dict:
+    lane = (gas_eval.get("matched_lane") or "").lower()
+    is_hd_gas_work = any(token in lane for token in ("f-250", "f-350", "2500", "3500"))
+    if gas_eval.get("gas_match") and is_hd_gas_work:
+        return {"target": True, "label": gas_eval.get("matched_lane") or "GAS WORK LOCAL"}
+    return {}
+
+
+def _strategy_listing_from_public_surplus(listing: dict, detail: dict) -> dict:
+    miles_value = detail.get("mileage_value")
+    return {
+        "title": detail.get("title"),
+        "desc": detail.get("description_text"),
+        "structured_text": detail.get("structured_text"),
+        "category": "Public Surplus vehicle auction",
+        "city": detail.get("location"),
+        "state": listing.get("region_text"),
+        "url": listing.get("listing_url"),
+        "current_bid": detail.get("current_bid"),
+        "year": detail.get("year"),
+        "make": detail.get("make"),
+        "model": detail.get("model"),
+        "engine": detail.get("engine"),
+        "condition": detail.get("condition"),
+        "title_status": detail.get("title_status"),
+        "body_style": detail.get("body_style"),
+        "vin": detail.get("vin"),
+        "fuel": detail.get("fuel"),
+        "mileage": miles_value,
+        "mileage_value": miles_value,
+        "mileage_display": f"{miles_value:,}" if isinstance(miles_value, int) else "",
+    }
+
+
 def evaluate_truck(listing: dict, detail: dict) -> dict:
     search_blob = " ".join(
         [
@@ -725,12 +763,36 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
     gas_eval = evaluate_gas_fast_flip(search_blob, vehicle_context_text=detail.get("title"))
     diesel_eval = evaluate_diesel_truck_filter(search_blob, vehicle_context_text=detail.get("title"))
 
-    gas_match = gas_eval["gas_match"]
     diesel_match = diesel_eval["diesel_match"]
+    strategy_result = classify_listing_strategies(
+        _strategy_listing_from_public_surplus(listing, detail),
+        diesel_result={
+            "strategy": "DIESEL_COMMERCIAL",
+            "classification": "ALERT" if diesel_match else "REJECT",
+            "target": diesel_match,
+            "blocked": not diesel_match,
+            "decision_reasons": ["diesel_commercial_existing_match"] if diesel_match else ["diesel_commercial_existing_no_match"],
+        },
+        gas_work_existing=_legacy_gas_work_existing(gas_eval),
+    )
+    strategy_fields = strategy_result_to_row_fields(strategy_result)
+
+    gas_work_match = (
+        strategy_result.get("target_strategy") == GAS_WORK_LOCAL
+        and strategy_result.get("target") is True
+    )
+    consumer_gas_match = (
+        strategy_result.get("target_strategy") == CONSUMER_GAS_LIQUID
+        and strategy_result.get("classification") == "ALERT"
+    )
+    gas_match = gas_work_match or consumer_gas_match
     target_match = gas_match or diesel_match
     debug_eval = _selected_debug_eval(gas_eval, diesel_eval)
 
-    miles_value = detail.get("mileage_value")
+    consumer_result = strategy_result.get("consumer_gas") or {}
+    miles_value = consumer_result.get("mileage")
+    if miles_value is None:
+        miles_value = detail.get("mileage_value")
     gas_mileage_ok = miles_value is None or miles_value < MAX_GAS_MILES
     diesel_mileage_ok = miles_value is None or miles_value <= MAX_DIESEL_MILES
     mileage_ok = (
@@ -765,11 +827,12 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         and not hard_exclude_hit
     )
 
-    year_value = debug_eval.get("year_value") or detail.get("year")
-    make_value = debug_eval.get("make_value") or detail.get("make")
-    model_value = detail.get("model")
+    year_value = consumer_result.get("year") or debug_eval.get("year_value") or detail.get("year")
+    make_value = consumer_result.get("make") or debug_eval.get("make_value") or detail.get("make")
+    model_value = consumer_result.get("model") or detail.get("model")
     engine_value = (
-        debug_eval.get("engine_value")
+        consumer_result.get("engine")
+        or debug_eval.get("engine_value")
         or debug_eval.get("engine_text")
         or detail.get("engine")
     )
@@ -780,8 +843,13 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         f"make: {_first_display(make_value)} | make_ok: {debug_eval['make_ok']}",
         f"model: {_first_display(model_value)} | model_ok: {debug_eval['model_ok']}",
         f"engine: {_first_display(engine_value)} | engine_ok: {debug_eval['engine_ok']}",
+        f"legacy_gas_match: {gas_eval['gas_match']}",
         f"gas_match: {gas_match}",
         f"diesel_match: {diesel_match}",
+        f"target_strategy: {strategy_result.get('target_strategy')}",
+        f"classification: {strategy_result.get('classification')}",
+        f"consumer_gas_score: {strategy_fields.get('consumer_gas_score')}",
+        f"decision_reasons: {strategy_result.get('decision_reasons')}",
         f"diesel_priority_level: {diesel_eval['diesel_priority_level'] if diesel_match else None}",
         f"specialty_keywords_matched: {diesel_eval['specialty_keywords_matched']}",
         f"hard_exclude_keywords_matched: {hard_exclude_keywords_matched}",
@@ -796,8 +864,10 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         f"should_alert: {should_alert}",
     ]
 
-    if gas_match:
-        target_label = "GAS FAST FLIP"
+    if strategy_result.get("target_strategy") == CONSUMER_GAS_LIQUID:
+        target_label = CONSUMER_GAS_LIQUID
+    elif strategy_result.get("target_strategy") == GAS_WORK_LOCAL:
+        target_label = "GAS WORK LOCAL"
     elif diesel_match:
         target_label = "DIESEL TARGET"
     else:
@@ -810,7 +880,12 @@ def evaluate_truck(listing: dict, detail: dict) -> dict:
         "gas_eval": gas_eval,
         "diesel_eval": diesel_eval,
         "debug_eval": debug_eval,
+        "strategy_result": strategy_result,
+        **strategy_fields,
         "gas_match": gas_match,
+        "legacy_gas_match": gas_eval["gas_match"],
+        "gas_work_match": gas_work_match,
+        "consumer_gas_match": consumer_gas_match,
         "diesel_match": diesel_match,
         "diesel_priority_level": diesel_eval["diesel_priority_level"] if diesel_match else None,
         "specialty_keywords_matched": diesel_eval["specialty_keywords_matched"],
@@ -859,6 +934,8 @@ def _build_alert_message(listing: dict, detail: dict, evaluation: dict) -> str:
         "",
         *evaluation["alert_debug_lines"],
     ]
+    if evaluation.get("next_action"):
+        alert_lines.insert(2, f"Next action: {evaluation['next_action']}")
 
     return "\n".join(alert_lines)
 
@@ -882,6 +959,7 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
         "engine": evaluation["engine_value"],
         "mileage": evaluation["miles_value"],
         "gas_match": evaluation["gas_match"],
+        "legacy_gas_match": evaluation.get("legacy_gas_match"),
         "diesel_match": evaluation["diesel_match"],
         "diesel_priority_level": evaluation["diesel_priority_level"],
         "specialty_keywords_matched": evaluation["specialty_keywords_matched"],
@@ -897,6 +975,35 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
         "make_ok": debug_eval["make_ok"],
         "model_ok": debug_eval["model_ok"],
         "engine_ok": debug_eval["engine_ok"],
+        "target_strategy": evaluation.get("target_strategy"),
+        "strategies_considered": evaluation.get("strategies_considered"),
+        "discovery_reasons": evaluation.get("discovery_reasons"),
+        "decision_reasons": evaluation.get("decision_reasons"),
+        "positive_signals": evaluation.get("positive_signals"),
+        "negative_signals": evaluation.get("negative_signals"),
+        "block_reasons": evaluation.get("block_reasons"),
+        "score": evaluation.get("score"),
+        "consumer_gas_score": evaluation.get("consumer_gas_score"),
+        "consumer_gas_model_key": evaluation.get("consumer_gas_model_key"),
+        "next_action": evaluation.get("next_action"),
+        "model_year": evaluation.get("model_year"),
+        "vehicle_age": evaluation.get("vehicle_age"),
+        "parsed_make": evaluation.get("parsed_make"),
+        "parsed_model": evaluation.get("parsed_model"),
+        "parsed_year": evaluation.get("parsed_year"),
+        "parsed_vehicle_age": evaluation.get("parsed_vehicle_age"),
+        "parsed_mileage": evaluation.get("parsed_mileage"),
+        "parsed_trim": evaluation.get("parsed_trim"),
+        "parsed_cab": evaluation.get("parsed_cab"),
+        "parsed_drivetrain": evaluation.get("parsed_drivetrain"),
+        "parsed_engine": evaluation.get("parsed_engine"),
+        "parsed_fuel": evaluation.get("parsed_fuel"),
+        "vin": evaluation.get("vin"),
+        "trim": evaluation.get("trim"),
+        "cab": evaluation.get("cab"),
+        "drivetrain": evaluation.get("drivetrain"),
+        "fuel": evaluation.get("fuel"),
+        "mileage_display": evaluation.get("mileage_display"),
     })
 
 

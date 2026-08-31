@@ -7,7 +7,9 @@ from src.core.utils import (
     is_specialty_body,
     is_target_vehicle,
 )
-from src.core.carvana_gas import classify_carvana_gas
+from src.core.consumer_gas_liquid import STRATEGY as CONSUMER_GAS_LIQUID
+from src.core.discovery import discover_vehicle_candidates
+from src.core.strategies import classify_listing_strategies
 from src.sites.govdeals import normalize
 
 
@@ -46,18 +48,27 @@ def test_light_duty_f150_stays_blocked_from_diesel_lane():
     assert is_target_vehicle(text) is False
 
 
-def test_light_duty_gas_can_only_alert_through_carvana_lane():
+def test_light_duty_gas_can_only_alert_through_consumer_gas_lane():
     diesel_text = "2019 Ford F-150 5.0 gas SuperCrew 4WD"
-    carvana_text = "2019 Ford F-150 King Ranch SuperCrew 4WD 48k miles 5.0 gas"
+    consumer_text = "2019 Ford F-150 King Ranch SuperCrew 4WD 48k miles 5.0 gas"
 
     assert is_target_vehicle(diesel_text) is False
-    result = classify_carvana_gas({"title": carvana_text})
-    assert result["strategy"] == "CARVANA_GAS"
+    result = classify_listing_strategies({"title": consumer_text}, current_year=2026)
+    assert result["strategy"] == CONSUMER_GAS_LIQUID
     assert result["classification"] == "ALERT"
 
 
 def test_ram_1500_diesel_stays_blocked_from_diesel_lane():
     assert is_target_vehicle("Ram 1500 diesel") is False
+
+
+def test_broad_discovery_finds_f150_without_changing_diesel_reject():
+    text = "2019 Ford F-150 5.0 gas SuperCrew 4WD"
+
+    discovery = discover_vehicle_candidates(text)
+
+    assert CONSUMER_GAS_LIQUID in discovery["strategy_candidates"]
+    assert is_target_vehicle(text) is False
 
 
 def test_govdeals_diesel_normalize_preserves_existing_output():

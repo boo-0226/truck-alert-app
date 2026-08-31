@@ -8,7 +8,7 @@ from src.core.utils import (
     dprint, parse_bid_cents, format_dollars,
     is_target_vehicle, annotate_tags,  # use unified targeting from utils.py
 )
-from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
+from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
 # seconds_remaining not used here; RB gives event-level close only
 # from src.core.timeparse import seconds_remaining
 
@@ -140,7 +140,12 @@ def _pick_category_links(ev_soup: BeautifulSoup) -> List[str]:
     if cat_block:
         for a in cat_block.find_all("a", href=True):
             txt = a.get_text(" ", strip=True).lower()
-            if any(kw in txt for kw in ("truck", "tractor", "fire", "utility", "heavy duty", "diesel", "crane", "bucket", "dump", "box")):
+            if any(kw in txt for kw in (
+                "truck", "pickup", "vehicle", "automobile", "auto", "fleet",
+                "tractor", "fire", "utility", "heavy duty", "diesel", "crane",
+                "bucket", "dump", "box", "f-150", "f150", "silverado", "sierra",
+                "ram", "tacoma", "tundra", "colorado", "canyon", "ranger", "frontier",
+            )):
                 u = _abs_url(a["href"])
                 if u: links.append(u)
 
@@ -186,8 +191,11 @@ def _extract_lot_rows(list_html: str) -> List[Dict]:
             if m2:
                 price = parse_bid_cents(m2.group(1))
 
+        container_text = container.get_text(" ", strip=True) if container else title
+
         out.append({
             "title": title,
+            "container_text": container_text,
             "url": url,
             "bid_cents": price,
             "asset_id": lot_id or f"lot-{hash(url) & 0xffffffff:x}",
@@ -284,7 +292,8 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
             bid   = lot.get("bid_cents")
             asset_id = lot.get("asset_id") or f"{(hash(url) & 0xffffffff):x}"
 
-            text = (title or "").lower()
+            container_text = lot.get("container_text") or title
+            text = " ".join([title or "", ev.get("title") or "", container_text or ""]).lower()
             tags = annotate_tags(text)
             diesel_target = is_target_vehicle(text)  # true target = diesel+specialty OR cummins
             blocked = not diesel_target
@@ -293,6 +302,8 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
                 "site": "ReneBates",
                 "asset_id": str(asset_id),
                 "title": title,
+                "desc": container_text,
+                "event_title": ev.get("title"),
                 "city": city, "state": state,
                 "bid_cents": bid,
                 "secs": secs_event,   # RB rarely gives per-lot times; use event close
@@ -303,27 +314,28 @@ def fetch_listings(pages: int = 1, page_delay: float = 3.5, start_offset: int = 
                 "target": diesel_target,
             }
 
-            carvana_result = classify_carvana_gas({
+            strategy_result = classify_listing_strategies({
                 "title": title,
+                "desc": container_text,
+                "event_title": ev.get("title"),
+                "container_text": container_text,
                 "bid_cents": bid,
                 "secs": secs_event,
                 "url": url,
+            }, diesel_result={
+                "strategy": "DIESEL_COMMERCIAL",
+                "classification": "ALERT" if diesel_target and not blocked else "REJECT",
+                "target": diesel_target and not blocked,
+                "blocked": blocked,
+                "engine_67": row["engine_67"],
+                "tags": tags,
+                "decision_reasons": ["diesel_commercial_existing_match"] if diesel_target and not blocked else ["diesel_commercial_existing_no_match"],
             })
 
-            if diesel_target and not blocked:
-                row["target_strategy"] = "DIESEL_COMMERCIAL"
-            elif carvana_result.get("classification") == "ALERT":
-                row.update(carvana_result_to_row_fields(carvana_result))
-                row["target"] = True
-                row["blocked"] = False
-            elif carvana_result.get("classification") == "WATCHLIST":
-                row.update(carvana_result_to_row_fields(carvana_result))
-                row["target"] = False
-                row["blocked"] = False
-            elif carvana_result.get("is_carvana_candidate"):
-                row.update(carvana_result_to_row_fields(carvana_result))
-                row["target"] = False
-                row["blocked"] = True
+            row.update(strategy_result_to_row_fields(strategy_result))
+            if strategy_result.get("target_strategy"):
+                row["target"] = strategy_result["target"]
+                row["blocked"] = strategy_result["blocked"]
 
             rows.append(row)
 

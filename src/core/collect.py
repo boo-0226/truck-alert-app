@@ -28,9 +28,19 @@ from src.sites import proxibid
 from src.core.utils import format_dollars, is_target_vehicle
 
 
-CARVANA_PASSTHROUGH_FIELDS = (
+STRATEGY_PASSTHROUGH_FIELDS = (
     "target_strategy",
+    "strategies_considered",
     "classification",
+    "discovery_reasons",
+    "decision_reasons",
+    "positive_signals",
+    "negative_signals",
+    "block_reasons",
+    "score",
+    "consumer_gas_score",
+    "consumer_gas_model_key",
+    "next_action",
     "carvana_score",
     "carvana_model_key",
     "carvana_positive_signals",
@@ -39,6 +49,8 @@ CARVANA_PASSTHROUGH_FIELDS = (
     "carvana_next_action",
     "vin",
     "year",
+    "model_year",
+    "vehicle_age",
     "make",
     "model",
     "trim",
@@ -48,6 +60,16 @@ CARVANA_PASSTHROUGH_FIELDS = (
     "fuel",
     "mileage",
     "mileage_display",
+    "parsed_make",
+    "parsed_model",
+    "parsed_year",
+    "parsed_vehicle_age",
+    "parsed_engine",
+    "parsed_mileage",
+    "parsed_trim",
+    "parsed_cab",
+    "parsed_drivetrain",
+    "parsed_fuel",
 )
 
 
@@ -86,17 +108,17 @@ def _normalize_row(row: Dict) -> Dict:
 
     text_for_target = " ".join(
         str(out.get(key) or "")
-        for key in ("title", "desc", "description", "category", "tags")
+        for key in ("title", "desc", "description", "category", "city", "state", "tags")
     )
 
-    if "target" not in out:
+    if out.get("target") is None:
         out["target"] = is_target_vehicle(text_for_target)
-    if "blocked" not in out:
+    if out.get("blocked") is None:
         out["blocked"] = not bool(out.get("target", False))
     if "bid_display" not in out:
         out["bid_display"] = format_dollars(out.get("bid_cents"))
 
-    for field in CARVANA_PASSTHROUGH_FIELDS:
+    for field in STRATEGY_PASSTHROUGH_FIELDS:
         if field in row:
             out[field] = row[field]
 

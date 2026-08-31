@@ -11,7 +11,7 @@ from src.core.utils import (
     is_engine_67, BLOCKED_MODELS,
     is_target_vehicle, annotate_tags,
 )
-from src.core.carvana_gas import classify_carvana_gas, carvana_result_to_row_fields
+from src.core.strategies import classify_listing_strategies, strategy_result_to_row_fields
 from src.core.timeparse import seconds_remaining
 
 # ---- Config (env-overridable via .env if you want) ----
@@ -120,48 +120,53 @@ def _parse_fragment(html: str) -> List[Dict]:
                 if len(nums) >= 2: minutes_text = nums[1]
         secs = _secs_from_hm(hours_text, minutes_text)
 
+        container_text = container.get_text(" ", strip=True) if container else title
+
         # Build text blob for filters
-        text = title.lower()
+        text = f"{title} {container_text}".lower()
         engine67 = is_engine_67(text)
         blocked  = any(b in text for b in BLOCKED_MODELS)
         target   = is_target_vehicle(text)
         tags     = annotate_tags(text)
+        diesel_target = target
+        diesel_blocked = blocked
 
         row = {
             "site": "Proxibid",
             "asset_id": lid,
             "title": title,
+            "desc": container_text,
             "city": city, "state": state,
             "bid_cents": bid_cents,
             "secs": secs,
             "engine_67": engine67,
-            "blocked": blocked,
-            "target": target,
+            "blocked": diesel_blocked,
+            "target": diesel_target,
             "tags": tags,
             "url": url,
         }
 
-        carvana_result = classify_carvana_gas({
+        strategy_result = classify_listing_strategies({
             "title": title,
+            "desc": container_text,
+            "container_text": container_text,
             "bid_cents": bid_cents,
             "secs": secs,
             "url": url,
+        }, diesel_result={
+            "strategy": "DIESEL_COMMERCIAL",
+            "classification": "ALERT" if row["target"] and not row["blocked"] else "REJECT",
+            "target": row["target"] and not row["blocked"],
+            "blocked": row["blocked"],
+            "engine_67": engine67,
+            "tags": tags,
+            "decision_reasons": ["diesel_commercial_existing_match"] if row["target"] and not row["blocked"] else ["diesel_commercial_existing_no_match"],
         })
 
-        if target and not blocked:
-            row["target_strategy"] = "DIESEL_COMMERCIAL"
-        elif carvana_result.get("classification") == "ALERT":
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = True
-            row["blocked"] = False
-        elif carvana_result.get("classification") == "WATCHLIST":
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = False
-            row["blocked"] = False
-        elif carvana_result.get("is_carvana_candidate"):
-            row.update(carvana_result_to_row_fields(carvana_result))
-            row["target"] = False
-            row["blocked"] = True
+        row.update(strategy_result_to_row_fields(strategy_result))
+        if strategy_result.get("target_strategy"):
+            row["target"] = strategy_result["target"]
+            row["blocked"] = strategy_result["blocked"]
 
         out.append(row)
     return out

@@ -53,6 +53,28 @@ CSV_FIELDS = [
     "classification",
     "block_reason",
     "target_strategy",
+    "strategies_considered",
+    "discovery_reasons",
+    "decision_reasons",
+    "positive_signals",
+    "negative_signals",
+    "block_reasons",
+    "score",
+    "consumer_gas_score",
+    "consumer_gas_model_key",
+    "next_action",
+    "model_year",
+    "vehicle_age",
+    "parsed_make",
+    "parsed_model",
+    "parsed_year",
+    "parsed_vehicle_age",
+    "parsed_mileage",
+    "parsed_trim",
+    "parsed_cab",
+    "parsed_drivetrain",
+    "parsed_engine",
+    "parsed_fuel",
     "carvana_score",
     "carvana_model_key",
     "carvana_positive_signals",
@@ -257,10 +279,10 @@ def compute_block_reasons(record: dict[str, Any]) -> list[str]:
     if _as_bool(record.get("should_alert")):
         return ["alert_sent"]
 
-    if str(record.get("target_strategy") or "").strip().upper() == "CARVANA_GAS":
-        carvana_reasons = _as_list(record.get("carvana_block_reasons"))
-        if carvana_reasons:
-            return carvana_reasons
+    if str(record.get("target_strategy") or "").strip().upper() == "CONSUMER_GAS_LIQUID":
+        consumer_reasons = _as_list(record.get("block_reasons")) or _as_list(record.get("decision_reasons"))
+        if consumer_reasons:
+            return consumer_reasons
 
     reasons = []
 
@@ -404,8 +426,8 @@ def _listing_line(row: dict[str, str]) -> str:
     title = row.get("title") or "Untitled"
     source = row.get("source") or "Unknown"
     strategy = row.get("target_strategy") or ""
-    score = row.get("carvana_score") or ""
-    action = row.get("carvana_next_action") or ""
+    score = row.get("consumer_gas_score") or row.get("score") or row.get("carvana_score") or ""
+    action = row.get("next_action") or row.get("carvana_next_action") or ""
     bid = row.get("current_bid") or "Not found"
     minutes = row.get("minutes_left") or "Not found"
     location = row.get("location") or "Not found"
@@ -430,12 +452,20 @@ def _reason_counts(rows: list[dict[str, str]]) -> Counter:
 
 def _summary_body(rows: list[dict[str, str]]) -> list[str]:
     classification_counts = Counter(_row_classification(row) for row in rows)
+    strategy_counts = Counter(row.get("target_strategy") or "NONE" for row in rows)
+    broad_discovery_count = sum(1 for row in rows if _as_list(row.get("strategies_considered")))
     alerts = classification_counts["ALERT"]
     reason_counts = _reason_counts(rows)
 
     lines = [
         f"total listings scanned: {len(rows)}",
+        f"broad discovery candidates: {broad_discovery_count}",
         f"total alerts sent: {alerts}",
+        "count by strategy:",
+        f"- DIESEL_COMMERCIAL: {strategy_counts['DIESEL_COMMERCIAL']}",
+        f"- CONSUMER_GAS_LIQUID: {strategy_counts['CONSUMER_GAS_LIQUID']}",
+        f"- GAS_WORK_LOCAL: {strategy_counts['GAS_WORK_LOCAL']}",
+        f"- NONE: {strategy_counts['NONE']}",
         "count by classification:",
         f"- ALERT: {classification_counts['ALERT']}",
         f"- WATCHLIST: {classification_counts['WATCHLIST']}",
@@ -450,6 +480,19 @@ def _summary_body(rows: list[dict[str, str]]) -> list[str]:
         lines.append("- none: 0")
 
     return lines
+
+
+def _missing_data_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    examples = []
+    for row in rows:
+        reasons = (
+            _block_reasons(row)
+            + _as_list(row.get("block_reasons"))
+            + _as_list(row.get("decision_reasons"))
+        )
+        if any("missing" in reason for reason in reasons):
+            examples.append(row)
+    return sorted(examples, key=_near_miss_sort_key)[:10]
 
 
 def update_daily_report(day_key: str | None = None) -> None:
@@ -484,6 +527,13 @@ def update_daily_report(day_key: str | None = None) -> None:
     lines.append("top 20 watchlist near misses:")
     if watchlist:
         lines.extend(_listing_line(row) for row in watchlist)
+    else:
+        lines.append("- none")
+
+    lines.extend(["", "6. Missing Data Examples"])
+    missing_data = _missing_data_rows(rows)
+    if missing_data:
+        lines.extend(_listing_line(row) for row in missing_data)
     else:
         lines.append("- none")
 
