@@ -8,6 +8,7 @@ from src.core.consumer_gas_liquid import (
     STRATEGY as CONSUMER_GAS_LIQUID,
     classify_consumer_gas_liquid,
     consumer_gas_result_to_row_fields,
+    listing_vehicle_guard,
 )
 from src.core.discovery import DIESEL_COMMERCIAL, GAS_WORK_LOCAL, discover_vehicle_candidates
 from src.core.utils import annotate_tags, is_engine_67, is_target_vehicle
@@ -31,6 +32,20 @@ def _listing_text(listing: dict[str, Any]) -> str:
 
 
 def classify_diesel_commercial_existing(listing: dict[str, Any]) -> dict[str, Any]:
+    guard = listing_vehicle_guard(listing)
+    if guard.get("blocked"):
+        reason = guard.get("reason") or "non_vehicle_listing"
+        return {
+            "strategy": DIESEL_COMMERCIAL,
+            "classification": "REJECT",
+            "target": False,
+            "blocked": True,
+            "engine_67": False,
+            "tags": [],
+            "decision_reasons": [str(reason)],
+            **guard,
+        }
+
     text = _listing_text(listing)
     target = is_target_vehicle(text)
     return {
@@ -50,6 +65,20 @@ def classify_gas_work_local(
     existing_match: bool = False,
     existing_label: str | None = None,
 ) -> dict[str, Any]:
+    guard = listing_vehicle_guard(listing)
+    if guard.get("blocked"):
+        reason = guard.get("reason") or "non_vehicle_listing"
+        return {
+            "strategy": GAS_WORK_LOCAL,
+            "classification": "REJECT",
+            "target": False,
+            "blocked": True,
+            "should_alert": False,
+            "matched_label": existing_label,
+            "decision_reasons": [str(reason)],
+            **guard,
+        }
+
     discovery = discover_vehicle_candidates(listing)
     is_candidate = GAS_WORK_LOCAL in discovery.get("strategy_candidates", [])
     classification = "ALERT" if existing_match else ("WATCHLIST" if is_candidate else "REJECT")
@@ -72,6 +101,38 @@ def classify_listing_strategies(
     gas_work_existing: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     discovery = discover_vehicle_candidates(listing)
+    guard = listing_vehicle_guard(listing)
+    if guard.get("blocked"):
+        reason = guard.get("reason") or "non_vehicle_listing"
+        consumer = classify_consumer_gas_liquid(listing, current_year=current_year)
+        return {
+            "discovery": discovery,
+            "strategies_considered": [],
+            "diesel": {
+                "strategy": DIESEL_COMMERCIAL,
+                "classification": "REJECT",
+                "target": False,
+                "blocked": True,
+                "decision_reasons": [str(reason)],
+            },
+            "gas_work": {
+                "strategy": GAS_WORK_LOCAL,
+                "classification": "REJECT",
+                "target": False,
+                "blocked": True,
+                "decision_reasons": [str(reason)],
+            },
+            "consumer_gas": consumer,
+            "strategy": None,
+            "target_strategy": None,
+            "classification": "REJECT",
+            "target": False,
+            "blocked": True,
+            "decision_reasons": [str(reason)],
+            "next_action": "",
+            **guard,
+        }
+
     diesel = diesel_result or classify_diesel_commercial_existing(listing)
     gas_work_existing = gas_work_existing or {}
     gas_work = classify_gas_work_local(
@@ -146,6 +207,11 @@ def strategy_result_to_row_fields(result: dict[str, Any]) -> dict[str, Any]:
         "discovery_reasons": (result.get("discovery") or {}).get("discovery_reasons", []),
         "decision_reasons": result.get("decision_reasons") or [],
         "next_action": result.get("next_action") or "",
+        "non_vehicle_listing": result.get("non_vehicle_listing") or (result.get("discovery") or {}).get("non_vehicle_listing", False),
+        "parts_or_equipment_only": result.get("parts_or_equipment_only") or (result.get("discovery") or {}).get("parts_or_equipment_only", False),
+        "body_not_pickup": result.get("body_not_pickup") or (result.get("discovery") or {}).get("body_not_pickup", False),
+        "parser_warning": result.get("parser_warning") or (result.get("discovery") or {}).get("parser_warning", ""),
+        "parser_correction_reason": result.get("parser_correction_reason") or (result.get("discovery") or {}).get("parser_correction_reason", ""),
     }
 
     if result.get("target_strategy") == CONSUMER_GAS_LIQUID:
@@ -157,5 +223,26 @@ def strategy_result_to_row_fields(result: dict[str, Any]) -> dict[str, Any]:
             "decision_reasons": result.get("decision_reasons") or [],
             "next_action": "",
         })
+    else:
+        consumer_fields = consumer_gas_result_to_row_fields(result.get("consumer_gas") or {})
+        for key in (
+            "parsed_make",
+            "parsed_model",
+            "parsed_year",
+            "parsed_vehicle_age",
+            "parsed_mileage",
+            "parsed_trim",
+            "parsed_cab",
+            "parsed_drivetrain",
+            "parsed_engine",
+            "parsed_fuel",
+            "non_vehicle_listing",
+            "parts_or_equipment_only",
+            "body_not_pickup",
+            "parser_warning",
+            "parser_correction_reason",
+        ):
+            if consumer_fields.get(key) not in (None, "", False):
+                fields[key] = consumer_fields[key]
 
     return fields

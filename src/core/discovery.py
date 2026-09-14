@@ -5,7 +5,7 @@ import re
 from typing import Any
 
 from src.core.consumer_gas_liquid import STRATEGY as CONSUMER_GAS_LIQUID
-from src.core.consumer_gas_liquid import identify_consumer_model, listing_text
+from src.core.consumer_gas_liquid import identify_consumer_model, listing_text, listing_vehicle_guard
 from src.core.utils import (
     BOX_PHRASES,
     BUCKET_BRANDS,
@@ -57,6 +57,24 @@ _DETAIL_FIELDS = (
     "vin",
 )
 
+_COMMERCIAL_BODY_WITHOUT_STANDALONE_LIFTGATE = (
+    DUMP_PHRASES
+    | BUCKET_PHRASES
+    | BUCKET_BRANDS
+    | CRANE_PHRASES
+    | CRANE_BRANDS
+    | BOX_PHRASES
+    | EMERGENCY_PHRASES
+    | (UTILITY_REFUSE_TANKER_PHRASES - {"liftgate", "tommy gate"})
+)
+
+_LIFTGATE_VEHICLE_CONTEXT_PATTERNS = (
+    r"\bbox\s+truck\b.{0,50}\blift\s*gate\b",
+    r"\bbox\s+truck\b.{0,50}\bliftgate\b",
+    r"\btruck\b.{0,50}\blift\s*gate\b",
+    r"\btruck\b.{0,50}\bliftgate\b",
+)
+
 
 def _text_value(value: Any) -> str:
     if value in (None, ""):
@@ -72,6 +90,10 @@ def _contains_any(text: str, keywords: set[str]) -> bool:
     return any(keyword in text for keyword in keywords)
 
 
+def _matches_any_pattern(text: str, patterns: tuple[str, ...]) -> bool:
+    return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
+
+
 def _has_detail_fields(listing_or_text: dict[str, Any] | str) -> bool:
     if isinstance(listing_or_text, str):
         return False
@@ -84,15 +106,10 @@ def _diesel_discovery(text: str) -> list[str]:
         reasons.append("discovery_hd_model")
     if _contains_any(
         text,
-        DUMP_PHRASES
-        | BUCKET_PHRASES
-        | BUCKET_BRANDS
-        | CRANE_PHRASES
-        | CRANE_BRANDS
-        | BOX_PHRASES
-        | EMERGENCY_PHRASES
-        | UTILITY_REFUSE_TANKER_PHRASES,
+        _COMMERCIAL_BODY_WITHOUT_STANDALONE_LIFTGATE,
     ):
+        reasons.append("discovery_commercial_body")
+    elif _matches_any_pattern(text, _LIFTGATE_VEHICLE_CONTEXT_PATTERNS):
         reasons.append("discovery_commercial_body")
     if _contains_any(text, DIESEL_KWS):
         reasons.append("discovery_diesel_keyword")
@@ -116,6 +133,23 @@ def discover_vehicle_candidates(listing_or_text: dict[str, Any] | str) -> dict[s
     strategy_candidates: list[str] = []
     discovered_model_key = None
     discovered_make_model = None
+    guard = listing_vehicle_guard(listing_or_text)
+    if guard.get("blocked"):
+        reason = guard.get("reason") or "non_vehicle_listing"
+        return {
+            "discovered": False,
+            "discovery_reasons": [str(reason)],
+            "strategy_candidates": [],
+            "discovered_make_model": None,
+            "discovered_model_key": None,
+            "discovery_confidence": 0,
+            "needs_detail": False,
+            "non_vehicle_listing": guard.get("non_vehicle_listing", False),
+            "parts_or_equipment_only": guard.get("parts_or_equipment_only", False),
+            "body_not_pickup": guard.get("body_not_pickup", False),
+            "parser_warning": guard.get("parser_warning", ""),
+            "parser_correction_reason": guard.get("parser_correction_reason", ""),
+        }
 
     diesel_reasons = _diesel_discovery(text)
     if diesel_reasons:

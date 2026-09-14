@@ -686,6 +686,14 @@ def _location_for_filter(listing: dict, detail: dict) -> str:
     )
 
 
+def should_skip_public_surplus_listing_by_region(listing: dict) -> tuple[bool, str]:
+    region_text = listing.get("region_text") or ""
+    if not region_text:
+        return False, ""
+    reason = location_block_reason(region_text)
+    return reason == "outside_target_state", reason
+
+
 def _display_minutes(minutes_left: Optional[float]) -> str:
     if minutes_left is None:
         return "Not found"
@@ -962,6 +970,9 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
     debug_eval = evaluation["debug_eval"]
     log_decision({
         "source": "Public Surplus",
+        "site": "Public Surplus",
+        "auction_id": listing.get("auction_id"),
+        "listing_id": listing.get("auction_id"),
         "url": listing.get("listing_url"),
         "title": detail.get("title"),
         "location": detail.get("location") or listing.get("region_text"),
@@ -1028,10 +1039,19 @@ def _log_public_surplus_decision(listing: dict, detail: dict, evaluation: dict):
 def _log_public_surplus_location_reject(listing: dict, reason: str):
     log_decision({
         "source": "Public Surplus",
+        "site": "Public Surplus",
+        "auction_id": listing.get("auction_id"),
+        "listing_id": listing.get("auction_id"),
         "url": listing.get("listing_url"),
         "title": "Public Surplus listing",
         "location": listing.get("region_text"),
         "state": listing.get("region_text"),
+        "decision_stage": "LOCATION_FILTER",
+        "final_classification": "REJECT",
+        "primary_reject_reason": reason,
+        "primary_reason_group": "LOCATION",
+        "target": False,
+        "blocked": True,
         "location_valid": False,
         "location_allowed": False,
         "location_block_reason": reason,
@@ -1079,10 +1099,9 @@ def scan_public_surplus_once(max_test_listings: Optional[int] = None) -> int:
                 continue
             seen_this_run.add(auction_id)
 
-            region_text = listing.get("region_text") or ""
-            region_reason = location_block_reason(region_text) if region_text else ""
-            if region_reason == "outside_target_state":
-                print(f"Skipping Public Surplus listing outside target state: {region_text}")
+            should_skip, region_reason = should_skip_public_surplus_listing_by_region(listing)
+            if should_skip:
+                print(f"Skipping Public Surplus listing outside target state: {listing.get('region_text') or 'Not found'}")
                 _log_public_surplus_location_reject(listing, region_reason)
                 continue
 

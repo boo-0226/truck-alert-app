@@ -197,7 +197,7 @@ CONSUMER_GAS_RULES: dict[str, ConsumerGasRule] = {
         model_key="chevrolet_silverado_1500",
         make="Chevrolet",
         model="Silverado 1500",
-        aliases=(r"\bchevrolet\s+silverado\b", r"\bchevy\s+silverado\b", r"\bsilverado\s*1500\b", r"\bsilverado\b"),
+        aliases=(r"\bchevrolet\s+silverado\b", r"\bchevy\s+silverado\b", r"\bsilverado\s*1500\b"),
         group=CORE,
         base_score=24,
         max_normal_age=7,
@@ -212,7 +212,7 @@ CONSUMER_GAS_RULES: dict[str, ConsumerGasRule] = {
         model_key="gmc_sierra_1500",
         make="GMC",
         model="Sierra 1500",
-        aliases=(r"\bgmc\s+sierra\b", r"\bsierra\s*1500\b", r"\bsierra\b"),
+        aliases=(r"\bgmc\s+sierra\b", r"\bsierra\s*1500\b"),
         group=CORE,
         base_score=24,
         max_normal_age=7,
@@ -274,7 +274,7 @@ CONSUMER_GAS_RULES: dict[str, ConsumerGasRule] = {
         model_key="ford_ranger",
         make="Ford",
         model="Ranger",
-        aliases=(r"\bford\s+ranger\b", r"\branger\b"),
+        aliases=(r"\bford\s+ranger\b",),
         group=OPPORTUNISTIC,
         base_score=10,
         max_normal_age=5,
@@ -376,6 +376,126 @@ HD_CONTEXT_PATTERNS = (
     r"\bram\s*3500\b",
 )
 
+COMPLETE_VEHICLE_PATTERNS = (
+    r"\b(?:pickup|truck|vehicle|unit)\b",
+    r"\bcrew\s+cab\b",
+    r"\bregular\s+cab\b",
+    r"\bextended\s+cab\b",
+    r"\bsuper\s*crew\b",
+    r"\bcab\s+(?:and\s+)?chassis\b",
+    r"\bchassis\s+cab\b",
+    r"\bruns?\s+and\s+drives?\b",
+)
+
+PARTS_EQUIPMENT_PATTERNS = (
+    r"\bauto\s+parts\b",
+    r"\bparts\s+only\b",
+    r"\bfor\s+parts\b",
+    r"\bvehicle\s+parts\b",
+    r"\b(?:ford|chevrolet|chevy|gmc|ram|dodge|toyota|nissan)?\s*f[-\s]?\d{3}\s+tailgate\b",
+    r"\btailgates?\b",
+    r"\btruck\s+bed\s+only\b",
+    r"\bpickup\s+bed\b",
+    r"\bdually\s+bed\b",
+    r"\bbed\s+only\b",
+    r"\bfender\s+sets?\b",
+    r"\bfenders?\b",
+    r"\bbumpers?\b",
+    r"\brear\s+seats?\b",
+    r"\bseats?\b",
+    r"\bvehicle\s+jacks?\b",
+    r"\bjacks?\s*(?:\(\d+\))?\b",
+    r"\blift\s*gate\s+only\b",
+    r"\bliftgate\s+only\b",
+    r"\btrailer\s+only\b",
+    r"\benclosed\s+trailer\b",
+    r"\btrailers?\b",
+    r"\bswap\s+body\b",
+    r"\bbody\s+only\b",
+    r"\butility\s+body\s+only\b",
+    r"\bservice\s+body\s+only\b",
+    r"\bcamper\s+shell\b",
+    r"\btool\s*box(?:es)?\b",
+    r"\bwheels?\s*/\s*tires?\s+only\b",
+    r"\btires?\s*/\s*wheels?\s+only\b",
+    r"\bengine\s+only\b",
+    r"\btransmission\s+only\b",
+)
+
+COMPLETE_TRUCK_OVERRIDE_PATTERNS = (
+    r"\bservice\s+body\s+truck\b",
+    r"\bservice\s+truck\b",
+    r"\butility\s+truck\b",
+    r"\bdump\s+truck\b",
+    r"\bbox\s+truck\b",
+    r"\btow\s+truck\b",
+    r"\bwrecker\b",
+    r"\btruck\s+with\s+lift\s*gate\b",
+    r"\btruck\s+with\s+liftgate\b",
+)
+
+NON_PICKUP_BODY_PATTERNS = (
+    r"\btahoe(?:\s+ppv)?\b",
+    r"\bsuburban\b",
+    r"\byukon(?:\s+xl)?\b",
+    r"\bexplorer\b",
+    r"\bexpedition\b",
+    r"\bdurango\b",
+    r"\bpolice\s+suv\b",
+    r"\bppv\s+suv\b",
+    r"\bsuv\b",
+    r"\bsedans?\b",
+    r"\bcargo\s+vans?\b",
+    r"\bpassenger\s+vans?\b",
+    r"\bcutaways?\b",
+    r"\bbuses?\b",
+)
+
+UTV_ATV_PATTERNS = (
+    r"\bpolaris\s+ranger\b",
+    r"\bclub\s+car\b",
+    r"\bcarryall\b",
+    r"\butv\b",
+    r"\batv\b",
+    r"\bside[-\s]?by[-\s]?side\b",
+    r"\bgolf\s+cart\b",
+    r"\butility\s+vehicle\b",
+    r"\boff[-\s]?road\s+vehicle\b",
+)
+
+MAKE_PATTERNS = (
+    ("Chevrolet", (r"\bchevrolet\b", r"\bchevy\b")),
+    ("GMC", (r"\bgmc\b",)),
+    ("Ford", (r"\bford\b",)),
+    ("Ram", (r"\bram\b", r"\bdodge\s+ram\b", r"\bdodge\b")),
+    ("Toyota", (r"\btoyota\b",)),
+    ("Nissan", (r"\bnissan\b",)),
+    ("Polaris", (r"\bpolaris\b",)),
+    ("Club Car", (r"\bclub\s+car\b",)),
+)
+
+MODEL_PATTERNS = (
+    ("Silverado 1500", (r"\bsilverado\s*1500\b", r"\bsilverado\b")),
+    ("Sierra 1500", (r"\bsierra\s*1500\b", r"\bsierra\b")),
+    ("F-150", (r"\bf[-\s]?150\b",)),
+    ("F-250", (r"\bf[-\s]?250\b",)),
+    ("F-350", (r"\bf[-\s]?350\b",)),
+    ("Ranger", (r"\branger\b",)),
+    ("Tahoe PPV", (r"\btahoe\s+ppv\b",)),
+    ("Tahoe", (r"\btahoe\b",)),
+    ("Suburban", (r"\bsuburban\b",)),
+    ("Yukon XL", (r"\byukon\s+xl\b",)),
+    ("Yukon", (r"\byukon\b",)),
+    ("Explorer", (r"\bexplorer\b",)),
+    ("Expedition", (r"\bexpedition\b",)),
+    ("Durango", (r"\bdurango\b",)),
+    ("Colorado", (r"\bcolorado\b",)),
+    ("Canyon", (r"\bcanyon\b",)),
+    ("Tacoma", (r"\btacoma\b",)),
+    ("Tundra", (r"\btundra\b",)),
+    ("Frontier", (r"\bfrontier\b",)),
+)
+
 
 def _text_value(value: Any) -> str:
     if value in (None, ""):
@@ -419,6 +539,76 @@ def listing_text(listing: dict[str, Any] | str) -> str:
     return re.sub(r"\s+", " ", " ".join(_text_value(listing.get(field)) for field in fields)).strip()
 
 
+def _has_any_pattern(text: str, patterns: tuple[str, ...]) -> bool:
+    return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
+
+
+def parse_make_model_hint(listing: dict[str, Any] | str, text: str | None = None) -> tuple[str | None, str | None]:
+    text = text if text is not None else listing_text(listing)
+    make = ""
+    model = ""
+    if isinstance(listing, dict):
+        make = _clean_text(listing.get("make") or listing.get("parsed_make") or listing.get("makebrand"))
+        model = _clean_text(listing.get("model") or listing.get("parsed_model"))
+
+    if not make:
+        for candidate, patterns in MAKE_PATTERNS:
+            if _contains_pattern(text, patterns):
+                make = candidate
+                break
+
+    if not model:
+        for candidate, patterns in MODEL_PATTERNS:
+            if _contains_pattern(text, patterns):
+                model = candidate
+                break
+
+    return make or None, model or None
+
+
+def listing_vehicle_guard(listing: dict[str, Any] | str) -> dict[str, Any]:
+    text = listing_text(listing)
+    text_l = text.lower()
+    parser_warning = ""
+    parser_correction_reason = ""
+    parts_only = False
+    non_vehicle = False
+    body_not_pickup = False
+    reason = ""
+
+    if _has_any_pattern(text_l, UTV_ATV_PATTERNS):
+        non_vehicle = True
+        parser_warning = "non_vehicle_listing"
+        parser_correction_reason = "utv_atv_or_golf_cart_context"
+        reason = "non_vehicle_listing"
+
+    complete_truck_override = _has_any_pattern(text_l, COMPLETE_TRUCK_OVERRIDE_PATTERNS)
+    parts_match = _has_any_pattern(text_l, PARTS_EQUIPMENT_PATTERNS)
+    complete_vehicle = _has_any_pattern(text_l, COMPLETE_VEHICLE_PATTERNS) or complete_truck_override
+    if parts_match and not complete_truck_override:
+        parts_only = True
+        non_vehicle = True
+        parser_warning = parser_warning or "parts_or_equipment_only"
+        parser_correction_reason = parser_correction_reason or "parts_equipment_keyword_without_complete_truck_context"
+        reason = "parts_or_equipment_only"
+
+    if _has_any_pattern(text_l, NON_PICKUP_BODY_PATTERNS):
+        body_not_pickup = True
+        parser_warning = parser_warning or "body_not_pickup"
+        parser_correction_reason = parser_correction_reason or "suv_van_bus_or_sedan_context"
+        reason = reason or "body_not_pickup"
+
+    return {
+        "blocked": bool(non_vehicle or (parts_only and not complete_vehicle) or body_not_pickup),
+        "reason": reason,
+        "non_vehicle_listing": bool(non_vehicle),
+        "parts_or_equipment_only": bool(parts_only),
+        "body_not_pickup": bool(body_not_pickup),
+        "parser_warning": parser_warning,
+        "parser_correction_reason": parser_correction_reason,
+    }
+
+
 def _contains_pattern(text: str, patterns: tuple[str, ...]) -> bool:
     return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
 
@@ -445,10 +635,32 @@ def identify_consumer_model(listing: dict[str, Any] | str) -> tuple[str | None, 
         make_hint = _clean_text(listing.get("make") or listing.get("parsed_make") or listing.get("makebrand")).lower()
         model_hint = _clean_text(listing.get("model") or listing.get("parsed_model")).lower()
     searchable = f"{make_hint} {model_hint} {text}".strip()
+    guard = listing_vehicle_guard(listing)
+    if guard.get("parts_or_equipment_only") or guard.get("non_vehicle_listing") or guard.get("body_not_pickup"):
+        return None, None
 
     for key, rule in CONSUMER_GAS_RULES.items():
         if key in {"chevrolet_silverado_1500", "gmc_sierra_1500", "ram_1500"} and _contains_pattern(searchable, HD_CONTEXT_PATTERNS):
             continue
+
+        if key == "chevrolet_silverado_1500":
+            has_make_context = make_hint in {"chevrolet", "chevy"} or bool(re.search(r"\b(?:chevrolet|chevy)\b", text, re.IGNORECASE))
+            has_model_context = "silverado" in model_hint or bool(re.search(r"\bsilverado(?:\s*1500)?\b", text, re.IGNORECASE))
+            if not (has_make_context and has_model_context):
+                continue
+
+        if key == "gmc_sierra_1500":
+            has_make_context = make_hint == "gmc" or bool(re.search(r"\bgmc\b", text, re.IGNORECASE))
+            has_model_context = "sierra" in model_hint or bool(re.search(r"\bsierra(?:\s*1500)?\b", text, re.IGNORECASE))
+            if not (has_make_context and has_model_context):
+                continue
+
+        if key == "ford_ranger":
+            has_ford_context = make_hint == "ford" or bool(re.search(r"\bford\b.{0,24}\branger\b|\branger\b.{0,24}\bford\b", searchable, re.IGNORECASE))
+            explicit_model = model_hint == "ranger" or bool(re.search(r"\bford\s+ranger\b", searchable, re.IGNORECASE))
+            if not (has_ford_context and explicit_model):
+                continue
+
         if any(re.search(pattern, searchable, re.IGNORECASE) for pattern in rule.aliases):
             return key, rule
     return None, None
@@ -843,6 +1055,8 @@ def classify_consumer_gas_liquid(listing: dict[str, Any], *, current_year: int |
     current_year = current_year or datetime.now().year
     text = listing_text(listing)
     text_l = text.lower()
+    guard = listing_vehicle_guard(listing)
+    parsed_make, parsed_model = parse_make_model_hint(listing, text)
     model_key, rule = identify_consumer_model(listing)
 
     model_year = parse_year(listing, text)
@@ -865,7 +1079,11 @@ def classify_consumer_gas_liquid(listing: dict[str, Any], *, current_year: int |
         negative.append("consumer_gas_missing_required_data")
 
     vehicle_age: int | None = None
-    if rule:
+    if guard.get("blocked"):
+        reason = guard.get("reason") or "non_vehicle_listing"
+        negative.append(str(reason))
+        block_reasons.append(str(reason))
+    elif rule:
         if rule.group == CORE:
             positive.append("consumer_gas_core_model")
         else:
@@ -889,22 +1107,25 @@ def classify_consumer_gas_liquid(listing: dict[str, Any], *, current_year: int |
     if fuel == "Diesel":
         negative.append("consumer_gas_wrong_fuel")
 
-    classification = _classify(
-        rule=rule,
-        score=score,
-        model_year=model_year,
-        vehicle_age=vehicle_age,
-        mileage=mileage,
-        trim=trim,
-        cab=cab,
-        drivetrain=drivetrain,
-        engine=engine,
-        fuel=fuel,
-        hard_rejects=hard_rejects,
-        positive=positive,
-        negative=negative,
-        block_reasons=block_reasons,
-    )
+    if guard.get("blocked"):
+        classification = "REJECT"
+    else:
+        classification = _classify(
+            rule=rule,
+            score=score,
+            model_year=model_year,
+            vehicle_age=vehicle_age,
+            mileage=mileage,
+            trim=trim,
+            cab=cab,
+            drivetrain=drivetrain,
+            engine=engine,
+            fuel=fuel,
+            hard_rejects=hard_rejects,
+            positive=positive,
+            negative=negative,
+            block_reasons=block_reasons,
+        )
 
     if classification == "ALERT":
         positive.append("consumer_gas_get_quote")
@@ -915,15 +1136,15 @@ def classify_consumer_gas_liquid(listing: dict[str, Any], *, current_year: int |
     return {
         "strategy": STRATEGY,
         "classification": classification,
-        "is_consumer_gas_candidate": bool(rule),
+        "is_consumer_gas_candidate": bool(rule) and not guard.get("blocked"),
         "should_alert": classification == "ALERT",
         "score": score,
         "model_key": model_key,
         "model_year": model_year,
         "vehicle_age": vehicle_age,
         "year": model_year,
-        "make": rule.make if rule else None,
-        "model": rule.model if rule else None,
+        "make": rule.make if rule else parsed_make,
+        "model": rule.model if rule else parsed_model,
         "trim": trim,
         "cab": cab,
         "drivetrain": drivetrain,
@@ -937,6 +1158,11 @@ def classify_consumer_gas_liquid(listing: dict[str, Any], *, current_year: int |
         "block_reasons": _dedupe(block_reasons),
         "decision_reasons": decision_reasons,
         "next_action": NEXT_ACTION if classification == "ALERT" else "",
+        "non_vehicle_listing": guard.get("non_vehicle_listing", False),
+        "parts_or_equipment_only": guard.get("parts_or_equipment_only", False),
+        "body_not_pickup": guard.get("body_not_pickup", False),
+        "parser_warning": guard.get("parser_warning", ""),
+        "parser_correction_reason": guard.get("parser_correction_reason", ""),
     }
 
 
@@ -975,6 +1201,11 @@ def consumer_gas_result_to_row_fields(result: dict[str, Any]) -> dict[str, Any]:
         "parsed_drivetrain": result.get("drivetrain"),
         "parsed_engine": result.get("engine"),
         "parsed_fuel": result.get("fuel"),
+        "non_vehicle_listing": result.get("non_vehicle_listing", False),
+        "parts_or_equipment_only": result.get("parts_or_equipment_only", False),
+        "body_not_pickup": result.get("body_not_pickup", False),
+        "parser_warning": result.get("parser_warning", ""),
+        "parser_correction_reason": result.get("parser_correction_reason", ""),
     }
     return fields
 

@@ -11,13 +11,18 @@ from contextlib import contextmanager
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 try:
     from src.core.config import location_block_reason as configured_location_block_reason
     from src.core.config import normalize_state
+    from src.core.config import target_state_names
+    from src.core.config import ALERT_TIME_SECS
 except ImportError:  # pragma: no cover - supports direct script execution with src on sys.path
     from core.config import location_block_reason as configured_location_block_reason
     from core.config import normalize_state
+    from core.config import target_state_names
+    from core.config import ALERT_TIME_SECS
 
 try:
     from src.core.consumer_gas_liquid import STRATEGY as CONSUMER_GAS_LIQUID
@@ -70,7 +75,7 @@ REASON_GROUPS = (
 LOCATION_REASONS = {"outside_target_state", "location_state_unknown", "blocked_location"}
 TIME_REASONS = {"missing_time", "outside_time_window", "beyond_scan_window", "already_closed"}
 BID_REASONS = {"bid_too_high", "blocked_bid", "missing_bid"}
-DISCOVERY_REASONS = {"no_broad_discovery_match"}
+DISCOVERY_REASONS = {"no_broad_discovery_match", "non_vehicle_listing", "parts_or_equipment_only"}
 MISSING_DATA_REASONS = {
     "missing_required_data",
     "missing_time",
@@ -90,9 +95,16 @@ LOW_CEILING_REASONS = {
     "mileage_too_high",
     "year_too_old",
 }
-WRONG_MODEL_REASONS = {"not_target_strategy_match", "blocked_make", "blocked_model"}
+WRONG_MODEL_REASONS = {"not_target_strategy_match", "blocked_make", "blocked_model", "body_not_pickup"}
 WRONG_FUEL_REASONS = {"not_gas_or_diesel_target", "blocked_engine", "consumer_gas_wrong_fuel"}
-CONDITION_REASONS = {"hard_exclude", "title_problem", "rust", "major_mechanical"}
+CONDITION_REASONS = {
+    "hard_exclude",
+    "title_problem",
+    "rust",
+    "major_mechanical",
+    "parts_or_equipment_only",
+    "non_vehicle_listing",
+}
 ALERT_DEDUPED_REASONS = {"alert_deduped", "already_alerted"}
 
 REASON_ALIASES = {
@@ -129,6 +141,9 @@ REASON_ALIASES = {
     "no_title": "title_problem",
     "salvage": "title_problem",
     "parts_only": "title_problem",
+    "parts_or_equipment_only": "parts_or_equipment_only",
+    "non_vehicle_listing": "non_vehicle_listing",
+    "body_not_pickup": "body_not_pickup",
     "bad_engine": "major_mechanical",
     "bad_transmission": "major_mechanical",
     "major_rust": "rust",
@@ -151,6 +166,9 @@ PRIMARY_REASON_PRIORITY = (
     "title_problem",
     "rust",
     "major_mechanical",
+    "parts_or_equipment_only",
+    "non_vehicle_listing",
+    "body_not_pickup",
     "no_broad_discovery_match",
     "missing_mileage",
     "missing_required_data",
@@ -189,8 +207,10 @@ _REQUESTED_CSV_FIELDS = [
     "timestamp",
     "source",
     "site",
+    "listing_key",
     "listing_id",
     "asset_id",
+    "auction_id",
     "url",
     "title",
     "location",
@@ -210,6 +230,17 @@ _REQUESTED_CSV_FIELDS = [
     "target",
     "blocked",
     "should_alert",
+    "duplicate_evaluation_count",
+    "is_duplicate_evaluation",
+    "first_seen_timestamp",
+    "last_seen_timestamp",
+    "unique_listing_rank",
+    "representative_row_selected",
+    "evaluation_count_for_listing",
+    "best_minutes_left",
+    "closest_minutes_left",
+    "best_bid_cents",
+    "latest_bid_cents",
     "alert_gate_passed",
     "primary_reason_group",
     "primary_reject_reason",
@@ -223,6 +254,11 @@ _REQUESTED_CSV_FIELDS = [
     "alert_reasons",
     "missing_fields",
     "missing_data_notes",
+    "non_vehicle_listing",
+    "parts_or_equipment_only",
+    "body_not_pickup",
+    "parser_warning",
+    "parser_correction_reason",
     "bid_cents",
     "bid_display",
     "current_bid",
@@ -559,6 +595,68 @@ def _site_name(row: dict[str, Any]) -> str:
     return str(row.get("site") or row.get("source") or "Unknown").strip() or "Unknown"
 
 
+_TRACKING_QUERY_PREFIXES = ("utm_",)
+_TRACKING_QUERY_KEYS = {
+    "fbclid",
+    "gclid",
+    "gbraid",
+    "wbraid",
+    "mc_cid",
+    "mc_eid",
+    "ref",
+    "ref_src",
+    "source",
+}
+
+
+def _normalize_key_part(value: Any) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"\s+", " ", text)
+    return text
+
+
+def _normalize_key_url(value: Any) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+
+    try:
+        parsed = urlsplit(raw)
+    except ValueError:
+        return _normalize_key_part(raw)
+
+    scheme = (parsed.scheme or "https").lower()
+    netloc = parsed.netloc.lower()
+    path = re.sub(r"/+$", "", parsed.path or "/")
+    kept_query = []
+    for key, val in parse_qsl(parsed.query, keep_blank_values=True):
+        key_l = key.lower()
+        if key_l in _TRACKING_QUERY_KEYS or any(key_l.startswith(prefix) for prefix in _TRACKING_QUERY_PREFIXES):
+            continue
+        kept_query.append((key, val))
+
+    query = urlencode(sorted(kept_query))
+    return urlunsplit((scheme, netloc, path, query, ""))
+
+
+def make_listing_key(row: dict[str, Any]) -> str:
+    site = _normalize_key_part(_site_name(row)) or "unknown"
+    for field in ("asset_id", "listing_id", "auction_id"):
+        value = row.get(field)
+        if value not in (None, ""):
+            return f"{site}:{_normalize_key_part(value)}"
+
+    url = _normalize_key_url(row.get("url") or row.get("listing_url"))
+    if url:
+        return f"{site}:url:{url}"
+
+    title = _normalize_key_part(row.get("title"))
+    city = _normalize_key_part(row.get("city"))
+    state = normalize_state(row.get("state") or row.get("normalized_state") or row.get("location"))
+    location = " ".join(part for part in (city, state.lower()) if part)
+    return f"{site}:fallback:{title}:{location}"
+
+
 def _strategy_classification(row: dict[str, Any]) -> str:
     classification = str(row.get("strategy_classification") or row.get("classification") or "").strip().upper()
     return classification if classification in {"ALERT", "WATCHLIST", "REJECT"} else ""
@@ -608,6 +706,8 @@ def _normalize_identity(row: dict[str, Any]) -> None:
         city = str(row.get("city") or "").strip()
         state = str(row.get("state") or row.get("normalized_state") or "").strip()
         row["location"] = ", ".join(part for part in (city, state) if part)
+
+    row["listing_key"] = row.get("listing_key") or make_listing_key(row)
 
 
 def _normalize_money_and_time(row: dict[str, Any]) -> None:
@@ -674,6 +774,18 @@ def _discover_for_report(row: dict[str, Any]) -> dict[str, Any]:
 def _normalize_discovery(row: dict[str, Any]) -> None:
     considered = _as_list(row.get("strategies_considered"))
     discovery_reasons = _as_list(row.get("discovery_reasons"))
+    guard_reasons = []
+    if _as_bool(row.get("parts_or_equipment_only")):
+        guard_reasons.append("parts_or_equipment_only")
+    if _as_bool(row.get("non_vehicle_listing")):
+        guard_reasons.append("non_vehicle_listing")
+    if _as_bool(row.get("body_not_pickup")):
+        guard_reasons.append("body_not_pickup")
+    if guard_reasons:
+        row["strategies_considered"] = []
+        row["discovery_reasons"] = _dedupe(discovery_reasons + guard_reasons)
+        row["broad_discovery_candidate"] = False
+        return
 
     should_probe_discovery = (
         not considered
@@ -737,6 +849,13 @@ def _strategy_reasons_from_row(row: dict[str, Any], *, discovered: bool) -> list
 
     if _as_bool(row.get("hard_exclude_hit")):
         reasons.append("hard_exclude")
+
+    if _as_bool(row.get("parts_or_equipment_only")):
+        reasons.append("parts_or_equipment_only")
+    if _as_bool(row.get("non_vehicle_listing")):
+        reasons.append("non_vehicle_listing")
+    if _as_bool(row.get("body_not_pickup")):
+        reasons.append("body_not_pickup")
 
     strategy_classification = _strategy_classification(row)
     if discovered and strategy_classification == "REJECT" and not reasons:
@@ -1061,6 +1180,57 @@ def _normalized_row(record: dict[str, Any]) -> dict[str, str]:
     return {field: _format_value(row.get(field)) for field in CSV_FIELDS}
 
 
+def _timestamp_text(row: dict[str, Any]) -> str:
+    return str(row.get("scan_timestamp") or row.get("timestamp") or "")
+
+
+def _read_existing_rows_unlocked(path: Path) -> list[dict[str, str]]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+    with path.open("r", newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def _min_known(values: list[Any]) -> Any:
+    known = [value for value in values if _as_float(value) is not None]
+    if not known:
+        return ""
+    return min(known, key=lambda value: _as_float(value) or 0)
+
+
+def _latest_known_bid(rows: list[dict[str, Any]]) -> Any:
+    for row in reversed(rows):
+        bid = row.get("bid_cents")
+        if _as_int(bid) is not None:
+            return _as_int(bid)
+    return ""
+
+
+def _annotate_duplicate_metadata_for_append(row: dict[str, Any], existing_rows: list[dict[str, Any]]) -> None:
+    listing_key = row.get("listing_key") or make_listing_key(row)
+    matching = [
+        existing
+        for existing in existing_rows
+        if (existing.get("listing_key") or make_listing_key(existing)) == listing_key
+    ]
+    group = matching + [row]
+    timestamps = [text for text in (_timestamp_text(item) for item in group) if text]
+
+    count = len(group)
+    row["listing_key"] = listing_key
+    row["duplicate_evaluation_count"] = count
+    row["evaluation_count_for_listing"] = count
+    row["is_duplicate_evaluation"] = bool(matching)
+    row["unique_listing_rank"] = count
+    row["representative_row_selected"] = False
+    row["first_seen_timestamp"] = min(timestamps) if timestamps else _timestamp_text(row)
+    row["last_seen_timestamp"] = max(timestamps) if timestamps else _timestamp_text(row)
+    row["closest_minutes_left"] = _min_known([item.get("minutes_left") for item in group])
+    row["best_minutes_left"] = row["closest_minutes_left"]
+    row["best_bid_cents"] = _min_known([item.get("bid_cents") for item in group])
+    row["latest_bid_cents"] = _latest_known_bid(group)
+
+
 def _ensure_csv_schema(path: Path) -> None:
     if not path.exists() or path.stat().st_size == 0:
         return
@@ -1085,14 +1255,17 @@ def log_decision(record: dict[str, Any]) -> None:
     try:
         LOG_DIR.mkdir(parents=True, exist_ok=True)
         cleanup_old_decision_logs_once_per_day()
-        row = _normalized_row(record)
-        day_key = row["timestamp"][:10] if row.get("timestamp") else _today_key()
+        normalized = normalize_decision_record(record)
+        day_key = str(normalized.get("timestamp") or "")[:10] or _today_key()
 
         with _daily_log_lock(day_key):
             path = _csv_path(day_key)
             if path.exists():
                 _ensure_csv_schema(path)
             file_has_rows = path.exists() and path.stat().st_size > 0
+            existing_rows = _read_existing_rows_unlocked(path)
+            _annotate_duplicate_metadata_for_append(normalized, existing_rows)
+            row = {field: _format_value(normalized.get(field)) for field in CSV_FIELDS}
 
             for attempt in range(3):
                 try:
@@ -1163,6 +1336,87 @@ def _candidate_strategies(row: dict[str, Any]) -> list[str]:
     return considered or ["NONE"]
 
 
+def _target_state_display_label() -> str:
+    names = target_state_names()
+    if len(names) == 1:
+        return names[0]
+    if names:
+        return "target-state"
+    return "target-state"
+
+
+def _score_value(row: dict[str, Any]) -> float:
+    return _as_float(row.get("consumer_gas_score") or row.get("score") or row.get("carvana_score")) or -999999.0
+
+
+def _timestamp_sort_value(row: dict[str, Any]) -> float:
+    text = _timestamp_text(row)
+    if not text:
+        return 0.0
+    try:
+        return datetime.fromisoformat(text.replace("Z", "+00:00")).timestamp()
+    except ValueError:
+        return 0.0
+
+
+def _representative_sort_key(row: dict[str, Any]) -> tuple[int, int, int, int, float, float, float]:
+    classification_rank = {"ALERT": 0, "WATCHLIST": 1, "REJECT": 2}
+    minutes = _as_float(row.get("minutes_left"))
+    alert_window_minutes = max(0.0, ALERT_TIME_SECS / 60.0)
+    in_alert_window = minutes is not None and 0 <= minutes <= alert_window_minutes
+    minute_value = minutes if minutes is not None else 999999.0
+    return (
+        classification_rank.get(_row_classification(row), 9),
+        0 if _is_inside_target_state(row) else 1,
+        0 if _is_broad_discovery_candidate(row) else 1,
+        0 if in_alert_window else 1,
+        minute_value,
+        -_score_value(row),
+        -_timestamp_sort_value(row),
+    )
+
+
+def _group_by_listing_key(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        key = row.get("listing_key") or make_listing_key(row)
+        row["listing_key"] = key
+        grouped[str(key)].append(row)
+    return grouped
+
+
+def _annotate_listing_groups(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped = _group_by_listing_key(rows)
+    annotated: list[dict[str, Any]] = []
+    for group in grouped.values():
+        representative = min(group, key=_representative_sort_key)
+        count = len(group)
+        timestamps = [text for text in (_timestamp_text(item) for item in group) if text]
+        closest_minutes = _min_known([item.get("minutes_left") for item in group])
+        best_bid = _min_known([item.get("bid_cents") for item in group])
+        latest_bid = _latest_known_bid(group)
+
+        for index, row in enumerate(group, start=1):
+            row["duplicate_evaluation_count"] = count
+            row["evaluation_count_for_listing"] = count
+            row["is_duplicate_evaluation"] = index > 1
+            row["first_seen_timestamp"] = min(timestamps) if timestamps else _timestamp_text(row)
+            row["last_seen_timestamp"] = max(timestamps) if timestamps else _timestamp_text(row)
+            row["unique_listing_rank"] = index
+            row["representative_row_selected"] = row is representative
+            row["closest_minutes_left"] = closest_minutes
+            row["best_minutes_left"] = closest_minutes
+            row["best_bid_cents"] = best_bid
+            row["latest_bid_cents"] = latest_bid
+            annotated.append(row)
+
+    return annotated
+
+
+def _representative_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [min(group, key=_representative_sort_key) for group in _group_by_listing_key(rows).values()]
+
+
 def _near_miss_sort_key(row: dict[str, Any]) -> tuple[int, float, float, str]:
     classification_rank = {"WATCHLIST": 0, "REJECT": 1, "ALERT": 2}
     minutes = _as_float(row.get("minutes_left"))
@@ -1212,12 +1466,14 @@ def _listing_line(row: dict[str, Any]) -> str:
     secondary = ";".join(secondary_values) if secondary_values else "None"
     details = "; ".join(_vehicle_detail_parts(row))
     url = row.get("url") or ""
+    eval_count = row.get("evaluation_count_for_listing") or row.get("duplicate_evaluation_count")
     score_part = f" | score={score}" if score else ""
     detail_part = f" | parsed={details}" if details else ""
+    eval_part = f" | evaluation_count_for_listing={eval_count}" if eval_count else ""
     return (
         f"- [{classification}] [{site}] {title} | bid={bid} | minutes={minutes} | "
         f"location={location} | strategy={strategy}{score_part} | primary={primary} | "
-        f"secondary={secondary}{detail_part} | {url}"
+        f"secondary={secondary}{detail_part}{eval_part} | {url}"
     )
 
 
@@ -1253,19 +1509,36 @@ def _alerts_sent_count(rows: list[dict[str, Any]]) -> int:
 
 
 def _summary_body(rows: list[dict[str, Any]]) -> list[str]:
+    unique_rows = _representative_rows(rows)
     classification_counts = Counter(_row_classification(row) for row in rows)
+    unique_classification_counts = Counter(_row_classification(row) for row in unique_rows)
     in_state_rows = [row for row in rows if _is_inside_target_state(row)]
     outside_state_count = sum(1 for row in rows if row.get("location_block_reason") == "outside_target_state")
     unknown_state_count = sum(1 for row in rows if row.get("location_block_reason") == "location_state_unknown")
     broad_rows = [row for row in in_state_rows if _is_broad_discovery_candidate(row)]
-    strategy_counts = Counter()
+
+    unique_in_state_rows = [row for row in unique_rows if _is_inside_target_state(row)]
+    unique_outside_state_count = sum(1 for row in unique_rows if row.get("location_block_reason") == "outside_target_state")
+    unique_unknown_state_count = sum(1 for row in unique_rows if row.get("location_block_reason") == "location_state_unknown")
+    unique_broad_rows = [row for row in unique_in_state_rows if _is_broad_discovery_candidate(row)]
+
+    row_strategy_counts = Counter()
     for row in in_state_rows:
         strategies = _candidate_strategies(row)
         if strategies == ["NONE"]:
-            strategy_counts["NONE"] += 1
+            row_strategy_counts["NONE"] += 1
         else:
             for strategy in strategies:
-                strategy_counts[strategy] += 1
+                row_strategy_counts[strategy] += 1
+
+    unique_strategy_counts = Counter()
+    for row in unique_in_state_rows:
+        strategies = _candidate_strategies(row)
+        if strategies == ["NONE"]:
+            unique_strategy_counts["NONE"] += 1
+        else:
+            for strategy in strategies:
+                unique_strategy_counts[strategy] += 1
 
     primary_group_counts = _reason_counts(rows, "primary_reason_group")
     primary_reason_counts = _reason_counts(rows, "primary_reject_reason")
@@ -1274,21 +1547,39 @@ def _summary_body(rows: list[dict[str, Any]]) -> list[str]:
     for row in broad_rows:
         missing_field_counts.update(_as_list(row.get("missing_fields")))
 
+    target_label = _target_state_display_label()
     lines = [
-        f"total listings scanned: {len(rows)}",
-        f"rows outside target state: {outside_state_count}",
+        f"row evaluations scanned: {len(rows)}",
+        f"unique listings scanned: {len(unique_rows)}",
+        f"row evaluations outside target state: {outside_state_count}",
+        f"unique listings outside target state: {unique_outside_state_count}",
         f"rows with unknown state: {unknown_state_count}",
-        f"rows inside target state: {len(in_state_rows)}",
-        f"broad discovery candidates: {len(broad_rows)}",
-        "candidates by strategy:",
-        f"- {DIESEL_COMMERCIAL}: {strategy_counts[DIESEL_COMMERCIAL]}",
-        f"- {CONSUMER_GAS_LIQUID}: {strategy_counts[CONSUMER_GAS_LIQUID]}",
-        f"- {GAS_WORK_LOCAL}: {strategy_counts[GAS_WORK_LOCAL]}",
-        f"- NONE: {strategy_counts['NONE']}",
-        "count by final_classification:",
+        f"unique listings with unknown state: {unique_unknown_state_count}",
+        f"row evaluations inside target state: {len(in_state_rows)}",
+        f"unique {target_label} listings: {len(unique_in_state_rows)}",
+        f"unique listings inside target state: {len(unique_in_state_rows)}",
+        f"row broad discovery candidates: {len(broad_rows)}",
+        f"unique broad discovery candidates: {len(unique_broad_rows)}",
+        "row candidates by strategy:",
+        f"- {DIESEL_COMMERCIAL}: {row_strategy_counts[DIESEL_COMMERCIAL]}",
+        f"- {CONSUMER_GAS_LIQUID}: {row_strategy_counts[CONSUMER_GAS_LIQUID]}",
+        f"- {GAS_WORK_LOCAL}: {row_strategy_counts[GAS_WORK_LOCAL]}",
+        f"- NONE: {row_strategy_counts['NONE']}",
+        "unique candidates by strategy:",
+        f"- {DIESEL_COMMERCIAL}: {unique_strategy_counts[DIESEL_COMMERCIAL]}",
+        f"- {CONSUMER_GAS_LIQUID}: {unique_strategy_counts[CONSUMER_GAS_LIQUID]}",
+        f"- {GAS_WORK_LOCAL}: {unique_strategy_counts[GAS_WORK_LOCAL]}",
+        f"- NONE: {unique_strategy_counts['NONE']}",
+        "row count by final_classification:",
         f"- ALERT: {classification_counts['ALERT']}",
         f"- WATCHLIST: {classification_counts['WATCHLIST']}",
         f"- REJECT: {classification_counts['REJECT']}",
+        "unique count by final_classification:",
+        f"- ALERT: {unique_classification_counts['ALERT']}",
+        f"- WATCHLIST: {unique_classification_counts['WATCHLIST']}",
+        f"- REJECT: {unique_classification_counts['REJECT']}",
+        f"unique WATCHLIST listings: {unique_classification_counts['WATCHLIST']}",
+        f"unique ALERT listings: {unique_classification_counts['ALERT']}",
         f"alert eligible after gates: {sum(1 for row in rows if _as_bool(row.get('alert_gate_passed')))}",
         f"alerts actually sent/reported: {_alerts_sent_count(rows)}",
         "count by primary_reason_group:",
@@ -1350,7 +1641,8 @@ def _is_near_miss(record: dict[str, Any]) -> bool:
 
 
 def _near_miss_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    return sorted([row for row in rows if _is_near_miss(row)], key=_near_miss_sort_key)[:20]
+    representative_rows = _representative_rows(rows)
+    return sorted([row for row in representative_rows if _is_near_miss(row)], key=_near_miss_sort_key)[:20]
 
 
 def _is_relevant_missing_data_row(row: dict[str, Any]) -> bool:
@@ -1367,7 +1659,8 @@ def _is_relevant_missing_data_row(row: dict[str, Any]) -> bool:
 
 def _missing_data_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     examples = [row for row in rows if _is_relevant_missing_data_row(row)]
-    return sorted(examples, key=_near_miss_sort_key)[:10]
+    deduped = [min(group, key=_representative_sort_key) for group in _group_by_listing_key(examples).values()]
+    return sorted(deduped, key=_near_miss_sort_key)[:10]
 
 
 def _missing_data_line(row: dict[str, Any]) -> str:
@@ -1380,7 +1673,7 @@ def _missing_data_line(row: dict[str, Any]) -> str:
 
 def render_daily_report(rows: list[dict[str, Any]], day_key: str | None = None) -> str:
     day_key = day_key or _today_key()
-    normalized_rows = [dict(row) for row in rows]
+    normalized_rows = _annotate_listing_groups([normalize_decision_record(dict(row)) for row in rows])
 
     alerts = [row for row in normalized_rows if _row_classification(row) == "ALERT"]
     near_misses = _near_miss_rows(normalized_rows)
@@ -1410,12 +1703,14 @@ def render_daily_report(rows: list[dict[str, Any]], day_key: str | None = None) 
 
     lines.extend(["", "5. Near Misses"])
     lines.append("top 20 discovered candidate near misses:")
+    lines.append("deduped by listing_key")
     if near_misses:
         lines.extend(_listing_line(row) for row in near_misses)
     else:
         lines.append("- none")
 
     lines.extend(["", "6. Missing Data Examples"])
+    lines.append("deduped by listing_key:")
     missing_data = _missing_data_rows(normalized_rows)
     if missing_data:
         lines.extend(_missing_data_line(row) for row in missing_data)
